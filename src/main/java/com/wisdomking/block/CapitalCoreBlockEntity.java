@@ -23,8 +23,8 @@ import net.minecraft.world.level.block.state.BlockState;
 public class CapitalCoreBlockEntity extends NationBlockEntity {
 	public static final int CLAIM_RADIUS = 4;
 
-	public CapitalCoreBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-		super(type, pos, state);
+	public CapitalCoreBlockEntity(BlockPos pos, BlockState state) {
+		super(com.wisdomking.core.WKBlockEntities.CAPITAL_CORE, pos, state);
 	}
 
 	/** 国家の首都として登録する。 */

@@ -1,22 +1,23 @@
 {
-  "parent": "wisdomking:root",
   "display": {
     "icon": {
       "id": "wisdomking:capital_core"
     },
     "title": {
-      "translate": "wisdomking.advancement.succession.title"
+      "translate": "wisdomking.advancements.nation.title"
     },
     "description": {
-      "translate": "wisdomking.advancement.succession.description"
+      "translate": "wisdomking.advancements.nation.desc"
     },
     "frame": "goal",
     "show_toast": true,
-    "announce_to_chat": true
+    "announce_to_chat": true,
+    "hidden": false
   },
   "criteria": {
-    "manual": {
+    "impossible": {
       "trigger": "minecraft:impossible"
     }
-  }
+  },
+  "parent": "wisdomking:root"
 }

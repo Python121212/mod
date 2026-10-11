@@ -6,10 +6,12 @@ import com.wisdomking.raphael.AnalysisReport;
 import com.wisdomking.raphael.RaphaelRelay;
 import com.wisdomking.raphael.Tone;
 import com.wisdomking.raphael.Urgency;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -33,6 +35,11 @@ public class TradePostBlock extends BaseEntityBlock {
 		super(properties);
 	}
 
+
+	@Override
+	protected com.mojang.serialization.MapCodec<? extends BaseEntityBlock> codec() {
+		return simpleCodec(properties -> new TradePostBlock(properties));
+	}
 	@Override
 	public RenderShape getRenderShape(BlockState state) {
 		return RenderShape.MODEL;
@@ -41,7 +48,7 @@ public class TradePostBlock extends BaseEntityBlock {
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new TradePostBlockEntity(com.wisdomking.core.WKBlockEntities.TRADE_POST, pos, state);
+		return new TradePostBlockEntity(pos, state);
 	}
 
 	@Nullable
@@ -76,8 +83,11 @@ public class TradePostBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
-			InteractionHand hand, BlockHitResult hit) {
+	public ItemInteractionResult useItemOn(ItemStack heldStack, Level level, Player player, InteractionHand hand,
+			BlockHitResult hit) {
+		BlockPos pos = hit.getBlockPos();
+		BlockState state = level.getBlockState(pos);
+
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
 		}
@@ -85,7 +95,7 @@ public class TradePostBlock extends BaseEntityBlock {
 		if (!(be instanceof TradePostBlockEntity post) || !(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)) {
 			return InteractionResult.SUCCESS;
 		}
-		ItemStack held = player.getItemInHand(hand);
+		ItemStack held = heldStack;
 		if (!held.isEmpty()) {
 			if (post.depositFrom(held)) {
 				serverPlayer.displayClientMessage(Component.literal("§6[交易] 市場へ納品しました。"), true);
@@ -108,5 +118,12 @@ public class TradePostBlock extends BaseEntityBlock {
 		RaphaelRelay.announceTo(serverPlayer, new AnalysisReport(Tone.REPORT,
 				"市場ターミナル報告", details, Urgency.INFO), false);
 		return InteractionResult.SUCCESS;
+		}
+
+	@Override
+	public InteractionResult useWithoutItem(Level level, Player player, BlockHitResult hit) {
+		return useItemOn(ItemStack.EMPTY, level, player, InteractionHand.MAIN_HAND, hit) == ItemInteractionResult.SUCCESS
+				? InteractionResult.SUCCESS : InteractionResult.PASS;
 	}
+
 }

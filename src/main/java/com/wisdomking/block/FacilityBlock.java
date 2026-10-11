@@ -2,10 +2,12 @@ package com.wisdomking.block;
 
 import com.wisdomking.nation.Nation;
 import com.wisdomking.nation.NationManager;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -30,6 +32,11 @@ public class FacilityBlock extends BaseEntityBlock {
 		super(properties);
 	}
 
+
+	@Override
+	protected com.mojang.serialization.MapCodec<? extends BaseEntityBlock> codec() {
+		return simpleCodec(properties -> new FacilityBlock(properties));
+	}
 	@Override
 	public RenderShape getRenderShape(BlockState state) {
 		return RenderShape.MODEL;
@@ -38,7 +45,7 @@ public class FacilityBlock extends BaseEntityBlock {
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new FacilityBlockEntity(com.wisdomking.core.WKBlockEntities.FACILITY, pos, state);
+		return new FacilityBlockEntity(pos, state);
 	}
 
 	@Nullable
@@ -72,8 +79,10 @@ public class FacilityBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
-			InteractionHand hand, BlockHitResult hit) {
+	public InteractionResult useWithoutItem(Level level, Player player, BlockHitResult hit) {
+		BlockPos pos = hit.getBlockPos();
+		BlockState state = level.getBlockState(pos);
+
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
 		}
@@ -96,5 +105,13 @@ public class FacilityBlock extends BaseEntityBlock {
 			serverPlayer.displayClientMessage(Component.literal("§7  └ " + line), false);
 		}
 		return InteractionResult.SUCCESS;
+		}
+
+	@Override
+	public ItemInteractionResult useItemOn(ItemStack stack, Level level, Player player, InteractionHand hand,
+			BlockHitResult hit) {
+		return useWithoutItem(level, player, hit) == InteractionResult.SUCCESS
+				? ItemInteractionResult.SUCCESS : ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
+
 }

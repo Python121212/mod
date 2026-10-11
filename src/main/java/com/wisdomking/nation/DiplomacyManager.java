@@ -36,12 +36,12 @@ public final class DiplomacyManager {
 			return 0.9f;
 		}
 		return switch (a) {
-			case MILITARISM -> b == THEOCRACY ? 0.7f : (b == MERCANTILISM ? 0.45f : 0.25f);
-			case MERCANTILISM -> b == TECHNOCRACY ? 0.75f : (b == SCHOLARSHIP ? 0.7f : 0.4f);
+			case MILITARISM -> b == Ideology.THEOCRACY ? 0.7f : (b == Ideology.MERCANTILISM ? 0.45f : 0.25f);
+			case MERCANTILISM -> b == Ideology.TECHNOCRACY ? 0.75f : (b == Ideology.SCHOLARSHIP ? 0.7f : 0.4f);
 			case ISOLATIONISM -> 0.3f;
-			case SCHOLARSHIP -> b == TECHNOCRACY ? 0.9f : 0.5f;
-			case THEOCRACY -> b == MILITARISM ? 0.7f : 0.35f;
-			case TECHNOCRACY -> b == SCHOLARSHIP ? 0.9f : (b == MERCANTILISM ? 0.75f : 0.5f);
+			case SCHOLARSHIP -> b == Ideology.TECHNOCRACY ? 0.9f : 0.5f;
+			case THEOCRACY -> b == Ideology.MILITARISM ? 0.7f : 0.35f;
+			case TECHNOCRACY -> b == Ideology.SCHOLARSHIP ? 0.9f : (b == Ideology.MERCANTILISM ? 0.75f : 0.5f);
 		};
 	}
 

@@ -37,13 +37,14 @@ import java.util.List;
 public class FacilityBlockEntity extends NationBlockEntity {
 	private FacilityType facility = FacilityType.WORKSHOP;
 	private long lastWorkTick;
+	private boolean initialized;
 	private int producedCount;
 	private String lastCrafted = "-";
 	/** 直近の施設ログ（GUI・Raphael 報告用）。 */
 	private final List<String> log = new ArrayList<>();
 
-	public FacilityBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-		super(type, pos, state);
+	public FacilityBlockEntity(BlockPos pos, BlockState state) {
+		super(com.wisdomking.core.WKBlockEntities.FACILITY, pos, state);
 	}
 
 	public void setFacility(FacilityType type) {
@@ -77,6 +78,10 @@ public class FacilityBlockEntity extends NationBlockEntity {
 	public static void serverTick(Level level, BlockPos pos, BlockState state, FacilityBlockEntity be) {
 		if (!(level instanceof ServerLevel serverLevel)) {
 			return;
+		}
+		if (!be.initialized) {
+			be.initialized = true;
+			be.firstTick();
 		}
 		long time = serverLevel.getGameTime();
 		long interval = be.facility == FacilityType.WORKSHOP ? 100L : 600L;
@@ -209,10 +214,8 @@ public class FacilityBlockEntity extends NationBlockEntity {
 		}
 	}
 
-	@Override
-	public void onLoad() {
-		super.onLoad();
-		WKLog.safely("facility onLoad", () -> {
+	private void firstTick() {
+		WKLog.safely("facility firstTick", () -> {
 			if (level != null && !level.isClientSide) {
 				RaphaelRelay.remember(com.wisdomking.raphael.AnalysisReport.of(
 						com.wisdomking.raphael.Tone.REPORT,

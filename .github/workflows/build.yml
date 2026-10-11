@@ -73,6 +73,8 @@ jobs:
           CP2=$(ls /tmp/strip/*.jar | tr '\n' ':')
           ( java -cp "$CP2" tools/ApiDump.java; echo "java-exit=$?" ) > release/api-dump.log 2>&1 || true
           if [ -f api-dump.txt ]; then cp -f api-dump.txt release/api-dump.txt; fi
+          ( java -cp "$CP2" tools/ApiDump.java scan; echo "scan-exit=$?" ) > release/api-scan.log 2>&1 || true
+          if [ -f api-classes.txt ]; then cp -f api-classes.txt release/api-classes.txt; fi
           ls -la release
 
       - name: Collect build artifacts

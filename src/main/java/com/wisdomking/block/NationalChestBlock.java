@@ -4,10 +4,12 @@ import com.wisdomking.nation.Nation;
 import com.wisdomking.nation.NationManager;
 import com.wisdomking.raphael.ItemAnalyzer;
 import com.wisdomking.raphael.RaphaelRelay;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -36,6 +38,11 @@ public class NationalChestBlock extends BaseEntityBlock {
 		super(properties);
 	}
 
+
+	@Override
+	protected com.mojang.serialization.MapCodec<? extends BaseEntityBlock> codec() {
+		return simpleCodec(properties -> new NationalChestBlock(properties));
+	}
 	@Override
 	public RenderShape getRenderShape(BlockState state) {
 		return RenderShape.MODEL;
@@ -44,7 +51,7 @@ public class NationalChestBlock extends BaseEntityBlock {
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new NationalChestBlockEntity(com.wisdomking.core.WKBlockEntities.NATIONAL_CHEST, pos, state);
+		return new NationalChestBlockEntity(pos, state);
 	}
 
 	@Nullable
@@ -79,8 +86,11 @@ public class NationalChestBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
-			InteractionHand hand, BlockHitResult hit) {
+	public ItemInteractionResult useItemOn(ItemStack heldStack, Level level, Player player, InteractionHand hand,
+			BlockHitResult hit) {
+		BlockPos pos = hit.getBlockPos();
+		BlockState state = level.getBlockState(pos);
+
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
 		}
@@ -88,10 +98,10 @@ public class NationalChestBlock extends BaseEntityBlock {
 		if (!(be instanceof NationalChestBlockEntity chest) || !(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)) {
 			return InteractionResult.SUCCESS;
 		}
-		ItemStack held = player.getItemInHand(hand);
-		if (!held.isEmpty() && !player.isShiftKeyDown()) {
+		ItemStack held = heldStack;
+		if (!heldStack.isEmpty() && !player.isShiftKeyDown()) {
 			// 手に持ったアイテムを国庫へ納品する
-			boolean deposited = chest.deposit(held.copy());
+			boolean deposited = !heldStack.isEmpty() && chest.deposit(heldStack.copy());
 			if (deposited) {
 				held.setCount(0);
 				serverPlayer.displayClientMessage(Component.literal("§6[国庫] 納品しました。"), true);
@@ -109,5 +119,12 @@ public class NationalChestBlock extends BaseEntityBlock {
 		serverPlayer.displayClientMessage(Component.literal("§6[国庫] " + chest.summarize()), false);
 		com.wisdomking.network.WKNetwork.openDashboard(serverPlayer);
 		return InteractionResult.SUCCESS;
+		}
+
+	@Override
+	public InteractionResult useWithoutItem(Level level, Player player, BlockHitResult hit) {
+		return useItemOn(ItemStack.EMPTY, level, player, InteractionHand.MAIN_HAND, hit) == ItemInteractionResult.SUCCESS
+				? InteractionResult.SUCCESS : InteractionResult.PASS;
 	}
+
 }

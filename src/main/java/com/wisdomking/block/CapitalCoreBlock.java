@@ -4,11 +4,13 @@ import com.wisdomking.core.WKLog;
 import com.wisdomking.nation.Nation;
 import com.wisdomking.nation.NationManager;
 import com.wisdomking.raphael.RaphaelCore;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -36,6 +38,11 @@ public class CapitalCoreBlock extends BaseEntityBlock {
 		super(properties);
 	}
 
+
+	@Override
+	protected com.mojang.serialization.MapCodec<? extends BaseEntityBlock> codec() {
+		return simpleCodec(properties -> new CapitalCoreBlock(properties));
+	}
 	@Override
 	public RenderShape getRenderShape(BlockState state) {
 		return RenderShape.MODEL;
@@ -44,7 +51,7 @@ public class CapitalCoreBlock extends BaseEntityBlock {
 	@Nullable
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new CapitalCoreBlockEntity(com.wisdomking.core.WKBlockEntities.CAPITAL_CORE, pos, state);
+		return new CapitalCoreBlockEntity(pos, state);
 	}
 
 	@Nullable
@@ -85,8 +92,10 @@ public class CapitalCoreBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
-			InteractionHand hand, BlockHitResult hit) {
+	public InteractionResult useWithoutItem(Level level, Player player, BlockHitResult hit) {
+		BlockPos pos = hit.getBlockPos();
+		BlockState state = level.getBlockState(pos);
+
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
 		}
@@ -111,28 +120,36 @@ public class CapitalCoreBlock extends BaseEntityBlock {
 			}
 		}
 		return InteractionResult.SUCCESS;
-	}
+		}
 
 	@Override
-	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-		super.playerWillDestroy(level, pos, state, player);
+	public ItemInteractionResult useItemOn(ItemStack stack, Level level, Player player, InteractionHand hand,
+			BlockHitResult hit) {
+		return useWithoutItem(level, player, hit) == InteractionResult.SUCCESS
+				? ItemInteractionResult.SUCCESS : ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+	}
+
+
+	@Override
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+		BlockState result = super.playerWillDestroy(level, pos, state, player);
 		if (level.isClientSide()) {
-			return;
+			return result;
 		}
 		BlockEntity be = level.getBlockEntity(pos);
 		NationManager manager = NationManager.get();
 		if (manager == null || !(be instanceof CapitalCoreBlockEntity core)) {
-			return;
+			return result;
 		}
 		Nation defender = core.nation();
 		if (defender == null) {
-			return;
+			return result;
 		}
 		Nation attacker = manager.nationOfPlayer(player.getUUID());
 		if (attacker != null && attacker.id.equals(defender.id)) {
 			// 自国による解体（移転）は戦争扱いにしない
 			defender.capitalMaterialized = false;
-			return;
+			return result;
 		}
 		WKLog.info("capital core of " + defender.name + " destroyed by "
 				+ player.getName().getString());
@@ -141,5 +158,6 @@ public class CapitalCoreBlock extends BaseEntityBlock {
 			serverLevel.explode(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
 					4.0f, Level.ExplosionInteraction.NONE);
 		}
+		return result;
 	}
 }

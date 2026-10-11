@@ -34,8 +34,8 @@ public class TradePostBlockEntity extends NationBlockEntity implements Container
 	private double profitAccumulated;
 	private int tradeCount;
 
-	public TradePostBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-		super(type, pos, state);
+	public TradePostBlockEntity(BlockPos pos, BlockState state) {
+		super(com.wisdomking.core.WKBlockEntities.TRADE_POST, pos, state);
 	}
 
 	public static void serverTick(Level level, BlockPos pos, BlockState state, TradePostBlockEntity be) {

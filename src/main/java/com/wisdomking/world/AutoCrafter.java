@@ -133,9 +133,9 @@ public final class AutoCrafter {
 					if (!consume(chest, grid)) {
 						continue;
 					}
-					ItemStack remaining = chest.deposit(result.copy());
+					boolean stored = chest.deposit(result.copy());
 					String description = result.getCount() + " × " + result.getHoverName().getString();
-					if (!remaining.isEmpty()) {
+					if (!stored) {
 						WKLog.warn("auto craft output overflow: " + description);
 					}
 					LAST_CRAFT.put(level.dimension().location().hashCode() * 31L + chest.getBlockPos().asLong(),

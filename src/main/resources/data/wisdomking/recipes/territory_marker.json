@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "SGS",
-    "GTG",
-    "SGS"
+    "GSG",
+    "STS",
+    "GSG"
   ],
   "key": {
-    "S": {
-      "item": "minecraft:stone"
-    },
     "G": {
       "item": "minecraft:gold_ingot"
+    },
+    "S": {
+      "item": "minecraft:stone_bricks"
     },
     "T": {
       "item": "minecraft:torch"

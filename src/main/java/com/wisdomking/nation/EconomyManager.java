@@ -87,7 +87,7 @@ public final class EconomyManager {
 					biomeMix[3]++;
 				} else if (biome.is(BiomeTags.IS_JUNGLE)) {
 					biomeMix[4]++;
-				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.getBaseTemperature() < 0.15f) {
+				} else if (biome.getBaseTemperature() < 0.35f) { // 寒冷（タイガ・雪原）
 					biomeMix[5]++;
 				} else {
 					biomeMix[6]++;

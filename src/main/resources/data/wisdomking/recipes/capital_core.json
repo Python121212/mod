@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "GOG",
-    "ONO",
-    "GOG"
+    "GDG",
+    "DED",
+    "GDG"
   ],
   "key": {
     "G": {
       "item": "minecraft:gold_ingot"
     },
-    "O": {
-      "item": "minecraft:obsidian"
+    "D": {
+      "item": "minecraft:polished_deepslate"
     },
-    "N": {
-      "item": "minecraft:netherite_ingot"
+    "E": {
+      "item": "minecraft:emerald_block"
     }
   },
   "result": {

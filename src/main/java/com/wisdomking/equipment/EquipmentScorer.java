@@ -6,7 +6,6 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 import java.util.Map;
@@ -16,7 +15,7 @@ import java.util.Map;
  *
  * <p>攻撃力・防御力・耐久値・エンチャント・攻撃速度を統合し、
  * NPCが「国庫にある中で最も強い装備」を自動選択するためのスコアを算出する。
- * 属性は {@link ItemAttributeModifiers} から直接読むため、Mod追加装備でも機能する。</p>
+ * 属性は ItemStack#forEachModifier から直接読むため、Mod追加装備でも機能する。</p>
  */
 public final class EquipmentScorer {
 	private EquipmentScorer() {
@@ -48,47 +47,36 @@ public final class EquipmentScorer {
 	}
 
 	private static double attributeValue(ItemStack stack, Holder<Attribute> attribute, EquipmentSlot slot) {
+		if (attribute == null) {
+			return 0.0;
+		}
+		final double[] total = {0.0};
+		final java.util.Set<String> seen = new java.util.HashSet<>();
+		final java.util.function.BiConsumer<Holder<Attribute>, AttributeModifier> consumer = (attr, modifier) -> {
+			try {
+				if (attr == null || modifier == null || attr.value() != attribute.value()) {
+					return;
+				}
+				if (!seen.add(modifier.id().toString())) {
+					return;
+				}
+				total[0] += modifier.amount();
+			} catch (Throwable ignored) {
+				// 個別属性の解析失敗は無視する（他Modの特殊属性対策）
+			}
+		};
 		try {
-			ItemAttributeModifiers modifiers = stack.getAttributeModifiers();
-			double total = 0.0;
-			for (ItemAttributeModifiers.Entry entry : modifiers.modifiers()) {
-				if (!entry.attribute().equals(attribute)) {
-					continue;
-				}
-				AttributeModifier modifier = entry.modifier();
-				if (modifier.operation() == AttributeModifier.Operation.ADD_VALUE) {
-					total += modifier.amount();
-				} else if (modifier.operation() == AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-						|| modifier.operation() == AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL) {
-					total += modifier.amount();
+			if (slot != null) {
+				stack.forEachModifier(slot, consumer);
+			} else {
+				for (EquipmentSlot candidate : EquipmentSlot.values()) {
+					stack.forEachModifier(candidate, consumer);
 				}
 			}
-			if (total == 0.0 && !stack.isEmpty() && slot != null) {
-				// 一部のModはスロット限定属性を用いるため、素の攻撃力属性を参照する
-				Double base = stack.get(net.minecraft.core.component.DataComponents.ATTRIBUTE_MODIFIERS) == null
-						? null : fallbackAttack(stack);
-				if (base != null) {
-					total = base;
-				}
-			}
-			return total;
 		} catch (Throwable t) {
 			return 0.0;
 		}
-	}
-
-	private static Double fallbackAttack(ItemStack stack) {
-		try {
-			ItemAttributeModifiers modifiers = stack.getAttributeModifiers();
-			for (ItemAttributeModifiers.Entry entry : modifiers.modifiers()) {
-				if (entry.attribute().value() == Attributes.ATTACK_DAMAGE.value()) {
-					return entry.modifier().amount();
-				}
-			}
-		} catch (Throwable ignored) {
-			// 失敗しても致命ではない
-		}
-		return null;
+		return total[0];
 	}
 
 	/** エンチャントの総合補正。 */

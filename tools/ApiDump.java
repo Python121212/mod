@@ -242,6 +242,10 @@ public final class ApiDump {
     private static PrintWriter out;
 
     public static void main(String[] args) throws Exception {
+        if (args.length > 0 && args[0].equals("scan")) {
+            scan();
+            return;
+        }
         out = new PrintWriter(new FileWriter("api-dump.txt"));
         for (String name : CLASSES) {
             dump(name);
@@ -249,6 +253,38 @@ public final class ApiDump {
         out.flush();
         out.close();
         System.out.println("api-dump.txt written (" + CLASSES.length + " classes)");
+    }
+
+    /** Writes every net.minecraft / fabric-api class name found on the classpath into api-classes.txt. */
+    private static void scan() {
+        java.util.TreeSet<String> names = new java.util.TreeSet<>();
+        String cp = System.getProperty("java.class.path");
+        for (String entry : cp.split(java.io.File.pathSeparator)) {
+            java.io.File f = new java.io.File(entry);
+            if (!f.isFile() || !f.getName().endsWith(".jar")) continue;
+            try (java.util.zip.ZipFile zf = new java.util.zip.ZipFile(f)) {
+                java.util.Enumeration<? extends java.util.zip.ZipEntry> en = zf.entries();
+                while (en.hasMoreElements()) {
+                    String n = en.nextElement().getName();
+                    if (!n.endsWith(".class")) continue;
+                    if (n.startsWith("net/minecraft/") || n.startsWith("net/fabricmc/fabric/api/")
+                            || n.startsWith("net/fabricmc/api/") || n.startsWith("net/fabricmc/loader/api")) {
+                        names.add(n.substring(0, n.length() - 6).replace('/', '.'));
+                    }
+                }
+            } catch (Throwable t) {
+                // ignore unreadable jars
+            }
+        }
+        try (PrintWriter w = new PrintWriter(new FileWriter("api-classes.txt"))) {
+            for (String n : names) {
+                w.println(n);
+            }
+        } catch (Throwable t) {
+            t.printStackTrace();
+            return;
+        }
+        System.out.println("api-classes.txt written (" + names.size() + " classes)");
     }
 
     private static void dump(String name) {
@@ -328,11 +364,8 @@ public final class ApiDump {
 
     private static String typeName(Type t) {
         if (t == null) return "<none>";
-        String s = t.getTypeName();
-        int dot = s.lastIndexOf('.');
-        if (dot < 0) return s;
-        // shorten package prefixes for readability, keep nested class separator
-        return s.substring(dot + 1);
+        // strip package prefixes but keep nested-class separators and generic arguments intact
+        return t.getTypeName().replaceAll("(?:[a-z][a-zA-Z0-9_$]*\\.)+", "");
     }
 
     private static String typeNames(Type[] types) {

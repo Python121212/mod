@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "PPP",
-    "PEP",
+    "PBP",
     "PPP"
   ],
   "key": {
     "P": {
       "item": "minecraft:paper"
     },
-    "E": {
-      "item": "minecraft:emerald"
+    "B": {
+      "item": "minecraft:gold_block"
     }
   },
   "result": {

@@ -23,18 +23,18 @@ public final class WKBlockEntities {
 
 	public static void init() {
 		CAPITAL_CORE = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, WK.id("capital_core"),
-				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build());
+				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build(null));
 
 		TERRITORY_MARKER = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, WK.id("territory_marker"),
-				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build());
+				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build(null));
 
 		NATIONAL_CHEST = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, WK.id("national_chest"),
-				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build());
+				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build(null));
 
 		TRADE_POST = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, WK.id("trade_post"),
-				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build());
+				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build(null));
 
 		FACILITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, WK.id("facility"),
-				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build());
+				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build(null));
 	}
 }

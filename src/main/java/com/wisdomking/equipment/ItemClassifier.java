@@ -1,6 +1,7 @@
 package com.wisdomking.equipment;
 
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -148,7 +149,7 @@ public final class ItemClassifier {
 		if (item instanceof BlockItem) {
 			return CombatRole.BUILDING;
 		}
-		if (stack.getFoodProperties(null) != null) {
+		if (stack.get(net.minecraft.core.component.DataComponents.FOOD) != null) {
 			return CombatRole.FOOD;
 		}
 		if (item == Items.STICK || item == Items.IRON_INGOT || item == Items.GOLD_INGOT

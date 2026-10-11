@@ -62,7 +62,7 @@ public final class ResourceMapper {
 		String path = path(stack).toLowerCase(Locale.ROOT);
 		String namespace = namespace(stack);
 
-		if (stack.getFoodProperties(null) != null || containsAny(path, FOOD_HINTS)) {
+		if (stack.get(net.minecraft.core.component.DataComponents.FOOD) != null || containsAny(path, FOOD_HINTS)) {
 			return ResourceType.FOOD;
 		}
 		if (containsAny(path, ARCANE_HINTS) || isMagicNamespace(namespace)) {

@@ -28,8 +28,8 @@ public class NationalChestBlockEntity extends NationBlockEntity implements Conta
 	private final NonNullList<ItemStack> items = NonNullList.withSize(SLOTS, ItemStack.EMPTY);
 	private long lastDepositTick;
 
-	public NationalChestBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-		super(type, pos, state);
+	public NationalChestBlockEntity(BlockPos pos, BlockState state) {
+		super(com.wisdomking.core.WKBlockEntities.NATIONAL_CHEST, pos, state);
 	}
 
 	/** NPCやホッパーからの納品を受け入れる（資源として国家備蓄へ計上）。 */

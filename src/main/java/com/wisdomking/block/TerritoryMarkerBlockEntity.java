@@ -16,9 +16,11 @@ import net.minecraft.world.level.block.state.BlockState;
 public class TerritoryMarkerBlockEntity extends NationBlockEntity {
 	private int claimedCount;
 	private int radius = 2;
+	/** 最初のtickで領土を再宣言したか。 */
+	private boolean initialized;
 
-	public TerritoryMarkerBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
-		super(type, pos, state);
+	public TerritoryMarkerBlockEntity(BlockPos pos, BlockState state) {
+		super(com.wisdomking.core.WKBlockEntities.TERRITORY_MARKER, pos, state);
 	}
 
 	/** 領土を宣言する。 */
@@ -39,9 +41,8 @@ public class TerritoryMarkerBlockEntity extends NationBlockEntity {
 		return claimedCount;
 	}
 
-	@Override
-	public void onLoad() {
-		super.onLoad();
+	/** ワールド読込後に一度だけ領土を再宣言する（旧 onLoad 相当）。 */
+	private void firstTick() {
 		NationManager manager = NationManager.get();
 		Nation nation = nation();
 		if (manager != null && nation != null && level != null && !level.isClientSide) {
@@ -52,6 +53,10 @@ public class TerritoryMarkerBlockEntity extends NationBlockEntity {
 	public static void serverTick(Level level, BlockPos pos, BlockState state, TerritoryMarkerBlockEntity be) {
 		if (!(level instanceof ServerLevel serverLevel)) {
 			return;
+		}
+		if (!be.initialized) {
+			be.initialized = true;
+			be.firstTick();
 		}
 		long time = serverLevel.getGameTime();
 		if (time % 400L != 0L) {

@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "wisdomking:capital_core",
-    "wisdomking:territory_marker"
+    "wisdomking:facility",
+    "wisdomking:national_chest",
+    "wisdomking:trade_post"
   ]
 }
