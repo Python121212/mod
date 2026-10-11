@@ -54,6 +54,7 @@ public final class WKEvents {
 				AutomationAdvisor.reset();
 				AutoCrafter.reset();
 				CivilEngineeringAI.reset();
+				com.wisdomking.entity.NpcSpawner.reset();
 			});
 		});
 
@@ -66,6 +67,7 @@ public final class WKEvents {
 			try {
 				manager.tick();
 				CivilEngineeringAI.tick(server.overworld());
+				com.wisdomking.entity.NpcSpawner.tick(server.overworld());
 				RaphaelCore.passiveTick(server);
 			} catch (Throwable t) {
 				WKLog.error("nation tick failed", t);

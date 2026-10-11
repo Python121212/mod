@@ -58,4 +58,9 @@ public final class WKClientNetwork {
 			WK.LOG.warn("[wisdomking] failed to send action {}: {}", action, t.toString());
 		}
 	}
+
+	/** デバッグ用識別子（他Modとの名前空間分離の確認に使う）。 */
+	public static String debugTag() {
+		return "wisdomking:client_network";
+	}
 }

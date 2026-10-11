@@ -92,6 +92,11 @@ public final class ClientProbe {
 		EntityRendererRegistry.register(null, ctx -> new HumanoidMobRenderer<com.wisdomking.dev.Probe.ProbeNpc,
 				HumanoidModel<com.wisdomking.dev.Probe.ProbeNpc>>(ctx,
 				new HumanoidModel<>(ctx.bakeLayer(ModelLayers.PLAYER)), 0.5f) {
+			@Override
+			public net.minecraft.resources.ResourceLocation getTextureLocation(com.wisdomking.dev.Probe.ProbeNpc entity) {
+				return net.minecraft.resources.ResourceLocation.withDefaultNamespace("textures/entity/player/wide/steve.png");
+			}
+
 			{
 				this.addLayer(new HumanoidArmorLayer<>(this,
 						new HumanoidModel<>(ctx.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)),

@@ -49,6 +49,8 @@ public class WisdomKingClient implements ClientModInitializer {
 				InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_V, KEY_CATEGORY));
 
 		ClientVoiceManager.init();
+		com.wisdomking.client.raphael.RaphaelHud.init();
+		com.wisdomking.client.render.WKRenderers.init();
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (dashKey.consumeClick()) {

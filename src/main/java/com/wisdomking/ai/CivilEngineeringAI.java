@@ -48,6 +48,84 @@ public final class CivilEngineeringAI {
 		boolean step(ServerLevel level, Nation nation);
 
 		String describe();
+
+		/** このジョブを所有する国家。 */
+		java.util.UUID nationId();
+
+		/** 現在の作業対象位置（NPC が向かう先）。 */
+		@Nullable
+		BlockPos focus();
+	}
+
+	/**
+	 * 指定国家の未完了ジョブのうち、NPC の近くにある作業地点を返す。
+	 * 土木 NPC（{@code BuildRoadGoal}）が労働者として参加するために使う。
+	 */
+	@Nullable
+	public static BlockPos nearestWorkSite(Nation nation, BlockPos from) {
+		BlockPos best = null;
+		double bestDistance = Double.MAX_VALUE;
+		double maxDistance = WKConfig.get().civilEngineeringRadius;
+		for (Job job : JOBS) {
+			try {
+				if (!nation.id.equals(job.nationId())) {
+					continue;
+				}
+				BlockPos focus = job.focus();
+				if (focus == null) {
+					continue;
+				}
+				double distance = focus.distSqr(from);
+				if (distance > maxDistance * maxDistance || distance >= bestDistance) {
+					continue;
+				}
+				bestDistance = distance;
+				best = focus;
+			} catch (Throwable t) {
+				WKLog.debug("civil job focus skipped: " + t);
+			}
+		}
+		return best;
+	}
+
+	/**
+	 * NPC の労働: 近傍にある自国ジョブを1ステップ進める。
+	 *
+	 * @return 実際に作業が進んだ場合 true
+	 */
+	public static boolean workAt(ServerLevel level, Nation nation, BlockPos npcPos) {
+		if (!WKConfig.get().civilEngineering || JOBS.isEmpty()) {
+			return false;
+		}
+		double maxDistance = Math.max(16.0D, WKConfig.get().civilEngineeringRadius);
+		for (Job job : JOBS) {
+			try {
+				if (!nation.id.equals(job.nationId())) {
+					continue;
+				}
+				BlockPos focus = job.focus();
+				if (focus == null || focus.distSqr(npcPos) > maxDistance * maxDistance) {
+					continue;
+				}
+				return job.step(level, nation);
+			} catch (Throwable t) {
+				WKLog.debug("civil job step skipped: " + t);
+			}
+		}
+		return false;
+	}
+
+	/** ジョブ一覧の概要（Raphael の報告用）。 */
+	public static List<String> describeJobs() {
+		List<String> lines = new ArrayList<>();
+		for (Job job : JOBS) {
+			try {
+				lines.add(job.describe());
+			} catch (Throwable ignored) {
+				// 記述に失敗したジョブは省略
+			}
+		}
+		return lines;
 	}
 
 	/** 道路網の敷設を予約する。 */
@@ -247,6 +325,16 @@ public final class CivilEngineeringAI {
 		public String describe() {
 			return "道路敷設 " + index + "/" + path.size();
 		}
+
+		@Override
+		public java.util.UUID nationId() {
+			return nationId;
+		}
+
+		@Override
+		public @Nullable BlockPos focus() {
+			return index < path.size() ? path.get(index) : null;
+		}
 	}
 
 	/** 1ブロック分の道路を敷設する。 */
@@ -337,6 +425,16 @@ public final class CivilEngineeringAI {
 		}
 
 		@Override
+		@Override
+		public java.util.UUID nationId() {
+			return nationId;
+		}
+
+		@Override
+		public @Nullable BlockPos focus() {
+			return index < entries.size() ? entries.get(index).pos() : null;
+		}
+
 		public String describe() {
 			return "復興 " + index + "/" + entries.size();
 		}
@@ -374,6 +472,19 @@ public final class CivilEngineeringAI {
 				}
 			}
 			return moatIndex >= moat.size() && wallIndex >= wall.size();
+		}
+
+		@Override
+		public java.util.UUID nationId() {
+			return nationId;
+		}
+
+		@Override
+		public @Nullable BlockPos focus() {
+			if (moatIndex < moat.size()) {
+				return moat.get(moatIndex);
+			}
+			return wallIndex < wall.size() ? wall.get(wallIndex) : null;
 		}
 
 		@Override
@@ -428,6 +539,16 @@ public final class CivilEngineeringAI {
 		}
 
 		@Override
+		@Override
+		public java.util.UUID nationId() {
+			return nationId;
+		}
+
+		@Override
+		public @Nullable BlockPos focus() {
+			return center;
+		}
+
 		public String describe() {
 			return "整地 dx=" + dx + " dz=" + dz;
 		}

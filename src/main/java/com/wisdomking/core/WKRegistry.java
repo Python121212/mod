@@ -9,5 +9,6 @@ public final class WKRegistry {
 		WKBlocks.init();
 		WKItems.init();
 		WKBlockEntities.init();
+		com.wisdomking.entity.WKNpcEntities.init();
 	}
 }
