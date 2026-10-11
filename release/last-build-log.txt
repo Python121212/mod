@@ -27,373 +27,6 @@ Please make sure to read and understand the following license:
 duplicate input class net/fabricmc/fabric/mixin/tag/package-info, from /home/runner/.gradle/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-convention-tags-v2/2.12.0+c3656daa19/45cd5f071ec42e13b8b6ce15c8f83db322da2494/fabric-convention-tags-v2-2.12.0+c3656daa19.jar and /home/runner/.gradle/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-tag-api-v1/1.3.0+1eb36c0719/ba08d91572b12cd23a2d7a193ed45c26f8da62b0/fabric-tag-api-v1-1.3.0+1eb36c0719.jar
 
 > Task :compileJava
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:12: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:7: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:18: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:9: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:9: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:8: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/INationMember.java:3: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:19: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/MachineAnalyzer.java:15: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelSink.java:5: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:12: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:31: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ChatSink.java:5: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ThreatAnalyzer.java:18: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/NetworkSink.java:5: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:26: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:21: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:24: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:26: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:22: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKEvents.java:23: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:16: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:8: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:29: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationBlockEntity
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:39: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationBlockEntity
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:55: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class WarManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:244: error: cannot find symbol
-	public void onCapitalCoreLost(Nation defender, @Nullable Nation attacker) {
-	                                                ^
-  symbol:   class Nullable
-  location: class WarManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:83: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:154: error: cannot find symbol
-	public Nation nation(@Nullable UUID id) {
-	                      ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:153: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:173: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:178: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:183: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:193: error: cannot find symbol
-	public void setPlayerNation(UUID playerId, @Nullable Nation nation) {
-	                                            ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:204: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:56: error: cannot find symbol
-	public void onLeaderDeath(Nation nation, NpcRecord kingRecord, Cause cause, @Nullable UUID killerNationId) {
-	                                                                             ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:77: error: cannot find symbol
-	public NpcRecord selectSuccessor(Nation nation, @Nullable NpcRecord exclude) {
-	                                                 ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:76: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:106: error: cannot find symbol
-	public void crown(Nation nation, NpcRecord successor, Cause cause, int generation, @Nullable UUID killerNationId) {
-	                                                                                    ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:145: error: cannot find symbol
-			boolean policyChanged, Ideology previous, Ideology next, @Nullable UUID killerNationId) {
-			                                                          ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:300: error: cannot find symbol
-	public void notifyKingEntityDeath(Nation nation, UUID entityId, Cause cause, @Nullable UUID killerNation) {
-	                                                                              ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:300: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class DiplomacyManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:56: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:61: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:67: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:142: error: cannot find symbol
-	public boolean canModify(Level level, BlockPos pos, @Nullable Player player) {
-	                                                     ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:174: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/INationMember.java:12: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: interface INationMember
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:253: error: cannot find symbol
-	private static int buildRoadBlock(ServerLevel level, BlockPos surface, @Nullable Nation nation) {
-	                                                                        ^
-  symbol:   class Nullable
-  location: class CivilEngineeringAI
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:289: error: cannot find symbol
-	private static BlockState material(@Nullable Nation nation, ResourceType type, BlockState fallback) {
-	                                    ^
-  symbol:   class Nullable
-  location: class CivilEngineeringAI
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:236: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class RoadJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:316: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class RepairJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:360: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class DefenseJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:400: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class LevelJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/MachineAnalyzer.java:55: error: cannot find symbol
-	public static AnalysisReport analyze(ServerLevel level, BlockPos pos, @Nullable String viewerName) {
-	                                                                       ^
-  symbol:   class Nullable
-  location: class MachineAnalyzer
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelSink.java:24: error: cannot find symbol
-	void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId);
-	                                                                         ^
-  symbol:   class Nullable
-  location: interface RaphaelSink
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:70: error: cannot find symbol
-	private static void announce(MinecraftServer server, AnalysisReport report, @Nullable UUID nationId, boolean speak) {
-	                                                                             ^
-  symbol:   class Nullable
-  location: class RaphaelRelay
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:90: error: cannot find symbol
-	private static void deliverTo(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-	                                                                                          ^
-  symbol:   class Nullable
-  location: class RaphaelRelay
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:135: error: cannot find symbol
-			String policyText, @Nullable UUID killerNationId) {
-			                    ^
-  symbol:   class Nullable
-  location: class RaphaelRelay
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:104: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class RaphaelCore
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:199: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class RaphaelCore
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ChatSink.java:16: error: cannot find symbol
-	public void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-	                                                                                ^
-  symbol:   class Nullable
-  location: class ChatSink
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ThreatAnalyzer.java:158: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class ThreatAnalyzer
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/NetworkSink.java:17: error: cannot find symbol
-	public void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-	                                                                                ^
-  symbol:   class Nullable
-  location: class NetworkSink
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:38: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class FacilityBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:44: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class FacilityBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:58: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class FacilityBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:41: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TradePostBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:47: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TradePostBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:61: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class TradePostBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:44: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationalChestBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:50: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationalChestBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:64: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class NationalChestBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:39: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryMarkerBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:45: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryMarkerBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:59: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class TerritoryMarkerBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:44: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class CapitalCoreBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:50: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class CapitalCoreBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:64: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class CapitalCoreBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:169: error: package javax.annotation does not exist
-	@javax.annotation.Nullable
-	                 ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKEvents.java:133: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class WKEvents
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:69: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class AutoCrafter
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:57: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class ResourceMapper
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:151: error: cannot find symbol
 		if (stack.getFoodProperties(null) != null) {
 		         ^
@@ -419,17 +52,6 @@ import javax.annotation.Nullable;
 		                                  ^
   symbol:   method toPath()
   location: interface Path
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:68: error: incompatible types: cannot infer type arguments for ArrayList<>
-		List<long[]> sample = new ArrayList<>(nation.claimedChunks);
-		                                   ^
-    reason: inference variable E has incompatible bounds
-      equality constraints: long[]
-      lower bounds: Long
-  where E is a type-variable:
-    E extends Object declared in class ArrayList
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:73: error: incompatible types: long[] cannot be converted to long
-			long key = sample.get(i);
-			                     ^
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:90: error: cannot find symbol
 				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.is(BiomeTags.IS_SNOWY)) {
 				                                                             ^
@@ -475,13 +97,200 @@ import javax.annotation.Nullable;
 			                                                    ^
   symbol:   variable MERCANTILISM
   location: class DiplomacyManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationSavedData.java:50: error: incompatible types: String cannot be converted to DataFixTypes
-		return new SavedData.Factory<>(NationSavedData::create, NationSavedData::load, NAME);
-		                                                                               ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:36: error: cannot find symbol
+			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
+			                                     ^
+  symbol:   class UUID
+  location: class NationPopulation
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:56: error: cannot find symbol
+			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
+			                                     ^
+  symbol:   class UUID
+  location: class NationPopulation
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:262: error: cannot find symbol
+				|| state.is(BlockTags.GRAVEL) /* fallback */) {
+				                     ^
+  symbol:   variable GRAVEL
+  location: class BlockTags
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:70: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(0, new FloatGoal(mob));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:71: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(2, new MeleeAttackGoal(mob, 1.1, true));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:72: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(3, new RangedAttackGoal(mob, 1.0, 30, 12.0f));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:73: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(6, new RandomStrollGoal(mob, 0.8));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:74: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(7, new LookAtPlayerGoal(mob, Player.class, 8.0f));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:75: error: targetSelector has protected access in Mob
+		mob.targetSelector.addGoal(1, new HurtByTargetGoal(mob));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:76: error: targetSelector has protected access in Mob
+		mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Player.class, true));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:164: error: cannot find symbol
+		var modifiers = stack.getAttributeModifiers();
+		                     ^
+  symbol:   method getAttributeModifiers()
+  location: variable stack of type ItemStack
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:176: error: cannot find symbol
+		var food = stack.getFoodProperties(null);
+		                ^
+  symbol:   method getFoodProperties(<null>)
+  location: variable stack of type ItemStack
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:34: error: CapitalCoreBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class CapitalCoreBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:87: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:117: error: playerWillDestroy(Level,BlockPos,BlockState,Player) in CapitalCoreBlock cannot override playerWillDestroy(Level,BlockPos,BlockState,Player) in Block
+	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+	            ^
+  return type void is not compatible with BlockState
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:116: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:29: error: TerritoryMarkerBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class TerritoryMarkerBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:81: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:34: error: NationalChestBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class NationalChestBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:81: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:31: error: TradePostBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class TradePostBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:78: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:28: error: FacilityBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class FacilityBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:74: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:26: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build());
+				                           ^
+    constructor CapitalCoreBlockEntity in class CapitalCoreBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:26: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor CapitalCoreBlockEntity in class CapitalCoreBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:29: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build());
+				                           ^
+    constructor TerritoryMarkerBlockEntity in class TerritoryMarkerBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:29: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor TerritoryMarkerBlockEntity in class TerritoryMarkerBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:32: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build());
+				                           ^
+    constructor NationalChestBlockEntity in class NationalChestBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:32: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor NationalChestBlockEntity in class NationalChestBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:35: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build());
+				                           ^
+    constructor TradePostBlockEntity in class TradePostBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:35: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor TradePostBlockEntity in class TradePostBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:38: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build());
+				                           ^
+    constructor FacilityBlockEntity in class FacilityBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:38: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor FacilityBlockEntity in class FacilityBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlockEntity.java:42: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlockEntity.java:44: error: cannot find symbol
+		super.onLoad();
+		     ^
+  symbol: method onLoad()
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:212: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:214: error: cannot find symbol
+		super.onLoad();
+		     ^
+  symbol: method onLoad()
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:136: error: incompatible types: boolean cannot be converted to ItemStack
+					ItemStack remaining = chest.deposit(result.copy());
+					                                   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:65: error: cannot find symbol
+		if (stack.getFoodProperties(null) != null || containsAny(path, FOOD_HINTS)) {
+		         ^
+  symbol:   method getFoodProperties(<null>)
+  location: variable stack of type ItemStack
 Note: /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-100 errors
+54 errors
 
 > Task :compileJava FAILED
 
@@ -493,316 +302,122 @@ FAILURE: Build failed with an exception.
 Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
 > Compilation failed; see the compiler output below.
   Note: /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java uses or overrides a deprecated API.
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlockEntity.java:44: error: cannot find symbol
+  		super.onLoad();
+  		     ^
+    symbol: method onLoad()
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:214: error: cannot find symbol
+  		super.onLoad();
+  		     ^
+    symbol: method onLoad()
   Note: Recompile with -Xlint:deprecation for details.
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:68: error: incompatible types: cannot infer type arguments for ArrayList<>
-  		List<long[]> sample = new ArrayList<>(nation.claimedChunks);
-  		                                   ^
-      reason: inference variable E has incompatible bounds
-        equality constraints: long[]
-        lower bounds: Long
-    where E is a type-variable:
-      E extends Object declared in class ArrayList
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:73: error: incompatible types: long[] cannot be converted to long
-  			long key = sample.get(i);
-  			                     ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationSavedData.java:50: error: incompatible types: String cannot be converted to DataFixTypes
-  		return new SavedData.Factory<>(NationSavedData::create, NationSavedData::load, NAME);
-  		                                                                               ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:29: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationBlockEntity
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:39: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationBlockEntity
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:55: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class WarManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:244: error: cannot find symbol
-  	public void onCapitalCoreLost(Nation defender, @Nullable Nation attacker) {
-  	                                                ^
-    symbol:   class Nullable
-    location: class WarManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:83: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:154: error: cannot find symbol
-  	public Nation nation(@Nullable UUID id) {
-  	                      ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:153: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:173: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:178: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:183: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:193: error: cannot find symbol
-  	public void setPlayerNation(UUID playerId, @Nullable Nation nation) {
-  	                                            ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:204: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:56: error: cannot find symbol
-  	public void onLeaderDeath(Nation nation, NpcRecord kingRecord, Cause cause, @Nullable UUID killerNationId) {
-  	                                                                             ^
-    symbol:   class Nullable
-    location: class SuccessionEngine
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:77: error: cannot find symbol
-  	public NpcRecord selectSuccessor(Nation nation, @Nullable NpcRecord exclude) {
-  	                                                 ^
-    symbol:   class Nullable
-    location: class SuccessionEngine
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:76: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class SuccessionEngine
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:106: error: cannot find symbol
-  	public void crown(Nation nation, NpcRecord successor, Cause cause, int generation, @Nullable UUID killerNationId) {
-  	                                                                                    ^
-    symbol:   class Nullable
-    location: class SuccessionEngine
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:145: error: cannot find symbol
-  			boolean policyChanged, Ideology previous, Ideology next, @Nullable UUID killerNationId) {
-  			                                                          ^
-    symbol:   class Nullable
-    location: class SuccessionEngine
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:300: error: cannot find symbol
-  	public void notifyKingEntityDeath(Nation nation, UUID entityId, Cause cause, @Nullable UUID killerNation) {
-  	                                                                              ^
-    symbol:   class Nullable
-    location: class SuccessionEngine
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:300: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class DiplomacyManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:56: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TerritoryManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:61: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TerritoryManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:67: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TerritoryManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:142: error: cannot find symbol
-  	public boolean canModify(Level level, BlockPos pos, @Nullable Player player) {
-  	                                                     ^
-    symbol:   class Nullable
-    location: class TerritoryManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:174: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TerritoryManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/INationMember.java:12: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: interface INationMember
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:253: error: cannot find symbol
-  	private static int buildRoadBlock(ServerLevel level, BlockPos surface, @Nullable Nation nation) {
-  	                                                                        ^
-    symbol:   class Nullable
-    location: class CivilEngineeringAI
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:289: error: cannot find symbol
-  	private static BlockState material(@Nullable Nation nation, ResourceType type, BlockState fallback) {
-  	                                    ^
-    symbol:   class Nullable
-    location: class CivilEngineeringAI
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:236: error: cannot find symbol
-  		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-  		                                        ^
-    symbol:   class Nullable
-    location: class RoadJob
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:316: error: cannot find symbol
-  		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-  		                                        ^
-    symbol:   class Nullable
-    location: class RepairJob
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:360: error: cannot find symbol
-  		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-  		                                        ^
-    symbol:   class Nullable
-    location: class DefenseJob
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:400: error: cannot find symbol
-  		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-  		                                        ^
-    symbol:   class Nullable
-    location: class LevelJob
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/MachineAnalyzer.java:55: error: cannot find symbol
-  	public static AnalysisReport analyze(ServerLevel level, BlockPos pos, @Nullable String viewerName) {
-  	                                                                       ^
-    symbol:   class Nullable
-    location: class MachineAnalyzer
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelSink.java:24: error: cannot find symbol
-  	void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId);
-  	                                                                         ^
-    symbol:   class Nullable
-    location: interface RaphaelSink
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:70: error: cannot find symbol
-  	private static void announce(MinecraftServer server, AnalysisReport report, @Nullable UUID nationId, boolean speak) {
-  	                                                                             ^
-    symbol:   class Nullable
-    location: class RaphaelRelay
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:90: error: cannot find symbol
-  	private static void deliverTo(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-  	                                                                                          ^
-    symbol:   class Nullable
-    location: class RaphaelRelay
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:135: error: cannot find symbol
-  			String policyText, @Nullable UUID killerNationId) {
-  			                    ^
-    symbol:   class Nullable
-    location: class RaphaelRelay
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:104: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class RaphaelCore
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:199: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class RaphaelCore
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ChatSink.java:16: error: cannot find symbol
-  	public void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-  	                                                                                ^
-    symbol:   class Nullable
-    location: class ChatSink
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ThreatAnalyzer.java:158: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class ThreatAnalyzer
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/NetworkSink.java:17: error: cannot find symbol
-  	public void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-  	                                                                                ^
-    symbol:   class Nullable
-    location: class NetworkSink
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:38: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class FacilityBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:44: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class FacilityBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:58: error: cannot find symbol
-  	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-  	                                                                      ^
-    symbol:   class Nullable
-    location: class FacilityBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:41: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TradePostBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:47: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TradePostBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:61: error: cannot find symbol
-  	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-  	                                                                      ^
-    symbol:   class Nullable
-    location: class TradePostBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:44: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationalChestBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:50: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class NationalChestBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:64: error: cannot find symbol
-  	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-  	                                                                      ^
-    symbol:   class Nullable
-    location: class NationalChestBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:39: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TerritoryMarkerBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:45: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class TerritoryMarkerBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:59: error: cannot find symbol
-  	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-  	                                                                      ^
-    symbol:   class Nullable
-    location: class TerritoryMarkerBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:44: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class CapitalCoreBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:50: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class CapitalCoreBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:64: error: cannot find symbol
-  	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-  	                                                                      ^
-    symbol:   class Nullable
-    location: class CapitalCoreBlock
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKEvents.java:133: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class WKEvents
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:69: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class AutoCrafter
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:57: error: cannot find symbol
-  	@Nullable
-  	 ^
-    symbol:   class Nullable
-    location: class ResourceMapper
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:117: error: playerWillDestroy(Level,BlockPos,BlockState,Player) in CapitalCoreBlock cannot override playerWillDestroy(Level,BlockPos,BlockState,Player) in Block
+  	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+  	            ^
+    return type void is not compatible with BlockState
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:26: error: incompatible types: invalid constructor reference
+  				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build());
+  				                           ^
+      constructor CapitalCoreBlockEntity in class CapitalCoreBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:26: error: incompatible types: cannot infer type-variable(s) T
+  				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build());
+  				                          ^
+      (argument mismatch; invalid constructor reference
+        constructor CapitalCoreBlockEntity in class CapitalCoreBlockEntity cannot be applied to given types
+          required: BlockEntityType<?>,BlockPos,BlockState
+          found:    BlockPos,BlockState
+          reason: actual and formal argument lists differ in length)
+    where T is a type-variable:
+      T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:29: error: incompatible types: invalid constructor reference
+  				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build());
+  				                           ^
+      constructor TerritoryMarkerBlockEntity in class TerritoryMarkerBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:29: error: incompatible types: cannot infer type-variable(s) T
+  				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build());
+  				                          ^
+      (argument mismatch; invalid constructor reference
+        constructor TerritoryMarkerBlockEntity in class TerritoryMarkerBlockEntity cannot be applied to given types
+          required: BlockEntityType<?>,BlockPos,BlockState
+          found:    BlockPos,BlockState
+          reason: actual and formal argument lists differ in length)
+    where T is a type-variable:
+      T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:32: error: incompatible types: invalid constructor reference
+  				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build());
+  				                           ^
+      constructor NationalChestBlockEntity in class NationalChestBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:32: error: incompatible types: cannot infer type-variable(s) T
+  				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build());
+  				                          ^
+      (argument mismatch; invalid constructor reference
+        constructor NationalChestBlockEntity in class NationalChestBlockEntity cannot be applied to given types
+          required: BlockEntityType<?>,BlockPos,BlockState
+          found:    BlockPos,BlockState
+          reason: actual and formal argument lists differ in length)
+    where T is a type-variable:
+      T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:35: error: incompatible types: invalid constructor reference
+  				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build());
+  				                           ^
+      constructor TradePostBlockEntity in class TradePostBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:35: error: incompatible types: cannot infer type-variable(s) T
+  				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build());
+  				                          ^
+      (argument mismatch; invalid constructor reference
+        constructor TradePostBlockEntity in class TradePostBlockEntity cannot be applied to given types
+          required: BlockEntityType<?>,BlockPos,BlockState
+          found:    BlockPos,BlockState
+          reason: actual and formal argument lists differ in length)
+    where T is a type-variable:
+      T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:38: error: incompatible types: invalid constructor reference
+  				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build());
+  				                           ^
+      constructor FacilityBlockEntity in class FacilityBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:38: error: incompatible types: cannot infer type-variable(s) T
+  				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build());
+  				                          ^
+      (argument mismatch; invalid constructor reference
+        constructor FacilityBlockEntity in class FacilityBlockEntity cannot be applied to given types
+          required: BlockEntityType<?>,BlockPos,BlockState
+          found:    BlockPos,BlockState
+          reason: actual and formal argument lists differ in length)
+    where T is a type-variable:
+      T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:136: error: incompatible types: boolean cannot be converted to ItemStack
+  					ItemStack remaining = chest.deposit(result.copy());
+  					                                   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:34: error: CapitalCoreBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+  public class CapitalCoreBlock extends BaseEntityBlock {
+         ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:29: error: TerritoryMarkerBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+  public class TerritoryMarkerBlock extends BaseEntityBlock {
+         ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:34: error: NationalChestBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+  public class NationalChestBlock extends BaseEntityBlock {
+         ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:31: error: TradePostBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+  public class TradePostBlock extends BaseEntityBlock {
+         ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:28: error: FacilityBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+  public class FacilityBlock extends BaseEntityBlock {
+         ^
   /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:295: error: cannot find symbol
   		return Registry.ITEM.getKey(stack.getItem());
   		               ^
@@ -853,6 +468,66 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   			                                                    ^
     symbol:   variable MERCANTILISM
     location: class DiplomacyManager
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:36: error: cannot find symbol
+  			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
+  			                                     ^
+    symbol:   class UUID
+    location: class NationPopulation
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:56: error: cannot find symbol
+  			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
+  			                                     ^
+    symbol:   class UUID
+    location: class NationPopulation
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:262: error: cannot find symbol
+  				|| state.is(BlockTags.GRAVEL) /* fallback */) {
+  				                     ^
+    symbol:   variable GRAVEL
+    location: class BlockTags
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:70: error: goalSelector has protected access in Mob
+  		mob.goalSelector.addGoal(0, new FloatGoal(mob));
+  		   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:71: error: goalSelector has protected access in Mob
+  		mob.goalSelector.addGoal(2, new MeleeAttackGoal(mob, 1.1, true));
+  		   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:72: error: goalSelector has protected access in Mob
+  		mob.goalSelector.addGoal(3, new RangedAttackGoal(mob, 1.0, 30, 12.0f));
+  		   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:73: error: goalSelector has protected access in Mob
+  		mob.goalSelector.addGoal(6, new RandomStrollGoal(mob, 0.8));
+  		   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:74: error: goalSelector has protected access in Mob
+  		mob.goalSelector.addGoal(7, new LookAtPlayerGoal(mob, Player.class, 8.0f));
+  		   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:75: error: targetSelector has protected access in Mob
+  		mob.targetSelector.addGoal(1, new HurtByTargetGoal(mob));
+  		   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:76: error: targetSelector has protected access in Mob
+  		mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Player.class, true));
+  		   ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:87: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:116: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:81: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:81: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:78: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:74: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlockEntity.java:42: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:212: error: method does not override or implement a method from a supertype
+  	@Override
+  	^
   Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
   /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:151: error: cannot find symbol
   		if (stack.getFoodProperties(null) != null) {
@@ -874,79 +549,22 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   		                                  ^
     symbol:   method toPath()
     location: interface Path
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:12: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:7: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:18: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:9: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:9: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:8: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/INationMember.java:3: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:19: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/MachineAnalyzer.java:15: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelSink.java:5: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:12: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:31: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ChatSink.java:5: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ThreatAnalyzer.java:18: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/NetworkSink.java:5: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:26: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:21: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:24: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:26: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:22: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKEvents.java:23: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:16: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:8: error: package javax.annotation does not exist
-  import javax.annotation.Nullable;
-                         ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:169: error: package javax.annotation does not exist
-  	@javax.annotation.Nullable
-  	                 ^
-  100 errors
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:164: error: cannot find symbol
+  		var modifiers = stack.getAttributeModifiers();
+  		                     ^
+    symbol:   method getAttributeModifiers()
+    location: variable stack of type ItemStack
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:176: error: cannot find symbol
+  		var food = stack.getFoodProperties(null);
+  		                ^
+    symbol:   method getFoodProperties(<null>)
+    location: variable stack of type ItemStack
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:65: error: cannot find symbol
+  		if (stack.getFoodProperties(null) != null || containsAny(path, FOOD_HINTS)) {
+  		         ^
+    symbol:   method getFoodProperties(<null>)
+    location: variable stack of type ItemStack
+  54 errors
 
 * Try:
 > Check your code and dependencies to fix the compilation error(s)
@@ -985,376 +603,40 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':compile
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:146)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:131)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$0(DefaultBuildLifecycleController.java:323)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:324)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$0(StateTransitionController.java:235)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:45)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:235)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:314)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.lambda$runAndReleaseLocks$0(DefaultWorkerLeaseService.java:302)
+	at org.gradle.internal.work.ResourceLockStatistics$1.measure(ResourceLockStatistics.java:43)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAndReleaseLocks(DefaultWorkerLeaseService.java:300)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocksAcquired(DefaultWorkerLeaseService.java:296)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:288)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:131)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:182)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:199)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:199)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:65)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Compilation failed; see the compiler output below.
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:12: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:7: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:18: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:9: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:9: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:8: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/INationMember.java:3: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:19: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/MachineAnalyzer.java:15: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelSink.java:5: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:12: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:31: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ChatSink.java:5: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ThreatAnalyzer.java:18: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/NetworkSink.java:5: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:26: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:21: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:24: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:26: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:22: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKEvents.java:23: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:16: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:8: error: package javax.annotation does not exist
-import javax.annotation.Nullable;
-                       ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:29: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationBlockEntity
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationBlockEntity.java:39: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationBlockEntity
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:55: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class WarManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/WarManager.java:244: error: cannot find symbol
-	public void onCapitalCoreLost(Nation defender, @Nullable Nation attacker) {
-	                                                ^
-  symbol:   class Nullable
-  location: class WarManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:83: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:154: error: cannot find symbol
-	public Nation nation(@Nullable UUID id) {
-	                      ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:153: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:173: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:178: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:183: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:193: error: cannot find symbol
-	public void setPlayerNation(UUID playerId, @Nullable Nation nation) {
-	                                            ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:204: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:56: error: cannot find symbol
-	public void onLeaderDeath(Nation nation, NpcRecord kingRecord, Cause cause, @Nullable UUID killerNationId) {
-	                                                                             ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:77: error: cannot find symbol
-	public NpcRecord selectSuccessor(Nation nation, @Nullable NpcRecord exclude) {
-	                                                 ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:76: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:106: error: cannot find symbol
-	public void crown(Nation nation, NpcRecord successor, Cause cause, int generation, @Nullable UUID killerNationId) {
-	                                                                                    ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:145: error: cannot find symbol
-			boolean policyChanged, Ideology previous, Ideology next, @Nullable UUID killerNationId) {
-			                                                          ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/SuccessionEngine.java:300: error: cannot find symbol
-	public void notifyKingEntityDeath(Nation nation, UUID entityId, Cause cause, @Nullable UUID killerNation) {
-	                                                                              ^
-  symbol:   class Nullable
-  location: class SuccessionEngine
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:300: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class DiplomacyManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:56: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:61: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:67: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:142: error: cannot find symbol
-	public boolean canModify(Level level, BlockPos pos, @Nullable Player player) {
-	                                                     ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/TerritoryManager.java:174: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/INationMember.java:12: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: interface INationMember
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:253: error: cannot find symbol
-	private static int buildRoadBlock(ServerLevel level, BlockPos surface, @Nullable Nation nation) {
-	                                                                        ^
-  symbol:   class Nullable
-  location: class CivilEngineeringAI
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:289: error: cannot find symbol
-	private static BlockState material(@Nullable Nation nation, ResourceType type, BlockState fallback) {
-	                                    ^
-  symbol:   class Nullable
-  location: class CivilEngineeringAI
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:236: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class RoadJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:316: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class RepairJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:360: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class DefenseJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:400: error: cannot find symbol
-		public boolean step(ServerLevel level, @Nullable Nation ignored) {
-		                                        ^
-  symbol:   class Nullable
-  location: class LevelJob
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/MachineAnalyzer.java:55: error: cannot find symbol
-	public static AnalysisReport analyze(ServerLevel level, BlockPos pos, @Nullable String viewerName) {
-	                                                                       ^
-  symbol:   class Nullable
-  location: class MachineAnalyzer
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelSink.java:24: error: cannot find symbol
-	void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId);
-	                                                                         ^
-  symbol:   class Nullable
-  location: interface RaphaelSink
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:70: error: cannot find symbol
-	private static void announce(MinecraftServer server, AnalysisReport report, @Nullable UUID nationId, boolean speak) {
-	                                                                             ^
-  symbol:   class Nullable
-  location: class RaphaelRelay
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:90: error: cannot find symbol
-	private static void deliverTo(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-	                                                                                          ^
-  symbol:   class Nullable
-  location: class RaphaelRelay
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelRelay.java:135: error: cannot find symbol
-			String policyText, @Nullable UUID killerNationId) {
-			                    ^
-  symbol:   class Nullable
-  location: class RaphaelRelay
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:104: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class RaphaelCore
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/RaphaelCore.java:199: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class RaphaelCore
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ChatSink.java:16: error: cannot find symbol
-	public void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-	                                                                                ^
-  symbol:   class Nullable
-  location: class ChatSink
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/ThreatAnalyzer.java:158: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class ThreatAnalyzer
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/raphael/NetworkSink.java:17: error: cannot find symbol
-	public void deliver(ServerPlayer player, AnalysisReport report, boolean speak, @Nullable UUID nationId) {
-	                                                                                ^
-  symbol:   class Nullable
-  location: class NetworkSink
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:38: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class FacilityBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:44: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class FacilityBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:58: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class FacilityBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:41: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TradePostBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:47: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TradePostBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:61: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class TradePostBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:44: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationalChestBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:50: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class NationalChestBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:64: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class NationalChestBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:39: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryMarkerBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:45: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class TerritoryMarkerBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:59: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class TerritoryMarkerBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:44: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class CapitalCoreBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:50: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class CapitalCoreBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:64: error: cannot find symbol
-	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-	                                                                      ^
-  symbol:   class Nullable
-  location: class CapitalCoreBlock
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:169: error: package javax.annotation does not exist
-	@javax.annotation.Nullable
-	                 ^
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKEvents.java:133: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class WKEvents
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:69: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class AutoCrafter
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:57: error: cannot find symbol
-	@Nullable
-	 ^
-  symbol:   class Nullable
-  location: class ResourceMapper
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:151: error: cannot find symbol
 		if (stack.getFoodProperties(null) != null) {
 		         ^
@@ -1380,17 +662,6 @@ import javax.annotation.Nullable;
 		                                  ^
   symbol:   method toPath()
   location: interface Path
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:68: error: incompatible types: cannot infer type arguments for ArrayList<>
-		List<long[]> sample = new ArrayList<>(nation.claimedChunks);
-		                                   ^
-    reason: inference variable E has incompatible bounds
-      equality constraints: long[]
-      lower bounds: Long
-  where E is a type-variable:
-    E extends Object declared in class ArrayList
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:73: error: incompatible types: long[] cannot be converted to long
-			long key = sample.get(i);
-			                     ^
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:90: error: cannot find symbol
 				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.is(BiomeTags.IS_SNOWY)) {
 				                                                             ^
@@ -1436,13 +707,200 @@ import javax.annotation.Nullable;
 			                                                    ^
   symbol:   variable MERCANTILISM
   location: class DiplomacyManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationSavedData.java:50: error: incompatible types: String cannot be converted to DataFixTypes
-		return new SavedData.Factory<>(NationSavedData::create, NationSavedData::load, NAME);
-		                                                                               ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:36: error: cannot find symbol
+			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
+			                                     ^
+  symbol:   class UUID
+  location: class NationPopulation
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:56: error: cannot find symbol
+			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
+			                                     ^
+  symbol:   class UUID
+  location: class NationPopulation
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:262: error: cannot find symbol
+				|| state.is(BlockTags.GRAVEL) /* fallback */) {
+				                     ^
+  symbol:   variable GRAVEL
+  location: class BlockTags
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:70: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(0, new FloatGoal(mob));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:71: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(2, new MeleeAttackGoal(mob, 1.1, true));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:72: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(3, new RangedAttackGoal(mob, 1.0, 30, 12.0f));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:73: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(6, new RandomStrollGoal(mob, 0.8));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:74: error: goalSelector has protected access in Mob
+		mob.goalSelector.addGoal(7, new LookAtPlayerGoal(mob, Player.class, 8.0f));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:75: error: targetSelector has protected access in Mob
+		mob.targetSelector.addGoal(1, new HurtByTargetGoal(mob));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:76: error: targetSelector has protected access in Mob
+		mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Player.class, true));
+		   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:164: error: cannot find symbol
+		var modifiers = stack.getAttributeModifiers();
+		                     ^
+  symbol:   method getAttributeModifiers()
+  location: variable stack of type ItemStack
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java:176: error: cannot find symbol
+		var food = stack.getFoodProperties(null);
+		                ^
+  symbol:   method getFoodProperties(<null>)
+  location: variable stack of type ItemStack
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:34: error: CapitalCoreBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class CapitalCoreBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:87: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:117: error: playerWillDestroy(Level,BlockPos,BlockState,Player) in CapitalCoreBlock cannot override playerWillDestroy(Level,BlockPos,BlockState,Player) in Block
+	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+	            ^
+  return type void is not compatible with BlockState
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:116: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:29: error: TerritoryMarkerBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class TerritoryMarkerBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlock.java:81: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:34: error: NationalChestBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class NationalChestBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/NationalChestBlock.java:81: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:31: error: TradePostBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class TradePostBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TradePostBlock.java:78: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:28: error: FacilityBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
+public class FacilityBlock extends BaseEntityBlock {
+       ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:74: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:26: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build());
+				                           ^
+    constructor CapitalCoreBlockEntity in class CapitalCoreBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:26: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(CapitalCoreBlockEntity::new, WKBlocks.CAPITAL_CORE).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor CapitalCoreBlockEntity in class CapitalCoreBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:29: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build());
+				                           ^
+    constructor TerritoryMarkerBlockEntity in class TerritoryMarkerBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:29: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(TerritoryMarkerBlockEntity::new, WKBlocks.TERRITORY_MARKER).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor TerritoryMarkerBlockEntity in class TerritoryMarkerBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:32: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build());
+				                           ^
+    constructor NationalChestBlockEntity in class NationalChestBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:32: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(NationalChestBlockEntity::new, WKBlocks.NATIONAL_CHEST).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor NationalChestBlockEntity in class NationalChestBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:35: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build());
+				                           ^
+    constructor TradePostBlockEntity in class TradePostBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:35: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(TradePostBlockEntity::new, WKBlocks.TRADE_POST).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor TradePostBlockEntity in class TradePostBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:38: error: incompatible types: invalid constructor reference
+				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build());
+				                           ^
+    constructor FacilityBlockEntity in class FacilityBlockEntity cannot be applied to given types
+      required: BlockEntityType<?>,BlockPos,BlockState
+      found:    BlockPos,BlockState
+      reason: actual and formal argument lists differ in length
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/core/WKBlockEntities.java:38: error: incompatible types: cannot infer type-variable(s) T
+				BlockEntityType.Builder.of(FacilityBlockEntity::new, WKBlocks.FACILITY).build());
+				                          ^
+    (argument mismatch; invalid constructor reference
+      constructor FacilityBlockEntity in class FacilityBlockEntity cannot be applied to given types
+        required: BlockEntityType<?>,BlockPos,BlockState
+        found:    BlockPos,BlockState
+        reason: actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends BlockEntity declared in method <T>of(BlockEntitySupplier<? extends T>,Block...)
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlockEntity.java:42: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/TerritoryMarkerBlockEntity.java:44: error: cannot find symbol
+		super.onLoad();
+		     ^
+  symbol: method onLoad()
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:212: error: method does not override or implement a method from a supertype
+	@Override
+	^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlockEntity.java:214: error: cannot find symbol
+		super.onLoad();
+		     ^
+  symbol: method onLoad()
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/AutoCrafter.java:136: error: incompatible types: boolean cannot be converted to ItemStack
+					ItemStack remaining = chest.deposit(result.copy());
+					                                   ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:65: error: cannot find symbol
+		if (stack.getFoodProperties(null) != null || containsAny(path, FOOD_HINTS)) {
+		         ^
+  symbol:   method getFoodProperties(<null>)
+  location: variable stack of type ItemStack
 Note: /home/runner/work/mod/mod/src/main/java/com/wisdomking/dev/ApiProbe.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-100 errors
+54 errors
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:88)
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:49)
 	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:98)
@@ -1574,8 +1032,8 @@ Note: Some messages have been simplified; recompile with -Xdiags:verbose to get 
 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:38)
 	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:68)
 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:132)
-	... 30 more
+	... 61 more
 
 
-BUILD FAILED in 54s
+BUILD FAILED in 53s
 1 actionable task: 1 executed
