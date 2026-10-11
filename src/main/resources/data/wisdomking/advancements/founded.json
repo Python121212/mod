@@ -1,0 +1,22 @@
+{
+  "parent": "wisdomking:root",
+  "display": {
+    "icon": {
+      "id": "wisdomking:capital_core"
+    },
+    "title": {
+      "translate": "wisdomking.advancement.founded.title"
+    },
+    "description": {
+      "translate": "wisdomking.advancement.founded.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "manual": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

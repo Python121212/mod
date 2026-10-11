@@ -1,0 +1,22 @@
+{
+  "parent": "wisdomking:root",
+  "display": {
+    "icon": {
+      "id": "wisdomking:raphael_terminal"
+    },
+    "title": {
+      "translate": "wisdomking.advancement.scan.title"
+    },
+    "description": {
+      "translate": "wisdomking.advancement.scan.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "manual": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

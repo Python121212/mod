@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BSB",
+    "SCS",
+    "BSB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:stone_bricks"
+    },
+    "S": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:crafting_table"
+    }
+  },
+  "result": {
+    "id": "wisdomking:facility",
+    "count": 1
+  }
+}

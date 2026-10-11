@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "wisdomking:nation_charter"
+    },
+    "title": {
+      "translate": "wisdomking.advancement.root.title"
+    },
+    "description": {
+      "translate": "wisdomking.advancement.root.description"
+    },
+    "background": "minecraft:textures/block/deepslate_tiles.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "manual": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
