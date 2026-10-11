@@ -1,1244 +1,352 @@
+=== net.minecraft.tags.BiomeTags  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.storage.LevelResource  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.component.ItemAttributeModifiers  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.component.DataComponentType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.component.DataComponentMap  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.Blocks  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.RenderShape  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.HorizontalDirectionalBlock  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.properties.Property  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.properties.BooleanProperty  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.properties.EnumProperty  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.properties.DirectionProperty  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.entity.ChestBlockEntity  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.Explosion  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.levelgen.Heightmap  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.monster.Skeleton  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.monster.Pillager  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.MenuProvider  ::  MISSING (ClassNotFoundException)
 
-=== net.minecraft.core.BlockPos  ::  public class extends Vec3i implements 
-  CTOR public BlockPos(Vec3i)
-  CTOR public BlockPos(int, int, int)
-  FIELD public static final BlockPos ZERO
-  FIELD public static final BlockPos> CODEC
-  FIELD public static final BlockPos> STREAM_CODEC
-  FIELD public static final int PACKED_Y_LENGTH
-  METHOD public BlockPos above()
-  METHOD public BlockPos above(int)
-  METHOD public BlockPos atY(int)
-  METHOD public BlockPos below()
-  METHOD public BlockPos below(int)
-  METHOD public BlockPos cross(Vec3i)
-  METHOD public BlockPos east()
-  METHOD public BlockPos east(int)
-  METHOD public BlockPos immutable()
-  METHOD public BlockPos multiply(int)
-  METHOD public BlockPos north()
-  METHOD public BlockPos north(int)
-  METHOD public BlockPos offset(Vec3i)
-  METHOD public BlockPos offset(int, int, int)
-  METHOD public BlockPos relative(Direction$Axis, int)
-  METHOD public BlockPos relative(Direction)
-  METHOD public BlockPos relative(Direction, int)
-  METHOD public BlockPos rotate(Rotation)
-  METHOD public BlockPos south()
-  METHOD public BlockPos south(int)
-  METHOD public BlockPos subtract(Vec3i)
-  METHOD public BlockPos west()
-  METHOD public BlockPos west(int)
-  METHOD public BlockPos$MutableBlockPos mutable()
-  METHOD public Vec3 clampLocationWithin(Vec3)
-  METHOD public Vec3 getBottomCenter()
-  METHOD public Vec3 getCenter()
-  METHOD public long asLong()
-  METHOD public static BlockPos containing(Position)
-  METHOD public static BlockPos containing(double, double, double)
-  METHOD public static BlockPos max(BlockPos, BlockPos)
-  METHOD public static BlockPos min(BlockPos, BlockPos)
-  METHOD public static BlockPos of(long)
-  METHOD public static BlockPos$MutableBlockPos> spiralAround(BlockPos, int, Direction, Direction)
-  METHOD public static BlockPos> betweenClosed(BlockPos, BlockPos)
-  METHOD public static BlockPos> betweenClosed(int, int, int, int, int, int)
-  METHOD public static BlockPos> betweenClosedStream(AABB)
-  METHOD public static BlockPos> betweenClosedStream(BlockPos, BlockPos)
-  METHOD public static BlockPos> betweenClosedStream(BoundingBox)
-  METHOD public static BlockPos> betweenClosedStream(int, int, int, int, int, int)
-  METHOD public static BlockPos> findClosestMatch(BlockPos, int, int, BlockPos>)
-  METHOD public static BlockPos> randomBetweenClosed(RandomSource, int, int, int, int, int, int, int)
-  METHOD public static BlockPos> randomInCube(RandomSource, int, BlockPos, int)
-  METHOD public static BlockPos> squareOutSouthEast(BlockPos)
-  METHOD public static BlockPos> withinManhattan(BlockPos, int, int, int)
-  METHOD public static BlockPos> withinManhattanStream(BlockPos, int, int, int)
-  METHOD public static int breadthFirstTraversal(BlockPos, int, int, BlockPos>>, BlockPos>)
-  METHOD public static int getX(long)
-  METHOD public static int getY(long)
-  METHOD public static int getZ(long)
-  METHOD public static long asLong(int, int, int)
-  METHOD public static long getFlatIndex(long)
-  METHOD public static long offset(long, Direction)
-  METHOD public static long offset(long, int, int, int)
+=== net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ClientPlayConnectionEvents$Disconnect> DISCONNECT
+  FIELD public static final ClientPlayConnectionEvents$Init> INIT
+  FIELD public static final ClientPlayConnectionEvents$Join> JOIN
 
-=== net.minecraft.core.Direction  ::  public final enum extends Direction> implements StringRepresentable
-  FIELD public static final Direction DOWN
-  FIELD public static final Direction EAST
-  FIELD public static final Direction NORTH
-  FIELD public static final Direction SOUTH
-  FIELD public static final Direction UP
-  FIELD public static final Direction WEST
-  FIELD public static final Direction> BY_ID
-  FIELD public static final Direction> CODEC
-  FIELD public static final Direction> STREAM_CODEC
-  FIELD public static final Direction> VERTICAL_CODEC
-  METHOD public Direction getClockWise()
-  METHOD public Direction getClockWise(Direction$Axis)
-  METHOD public Direction getCounterClockWise()
-  METHOD public Direction getCounterClockWise(Direction$Axis)
-  METHOD public Direction getOpposite()
-  METHOD public Direction$Axis getAxis()
-  METHOD public Direction$AxisDirection getAxisDirection()
-  METHOD public Quaternionf getRotation()
-  METHOD public String getName()
-  METHOD public String getSerializedName()
-  METHOD public String toString()
-  METHOD public Vec3i getNormal()
-  METHOD public Vector3f step()
-  METHOD public boolean isFacingAngle(float)
-  METHOD public float toYRot()
-  METHOD public int get2DDataValue()
-  METHOD public int get3DDataValue()
-  METHOD public int getStepX()
-  METHOD public int getStepY()
-  METHOD public int getStepZ()
-  METHOD public static Direction byName(String)
-  METHOD public static Direction from2DDataValue(int)
-  METHOD public static Direction from3DDataValue(int)
-  METHOD public static Direction fromAxisAndDirection(Direction$Axis, Direction$AxisDirection)
-  METHOD public static Direction fromDelta(int, int, int)
-  METHOD public static Direction fromYRot(double)
-  METHOD public static Direction get(Direction$AxisDirection, Direction$Axis)
-  METHOD public static Direction getFacingAxis(Entity, Direction$Axis)
-  METHOD public static Direction getNearest(Vec3)
-  METHOD public static Direction getNearest(double, double, double)
-  METHOD public static Direction getNearest(float, float, float)
-  METHOD public static Direction getRandom(RandomSource)
-  METHOD public static Direction rotate(Matrix4f, Direction)
-  METHOD public static Direction valueOf(String)
-  METHOD public static Direction> allShuffled(RandomSource)
-  METHOD public static Direction> stream()
-  METHOD public static Direction[] orderedByNearest(Entity)
-  METHOD public static Direction[] values()
+=== net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ClientLifecycleEvents$ClientStarted> CLIENT_STARTED
+  FIELD public static final ClientLifecycleEvents$ClientStopping> CLIENT_STOPPING
 
-=== net.minecraft.core.Holder  ::  public abstract interface extends <none> implements 
-  METHOD public String getRegisteredName()
-  METHOD public abstract Holder$Kind kind()
-  METHOD public abstract ResourceKey<T>, T> unwrap()
-  METHOD public abstract ResourceKey<T>> unwrapKey()
-  METHOD public abstract T value()
-  METHOD public abstract TagKey<T>> tags()
-  METHOD public abstract boolean canSerializeIn(HolderOwner<T>)
-  METHOD public abstract boolean is(Holder<T>)
-  METHOD public abstract boolean is(ResourceKey<T>)
-  METHOD public abstract boolean is(ResourceKey<T>>)
-  METHOD public abstract boolean is(ResourceLocation)
-  METHOD public abstract boolean is(TagKey<T>)
-  METHOD public abstract boolean isBound()
-  METHOD public static Holder<T> direct(T)
+=== net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final WorldRenderEvents$AfterEntities> AFTER_ENTITIES
+  FIELD public static final WorldRenderEvents$AfterSetup> AFTER_SETUP
+  FIELD public static final WorldRenderEvents$AfterTranslucent> AFTER_TRANSLUCENT
+  FIELD public static final WorldRenderEvents$BeforeBlockOutline> BEFORE_BLOCK_OUTLINE
+  FIELD public static final WorldRenderEvents$BeforeEntities> BEFORE_ENTITIES
+  FIELD public static final WorldRenderEvents$BlockOutline> BLOCK_OUTLINE
+  FIELD public static final WorldRenderEvents$DebugRender> BEFORE_DEBUG_RENDER
+  FIELD public static final WorldRenderEvents$End> END
+  FIELD public static final WorldRenderEvents$Last> LAST
+  FIELD public static final WorldRenderEvents$Start> START
+=== net.minecraft.world.entity.ai.brain.Brain  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.sensing.Sensor  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.memory.MemoryModuleType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.behavior.Behavior  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.BlockPos  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.Direction  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.Holder  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.HolderLookup  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.HolderLookup$Provider  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.Registry  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.RegistryAccess  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.component.DataComponents  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.registries.BuiltInRegistries  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.core.registries.Registries  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.nbt.CompoundTag  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.nbt.ListTag  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.nbt.Tag  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.network.FriendlyByteBuf  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.network.RegistryFriendlyByteBuf  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.network.chat.Component  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.network.chat.MutableComponent  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.network.codec.ByteBufCodecs  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.network.codec.StreamCodec  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.network.protocol.common.custom.CustomPacketPayload  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.resources.ResourceKey  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.resources.ResourceLocation  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.server.MinecraftServer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.server.level.ServerLevel  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.server.level.ServerPlayer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.sounds.SoundEvent  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.sounds.SoundEvents  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.tags.BlockTags  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.tags.ItemTags  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.tags.TagKey  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.util.Mth  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.util.RandomSource  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.Container  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.ContainerHelper  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.InteractionHand  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.InteractionResult  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.InteractionResultHolder  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.SimpleContainer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.damagesource.DamageSource  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.damagesource.DamageSources  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.effect.MobEffectInstance  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.effect.MobEffects  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.Entity  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.EquipmentSlot  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.LivingEntity  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.Mob  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.MobCategory  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.MobSpawnType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.PathfinderMob  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.SpawnGroupData  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.EntityType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.EntityType$Builder  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.attributes.Attribute  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.attributes.AttributeInstance  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.attributes.AttributeSupplier  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.attributes.AttributeSupplier$Builder  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.attributes.Attributes  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.FloatGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.Goal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.GoalSelector  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.LookAtPlayerGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.MeleeAttackGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.MoveThroughVillageGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.OpenDoorGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.RandomLookAroundGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.RangedAttackGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.navigation.GroundPathNavigation  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.ai.navigation.PathNavigation  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.animal.Animal  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.animal.Wolf  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.item.ItemEntity  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.monster.Monster  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.monster.Zombie  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.npc.AbstractVillager  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.npc.Villager  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.player.Inventory  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.player.Player  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.projectile.AbstractArrow  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.projectile.Arrow  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.entity.projectile.Projectile  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.inventory.AbstractContainerMenu  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.inventory.MenuType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.ArmorItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.ArmorMaterial  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.ArmorMaterials  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.ArrowItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.BowItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.CrossbowItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.DiggerItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.Item  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.Item$Properties  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.ItemStack  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.Items  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.ProjectileWeaponItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.Rarity  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.ShieldItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.SwordItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.Tier  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.TieredItem  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.Tiers  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.context.BlockPlaceContext  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.context.UseOnContext  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.CraftingInput  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.CraftingRecipe  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.Ingredient  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.Recipe  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.RecipeManager  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.RecipeSerializer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.RecipeType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.BlockGetter  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.Level  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.LevelAccessor  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.LevelReader  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.BaseEntityBlock  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.Block  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.BlockBehaviour  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.BlockBehaviour$Properties  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.ChestBlock  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.EntityBlock  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.SoundType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.entity.BlockEntity  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.entity.BlockEntityType  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.entity.BlockEntityType$Builder  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.BlockState  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.StateDefinition  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.block.state.properties.BlockStateProperties  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.chunk.ChunkAccess  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.chunk.LevelChunk  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.ChunkPos  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.biome.Biome  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.material.MapColor  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.material.PushReaction  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.saveddata.SavedData  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.level.saveddata.SavedData$Factory  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.phys.AABB  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.phys.BlockHitResult  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.phys.Vec3  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.phys.shapes.CollisionContext  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.phys.shapes.Shapes  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.world.phys.shapes.VoxelShape  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.commands.CommandSourceStack  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.commands.Commands  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.advancements.Advancement  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.advancements.AdvancementHolder  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.advancements.AdvancementProgress  ::  MISSING (ClassNotFoundException)
 
-=== net.minecraft.core.HolderLookup  ::  public abstract interface extends <none> implements HolderGetter<T>
-  METHOD public ResourceKey<T>> listElementIds()
-  METHOD public TagKey<T>> listTagIds()
-  METHOD public abstract Holder$Reference<T>> listElements()
-  METHOD public abstract HolderSet$Named<T>> listTags()
+=== net.fabricmc.loader.api.FabricLoader  ::  public abstract interface extends <none> implements 
+  METHOD public abstract EntrypointContainer<T>> getEntrypointContainers(String, Class<T>)
+  METHOD public abstract EnvType getEnvironmentType()
+  METHOD public abstract File getConfigDirectory()
+  METHOD public abstract File getGameDirectory()
+  METHOD public abstract List<T> getEntrypoints(String, Class<T>)
+  METHOD public abstract MappingResolver getMappingResolver()
+  METHOD public abstract ModContainer> getAllMods()
+  METHOD public abstract ModContainer> getModContainer(String)
+  METHOD public abstract Object getGameInstance()
+  METHOD public abstract ObjectShare getObjectShare()
+  METHOD public abstract Path getConfigDir()
+  METHOD public abstract Path getGameDir()
+  METHOD public abstract String getRawGameVersion()
+  METHOD public abstract String[] getLaunchArguments(boolean)
+  METHOD public abstract boolean isDevelopmentEnvironment()
+  METHOD public abstract boolean isModLoaded(String)
+  METHOD public abstract void invokeEntrypoints(String, Class<T>, Consumer<? super T>)
+  METHOD public static FabricLoader getInstance()
 
-=== net.minecraft.core.HolderLookup$Provider  ::  public static abstract interface extends <none> implements 
-  METHOD public HolderGetter$Provider asGetterLookup()
-  METHOD public HolderLookup$RegistryLookup<T> lookupOrThrow(Registry<? extends T>>)
-  METHOD public RegistryOps<V> createSerializationContext(DynamicOps<V>)
-  METHOD public abstract HolderLookup$RegistryLookup<T>> lookup(Registry<? extends T>>)
-  METHOD public abstract Registry<?>>> listRegistries()
-  METHOD public static HolderLookup$Provider create(HolderLookup$RegistryLookup<?>>)
+=== net.fabricmc.loader.api.ModContainer  ::  public abstract interface extends <none> implements 
+  METHOD public Path getRoot()
+  METHOD public Path> findPath(String)
+  METHOD public abstract ModContainer> getContainedMods()
+  METHOD public abstract ModContainer> getContainingMod()
+  METHOD public abstract ModMetadata getMetadata()
+  METHOD public abstract ModOrigin getOrigin()
+  METHOD public abstract Path getPath(String)
+  METHOD public abstract Path getRootPath()
+  METHOD public abstract Path> getRootPaths()
 
-=== net.minecraft.core.Registry  ::  public abstract interface extends <none> implements Keyable, IdMap<T>
-  METHOD public Codec<T> byNameCodec()
-  METHOD public Holder$Reference<T> getHolderOrThrow(ResourceKey<T>)
-  METHOD public Holder<T>> asHolderIdMap()
-  METHOD public Holder<T>> getRandomElementOf(TagKey<T>, RandomSource)
-  METHOD public Holder<T>> getTagOrEmpty(TagKey<T>)
-  METHOD public Holder<T>> holderByNameCodec()
-  METHOD public HolderLookup$RegistryLookup<T> asTagAddingLookup()
-  METHOD public Optional<T> getOptional(ResourceKey<T>)
-  METHOD public Optional<T> getOptional(ResourceLocation)
-  METHOD public Stream<T> stream()
-  METHOD public Stream<U> keys(DynamicOps<U>)
-  METHOD public T getOrThrow(ResourceKey<T>)
-  METHOD public abstract Holder$Reference<T> createIntrusiveHolder(T)
-  METHOD public abstract Holder$Reference<T>> getAny()
-  METHOD public abstract Holder$Reference<T>> getHolder(ResourceKey<T>)
-  METHOD public abstract Holder$Reference<T>> getHolder(ResourceLocation)
-  METHOD public abstract Holder$Reference<T>> getHolder(int)
-  METHOD public abstract Holder$Reference<T>> getRandom(RandomSource)
-  METHOD public abstract Holder$Reference<T>> holders()
-  METHOD public abstract Holder<T> wrapAsHolder(T)
-  METHOD public abstract HolderLookup$RegistryLookup<T> asLookup()
-  METHOD public abstract HolderOwner<T> holderOwner()
-  METHOD public abstract HolderSet$Named<T> getOrCreateTag(TagKey<T>)
-  METHOD public abstract HolderSet$Named<T>> getTag(TagKey<T>)
-  METHOD public abstract HolderSet$Named<T>>> getTags()
-  METHOD public abstract Lifecycle registryLifecycle()
-  METHOD public abstract RegistrationInfo> registrationInfo(ResourceKey<T>)
-  METHOD public abstract Registry<T> freeze()
-  METHOD public abstract Registry<T>> key()
-  METHOD public abstract ResourceKey<T>, T>> entrySet()
-  METHOD public abstract ResourceKey<T>> getResourceKey(T)
-  METHOD public abstract ResourceKey<T>> registryKeySet()
-  METHOD public abstract ResourceLocation getKey(T)
-  METHOD public abstract ResourceLocation> keySet()
-  METHOD public abstract T get(ResourceKey<T>)
-  METHOD public abstract T get(ResourceLocation)
-  METHOD public abstract TagKey<T>> getTagNames()
-  METHOD public abstract boolean containsKey(ResourceKey<T>)
-  METHOD public abstract boolean containsKey(ResourceLocation)
-  METHOD public abstract int getId(T)
-  METHOD public abstract void bindTags(Holder<T>>>)
-  METHOD public abstract void resetTags()
-  METHOD public static Holder$Reference<T> registerForHolder(Registry<T>, ResourceKey<T>, T)
-  METHOD public static Holder$Reference<T> registerForHolder(Registry<T>, ResourceLocation, T)
-  METHOD public static T register(Registry<? super T>, String, T)
-  METHOD public static T register(Registry<V>, ResourceKey<V>, T)
-  METHOD public static T register(Registry<V>, ResourceLocation, T)
+=== net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback  ::  public abstract interface extends <none> implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final CommandRegistrationCallback> EVENT
 
-=== net.minecraft.core.RegistryAccess  ::  public abstract interface extends <none> implements HolderLookup$Provider
-  FIELD public static final Logger LOGGER
-  FIELD public static final RegistryAccess$Frozen EMPTY
-  METHOD public HolderLookup$RegistryLookup<T>> lookup(Registry<? extends T>>)
-  METHOD public Lifecycle allRegistriesLifecycle()
-  METHOD public Registry<?>>> listRegistries()
-  METHOD public Registry<E> registryOrThrow(Registry<? extends E>>)
-  METHOD public RegistryAccess$Frozen freeze()
-  METHOD public abstract Registry<E>> registry(Registry<? extends E>>)
-  METHOD public abstract RegistryAccess$RegistryEntry<?>> registries()
-  METHOD public static RegistryAccess$Frozen fromRegistryOfRegistries(Registry<?>>)
+=== net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ServerTickEvents$EndTick> END_SERVER_TICK
+  FIELD public static final ServerTickEvents$EndWorldTick> END_WORLD_TICK
+  FIELD public static final ServerTickEvents$StartTick> START_SERVER_TICK
+  FIELD public static final ServerTickEvents$StartWorldTick> START_WORLD_TICK
 
-=== net.minecraft.core.component.DataComponents  ::  public class extends Object implements 
-  CTOR public DataComponents()
-  FIELD public static final AdventureModePredicate> CAN_BREAK
-  FIELD public static final AdventureModePredicate> CAN_PLACE_ON
-  FIELD public static final ArmorTrim> TRIM
-  FIELD public static final BannerPatternLayers> BANNER_PATTERNS
-  FIELD public static final BeehiveBlockEntity$Occupant>> BEES
-  FIELD public static final BlockItemStateProperties> BLOCK_STATE
-  FIELD public static final Boolean> ENCHANTMENT_GLINT_OVERRIDE
-  FIELD public static final BundleContents> BUNDLE_CONTENTS
-  FIELD public static final ChargedProjectiles> CHARGED_PROJECTILES
-  FIELD public static final Component> CUSTOM_NAME
-  FIELD public static final Component> ITEM_NAME
-  FIELD public static final CustomData> BLOCK_ENTITY_DATA
-  FIELD public static final CustomData> BUCKET_ENTITY_DATA
-  FIELD public static final CustomData> CUSTOM_DATA
-  FIELD public static final CustomData> ENTITY_DATA
-  FIELD public static final CustomModelData> CUSTOM_MODEL_DATA
-  FIELD public static final DataComponentMap COMMON_ITEM_COMPONENTS
-  FIELD public static final DebugStickState> DEBUG_STICK_STATE
-  FIELD public static final DyeColor> BASE_COLOR
-  FIELD public static final DyedItemColor> DYED_COLOR
-  FIELD public static final FireworkExplosion> FIREWORK_EXPLOSION
-  FIELD public static final Fireworks> FIREWORKS
-  FIELD public static final FoodProperties> FOOD
-  FIELD public static final Instrument>> INSTRUMENT
-  FIELD public static final Integer> DAMAGE
-  FIELD public static final Integer> MAX_DAMAGE
-  FIELD public static final Integer> MAX_STACK_SIZE
-  FIELD public static final Integer> OMINOUS_BOTTLE_AMPLIFIER
-  FIELD public static final Integer> REPAIR_COST
-  FIELD public static final ItemAttributeModifiers> ATTRIBUTE_MODIFIERS
-  FIELD public static final ItemContainerContents> CONTAINER
-  FIELD public static final ItemEnchantments> ENCHANTMENTS
-  FIELD public static final ItemEnchantments> STORED_ENCHANTMENTS
-  FIELD public static final ItemLore> LORE
-  FIELD public static final JukeboxPlayable> JUKEBOX_PLAYABLE
-  FIELD public static final LockCode> LOCK
-  FIELD public static final LodestoneTracker> LODESTONE_TRACKER
-  FIELD public static final MapDecorations> MAP_DECORATIONS
-  FIELD public static final MapId> MAP_ID
-  FIELD public static final MapItemColor> MAP_COLOR
-  FIELD public static final MapPostProcessing> MAP_POST_PROCESSING
-  FIELD public static final PotDecorations> POT_DECORATIONS
-  FIELD public static final PotionContents> POTION_CONTENTS
-  FIELD public static final Rarity> RARITY
-  FIELD public static final ResolvableProfile> PROFILE
-  FIELD public static final ResourceLocation> NOTE_BLOCK_SOUND
-  FIELD public static final ResourceLocation>> RECIPES
-  FIELD public static final SeededContainerLoot> CONTAINER_LOOT
-  FIELD public static final SuspiciousStewEffects> SUSPICIOUS_STEW_EFFECTS
-  FIELD public static final Tool> TOOL
-  FIELD public static final Unbreakable> UNBREAKABLE
-  FIELD public static final Unit> CREATIVE_SLOT_LOCK
-  FIELD public static final Unit> FIRE_RESISTANT
-  FIELD public static final Unit> HIDE_ADDITIONAL_TOOLTIP
-  FIELD public static final Unit> HIDE_TOOLTIP
-  FIELD public static final Unit> INTANGIBLE_PROJECTILE
-  FIELD public static final WritableBookContent> WRITABLE_BOOK_CONTENT
-  FIELD public static final WrittenBookContent> WRITTEN_BOOK_CONTENT
-  FIELD static final EncoderCache ENCODER_CACHE
-  METHOD public static DataComponentType<?> bootstrap(DataComponentType<?>>)
+=== net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ServerLifecycleEvents$AfterSave> AFTER_SAVE
+  FIELD public static final ServerLifecycleEvents$BeforeSave> BEFORE_SAVE
+  FIELD public static final ServerLifecycleEvents$EndDataPackReload> END_DATA_PACK_RELOAD
+  FIELD public static final ServerLifecycleEvents$ServerStarted> SERVER_STARTED
+  FIELD public static final ServerLifecycleEvents$ServerStarting> SERVER_STARTING
+  FIELD public static final ServerLifecycleEvents$ServerStopped> SERVER_STOPPED
+  FIELD public static final ServerLifecycleEvents$ServerStopping> SERVER_STOPPING
+  FIELD public static final ServerLifecycleEvents$StartDataPackReload> START_DATA_PACK_RELOAD
+  FIELD public static final ServerLifecycleEvents$SyncDataPackContents> SYNC_DATA_PACK_CONTENTS
 
-=== net.minecraft.core.registries.BuiltInRegistries  ::  public class extends Object implements 
-  CTOR public BuiltInRegistries()
-  FIELD public static final Activity> ACTIVITY
-  FIELD public static final ArgumentTypeInfo<?, ?>> COMMAND_ARGUMENT_TYPE
-  FIELD public static final ArmorMaterial> ARMOR_MATERIAL
-  FIELD public static final Attribute> ATTRIBUTE
-  FIELD public static final BiomeSource>> BIOME_SOURCE
-  FIELD public static final Block> BLOCK
-  FIELD public static final Block>> BLOCK_TYPE
-  FIELD public static final BlockEntityType<?>> BLOCK_ENTITY_TYPE
-  FIELD public static final BlockPredicateType<?>> BLOCK_PREDICATE_TYPE
-  FIELD public static final BlockStateProviderType<?>> BLOCKSTATE_PROVIDER_TYPE
-  FIELD public static final CatVariant> CAT_VARIANT
-  FIELD public static final ChunkGenerator>> CHUNK_GENERATOR
-  FIELD public static final ChunkStatus> CHUNK_STATUS
-  FIELD public static final CreativeModeTab> CREATIVE_MODE_TAB
-  FIELD public static final CriterionTrigger<?>> TRIGGER_TYPES
-  FIELD public static final DataComponentType<?>> DATA_COMPONENT_TYPE
-  FIELD public static final DataComponentType<?>> ENCHANTMENT_EFFECT_COMPONENT_TYPE
-  FIELD public static final DecoratedPotPattern> DECORATED_POT_PATTERN
-  FIELD public static final DensityFunction>> DENSITY_FUNCTION_TYPE
-  FIELD public static final EnchantmentEntityEffect>> ENCHANTMENT_ENTITY_EFFECT_TYPE
-  FIELD public static final EnchantmentLocationBasedEffect>> ENCHANTMENT_LOCATION_BASED_EFFECT_TYPE
-  FIELD public static final EnchantmentProvider>> ENCHANTMENT_PROVIDER_TYPE
-  FIELD public static final EnchantmentValueEffect>> ENCHANTMENT_VALUE_EFFECT_TYPE
-  FIELD public static final EntitySubPredicate>> ENTITY_SUB_PREDICATE_TYPE
-  FIELD public static final EntityType<?>> ENTITY_TYPE
-  FIELD public static final Feature<?>> FEATURE
-  FIELD public static final FeatureSizeType<?>> FEATURE_SIZE_TYPE
-  FIELD public static final FloatProviderType<?>> FLOAT_PROVIDER_TYPE
-  FIELD public static final Fluid> FLUID
-  FIELD public static final FoliagePlacerType<?>> FOLIAGE_PLACER_TYPE
-  FIELD public static final FrogVariant> FROG_VARIANT
-  FIELD public static final GameEvent> GAME_EVENT
-  FIELD public static final HeightProviderType<?>> HEIGHT_PROVIDER_TYPE
-  FIELD public static final Instrument> INSTRUMENT
-  FIELD public static final IntProviderType<?>> INT_PROVIDER_TYPE
-  FIELD public static final Item> ITEM
-  FIELD public static final ItemSubPredicate$Type<?>> ITEM_SUB_PREDICATE_TYPE
-  FIELD public static final LevelBasedValue>> ENCHANTMENT_LEVEL_BASED_VALUE_TYPE
-  FIELD public static final LootItemConditionType> LOOT_CONDITION_TYPE
-  FIELD public static final LootItemFunctionType<?>> LOOT_FUNCTION_TYPE
-  FIELD public static final LootNbtProviderType> LOOT_NBT_PROVIDER_TYPE
-  FIELD public static final LootNumberProviderType> LOOT_NUMBER_PROVIDER_TYPE
-  FIELD public static final LootPoolEntryType> LOOT_POOL_ENTRY_TYPE
-  FIELD public static final LootScoreProviderType> LOOT_SCORE_PROVIDER_TYPE
-  FIELD public static final MapDecorationType> MAP_DECORATION_TYPE
-  FIELD public static final MemoryModuleType<?>> MEMORY_MODULE_TYPE
-  FIELD public static final MenuType<?>> MENU
-  FIELD public static final MobEffect> MOB_EFFECT
-  FIELD public static final NumberFormatType<?>> NUMBER_FORMAT_TYPE
-  FIELD public static final ParticleType<?>> PARTICLE_TYPE
-  FIELD public static final PlacementModifierType<?>> PLACEMENT_MODIFIER_TYPE
-  FIELD public static final PoiType> POINT_OF_INTEREST_TYPE
-  FIELD public static final PoolAliasBinding>> POOL_ALIAS_BINDING_TYPE
-  FIELD public static final PosRuleTestType<?>> POS_RULE_TEST
-  FIELD public static final PositionSourceType<?>> POSITION_SOURCE_TYPE
-  FIELD public static final Potion> POTION
-  FIELD public static final RecipeSerializer<?>> RECIPE_SERIALIZER
-  FIELD public static final RecipeType<?>> RECIPE_TYPE
-  FIELD public static final Registry<?>> REGISTRY
-  FIELD public static final ResourceLocation> CUSTOM_STAT
-  FIELD public static final RootPlacerType<?>> ROOT_PLACER_TYPE
-  FIELD public static final RuleBlockEntityModifierType<?>> RULE_BLOCK_ENTITY_MODIFIER
-  FIELD public static final RuleTestType<?>> RULE_TEST
-  FIELD public static final Schedule> SCHEDULE
-  FIELD public static final SensorType<?>> SENSOR_TYPE
-  FIELD public static final SoundEvent> SOUND_EVENT
-  FIELD public static final StatType<?>> STAT_TYPE
-  FIELD public static final StructurePieceType> STRUCTURE_PIECE
-  FIELD public static final StructurePlacementType<?>> STRUCTURE_PLACEMENT
-  FIELD public static final StructurePoolElementType<?>> STRUCTURE_POOL_ELEMENT
-  FIELD public static final StructureProcessorType<?>> STRUCTURE_PROCESSOR
-  FIELD public static final StructureType<?>> STRUCTURE_TYPE
-  FIELD public static final SurfaceRules$ConditionSource>> MATERIAL_CONDITION
-  FIELD public static final SurfaceRules$RuleSource>> MATERIAL_RULE
-  FIELD public static final TreeDecoratorType<?>> TREE_DECORATOR_TYPE
-  FIELD public static final TrunkPlacerType<?>> TRUNK_PLACER_TYPE
-  FIELD public static final VillagerProfession> VILLAGER_PROFESSION
-  FIELD public static final VillagerType> VILLAGER_TYPE
-  FIELD public static final WorldCarver<?>> CARVER
-  METHOD public static void bootStrap()
+=== net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ServerEntityEvents$EquipmentChange> EQUIPMENT_CHANGE
+  FIELD public static final ServerEntityEvents$Load> ENTITY_LOAD
+  FIELD public static final ServerEntityEvents$Unload> ENTITY_UNLOAD
 
-=== net.minecraft.core.registries.Registries  ::  public class extends Object implements 
-  CTOR public Registries()
-  FIELD public static final Activity>> ACTIVITY
-  FIELD public static final Advancement>> ADVANCEMENT
-  FIELD public static final ArgumentTypeInfo<?, ?>>> COMMAND_ARGUMENT_TYPE
-  FIELD public static final ArmorMaterial>> ARMOR_MATERIAL
-  FIELD public static final Attribute>> ATTRIBUTE
-  FIELD public static final BannerPattern>> BANNER_PATTERN
-  FIELD public static final Biome>> BIOME
-  FIELD public static final BiomeSource>>> BIOME_SOURCE
-  FIELD public static final Block>> BLOCK
-  FIELD public static final Block>>> BLOCK_TYPE
-  FIELD public static final BlockEntityType<?>>> BLOCK_ENTITY_TYPE
-  FIELD public static final BlockPredicateType<?>>> BLOCK_PREDICATE_TYPE
-  FIELD public static final BlockStateProviderType<?>>> BLOCK_STATE_PROVIDER_TYPE
-  FIELD public static final CatVariant>> CAT_VARIANT
-  FIELD public static final ChatType>> CHAT_TYPE
-  FIELD public static final ChunkGenerator>>> CHUNK_GENERATOR
-  FIELD public static final ChunkStatus>> CHUNK_STATUS
-  FIELD public static final ConfiguredFeature<?, ?>>> CONFIGURED_FEATURE
-  FIELD public static final ConfiguredWorldCarver<?>>> CONFIGURED_CARVER
-  FIELD public static final CreativeModeTab>> CREATIVE_MODE_TAB
-  FIELD public static final CriterionTrigger<?>>> TRIGGER_TYPE
-  FIELD public static final DamageType>> DAMAGE_TYPE
-  FIELD public static final DataComponentType<?>>> DATA_COMPONENT_TYPE
-  FIELD public static final DataComponentType<?>>> ENCHANTMENT_EFFECT_COMPONENT_TYPE
-  FIELD public static final DecoratedPotPattern>> DECORATED_POT_PATTERN
-  FIELD public static final DensityFunction>> DENSITY_FUNCTION
-  FIELD public static final DensityFunction>>> DENSITY_FUNCTION_TYPE
-  FIELD public static final DimensionType>> DIMENSION_TYPE
-  FIELD public static final Enchantment>> ENCHANTMENT
-  FIELD public static final EnchantmentEntityEffect>>> ENCHANTMENT_ENTITY_EFFECT_TYPE
-  FIELD public static final EnchantmentLocationBasedEffect>>> ENCHANTMENT_LOCATION_BASED_EFFECT_TYPE
-  FIELD public static final EnchantmentProvider>> ENCHANTMENT_PROVIDER
-  FIELD public static final EnchantmentProvider>>> ENCHANTMENT_PROVIDER_TYPE
-  FIELD public static final EnchantmentValueEffect>>> ENCHANTMENT_VALUE_EFFECT_TYPE
-  FIELD public static final EntitySubPredicate>>> ENTITY_SUB_PREDICATE_TYPE
-  FIELD public static final EntityType<?>>> ENTITY_TYPE
-  FIELD public static final Feature<?>>> FEATURE
-  FIELD public static final FeatureSizeType<?>>> FEATURE_SIZE_TYPE
-  FIELD public static final FlatLevelGeneratorPreset>> FLAT_LEVEL_GENERATOR_PRESET
-  FIELD public static final FloatProviderType<?>>> FLOAT_PROVIDER_TYPE
-  FIELD public static final Fluid>> FLUID
-  FIELD public static final FoliagePlacerType<?>>> FOLIAGE_PLACER_TYPE
-  FIELD public static final FrogVariant>> FROG_VARIANT
-  FIELD public static final GameEvent>> GAME_EVENT
-  FIELD public static final HeightProviderType<?>>> HEIGHT_PROVIDER_TYPE
-  FIELD public static final Instrument>> INSTRUMENT
-  FIELD public static final IntProviderType<?>>> INT_PROVIDER_TYPE
-  FIELD public static final Item>> ITEM
-  FIELD public static final ItemSubPredicate$Type<?>>> ITEM_SUB_PREDICATE_TYPE
-  FIELD public static final JukeboxSong>> JUKEBOX_SONG
-  FIELD public static final Level>> DIMENSION
-  FIELD public static final LevelBasedValue>>> ENCHANTMENT_LEVEL_BASED_VALUE_TYPE
-  FIELD public static final LevelStem>> LEVEL_STEM
-  FIELD public static final LootItemCondition>> PREDICATE
-  FIELD public static final LootItemConditionType>> LOOT_CONDITION_TYPE
-  FIELD public static final LootItemFunction>> ITEM_MODIFIER
-  FIELD public static final LootItemFunctionType<?>>> LOOT_FUNCTION_TYPE
-  FIELD public static final LootNbtProviderType>> LOOT_NBT_PROVIDER_TYPE
-  FIELD public static final LootNumberProviderType>> LOOT_NUMBER_PROVIDER_TYPE
-  FIELD public static final LootPoolEntryType>> LOOT_POOL_ENTRY_TYPE
-  FIELD public static final LootScoreProviderType>> LOOT_SCORE_PROVIDER_TYPE
-  FIELD public static final LootTable>> LOOT_TABLE
-  FIELD public static final MapDecorationType>> MAP_DECORATION_TYPE
-  FIELD public static final MemoryModuleType<?>>> MEMORY_MODULE_TYPE
-  FIELD public static final MenuType<?>>> MENU
-  FIELD public static final MobEffect>> MOB_EFFECT
-  FIELD public static final MultiNoiseBiomeSourceParameterList>> MULTI_NOISE_BIOME_SOURCE_PARAMETER_LIST
-  FIELD public static final NoiseGeneratorSettings>> NOISE_SETTINGS
-  FIELD public static final NormalNoise$NoiseParameters>> NOISE
-  FIELD public static final NumberFormatType<?>>> NUMBER_FORMAT_TYPE
-  FIELD public static final PaintingVariant>> PAINTING_VARIANT
-  FIELD public static final ParticleType<?>>> PARTICLE_TYPE
-  FIELD public static final PlacedFeature>> PLACED_FEATURE
-  FIELD public static final PlacementModifierType<?>>> PLACEMENT_MODIFIER_TYPE
-  FIELD public static final PoiType>> POINT_OF_INTEREST_TYPE
-  FIELD public static final PoolAliasBinding>>> POOL_ALIAS_BINDING
-  FIELD public static final PosRuleTestType<?>>> POS_RULE_TEST
-  FIELD public static final PositionSourceType<?>>> POSITION_SOURCE_TYPE
-  FIELD public static final Potion>> POTION
-  FIELD public static final Recipe<?>>> RECIPE
-  FIELD public static final RecipeSerializer<?>>> RECIPE_SERIALIZER
-  FIELD public static final RecipeType<?>>> RECIPE_TYPE
-  FIELD public static final ResourceLocation ROOT_REGISTRY_NAME
-  FIELD public static final ResourceLocation>> CUSTOM_STAT
-  FIELD public static final RootPlacerType<?>>> ROOT_PLACER_TYPE
-  FIELD public static final RuleBlockEntityModifierType<?>>> RULE_BLOCK_ENTITY_MODIFIER
-  FIELD public static final RuleTestType<?>>> RULE_TEST
-  FIELD public static final Schedule>> SCHEDULE
-  FIELD public static final SensorType<?>>> SENSOR_TYPE
-  FIELD public static final SoundEvent>> SOUND_EVENT
-  FIELD public static final StatType<?>>> STAT_TYPE
-  FIELD public static final Structure>> STRUCTURE
-  FIELD public static final StructurePieceType>> STRUCTURE_PIECE
-  FIELD public static final StructurePlacementType<?>>> STRUCTURE_PLACEMENT
-  FIELD public static final StructurePoolElementType<?>>> STRUCTURE_POOL_ELEMENT
-  FIELD public static final StructureProcessorList>> PROCESSOR_LIST
-  FIELD public static final StructureProcessorType<?>>> STRUCTURE_PROCESSOR
-  FIELD public static final StructureSet>> STRUCTURE_SET
-  FIELD public static final StructureTemplatePool>> TEMPLATE_POOL
-  FIELD public static final StructureType<?>>> STRUCTURE_TYPE
-  FIELD public static final SurfaceRules$ConditionSource>>> MATERIAL_CONDITION
-  FIELD public static final SurfaceRules$RuleSource>>> MATERIAL_RULE
-  FIELD public static final TreeDecoratorType<?>>> TREE_DECORATOR_TYPE
-  FIELD public static final TrimMaterial>> TRIM_MATERIAL
-  FIELD public static final TrimPattern>> TRIM_PATTERN
-  FIELD public static final TrunkPlacerType<?>>> TRUNK_PLACER_TYPE
-  FIELD public static final VillagerProfession>> VILLAGER_PROFESSION
-  FIELD public static final VillagerType>> VILLAGER_TYPE
-  FIELD public static final WolfVariant>> WOLF_VARIANT
-  FIELD public static final WorldCarver<?>>> CARVER
-  FIELD public static final WorldPreset>> WORLD_PRESET
-  METHOD public static Level> levelStemToLevel(LevelStem>)
-  METHOD public static LevelStem> levelToLevelStem(Level>)
-  METHOD public static String elementsDirPath(Registry<?>>)
-  METHOD public static String tagsDirPath(Registry<?>>)
+=== net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ServerWorldEvents$Load> LOAD
+  FIELD public static final ServerWorldEvents$Unload> UNLOAD
 
-=== net.minecraft.nbt.CompoundTag  ::  public class extends Object implements Tag
-  CTOR protected CompoundTag(Tag>)
-  CTOR public CompoundTag()
-  FIELD public static final CompoundTag> CODEC
-  FIELD public static final CompoundTag> TYPE
-  METHOD protected CompoundTag shallowCopy()
-  METHOD protected Tag>> entrySet()
-  METHOD public CompoundTag copy()
-  METHOD public CompoundTag getCompound(String)
-  METHOD public CompoundTag merge(CompoundTag)
-  METHOD public CompoundTag> getType()
-  METHOD public ListTag getList(String, int)
-  METHOD public StreamTagVisitor$ValueResult accept(StreamTagVisitor)
-  METHOD public String getString(String)
-  METHOD public String toString()
-  METHOD public String> getAllKeys()
-  METHOD public Tag get(String)
-  METHOD public Tag put(String, Tag)
-  METHOD public UUID getUUID(String)
-  METHOD public boolean contains(String)
-  METHOD public boolean contains(String, int)
-  METHOD public boolean equals(Object)
-  METHOD public boolean getBoolean(String)
-  METHOD public boolean hasUUID(String)
-  METHOD public boolean isEmpty()
-  METHOD public byte getByte(String)
-  METHOD public byte getId()
-  METHOD public byte getTagType(String)
-  METHOD public byte[] getByteArray(String)
-  METHOD public double getDouble(String)
-  METHOD public float getFloat(String)
-  METHOD public int getInt(String)
-  METHOD public int hashCode()
-  METHOD public int size()
-  METHOD public int sizeInBytes()
-  METHOD public int[] getIntArray(String)
-  METHOD public long getLong(String)
-  METHOD public long[] getLongArray(String)
-  METHOD public short getShort(String)
-  METHOD public void accept(TagVisitor)
-  METHOD public void putBoolean(String, boolean)
-  METHOD public void putByte(String, byte)
-  METHOD public void putByteArray(String, Byte>)
-  METHOD public void putByteArray(String, byte[])
-  METHOD public void putDouble(String, double)
-  METHOD public void putFloat(String, float)
-  METHOD public void putInt(String, int)
-  METHOD public void putIntArray(String, Integer>)
-  METHOD public void putIntArray(String, int[])
-  METHOD public void putLong(String, long)
-  METHOD public void putLongArray(String, Long>)
-  METHOD public void putLongArray(String, long[])
-  METHOD public void putShort(String, short)
-  METHOD public void putString(String, String)
-  METHOD public void putUUID(String, UUID)
-  METHOD public void remove(String)
-  METHOD public void write(DataOutput) throws IOException
-  METHOD static Tag readNamedTagData(TagType<?>, String, DataInput, NbtAccounter)
+=== net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final PlayerBlockBreakEvents$After> AFTER
+  FIELD public static final PlayerBlockBreakEvents$Before> BEFORE
+  FIELD public static final PlayerBlockBreakEvents$Canceled> CANCELED
 
-=== net.minecraft.nbt.ListTag  ::  public class extends Tag> implements 
-  CTOR ListTag(Tag>, byte)
-  CTOR public ListTag()
-  FIELD public static final ListTag> TYPE
-  METHOD public CompoundTag getCompound(int)
-  METHOD public ListTag copy()
-  METHOD public ListTag getList(int)
-  METHOD public ListTag> getType()
-  METHOD public StreamTagVisitor$ValueResult accept(StreamTagVisitor)
-  METHOD public String getString(int)
-  METHOD public String toString()
-  METHOD public Tag get(int)
-  METHOD public Tag remove(int)
-  METHOD public Tag set(int, Tag)
-  METHOD public boolean addTag(int, Tag)
-  METHOD public boolean equals(Object)
-  METHOD public boolean isEmpty()
-  METHOD public boolean setTag(int, Tag)
-  METHOD public byte getElementType()
-  METHOD public byte getId()
-  METHOD public double getDouble(int)
-  METHOD public float getFloat(int)
-  METHOD public int getInt(int)
-  METHOD public int hashCode()
-  METHOD public int size()
-  METHOD public int sizeInBytes()
-  METHOD public int[] getIntArray(int)
-  METHOD public long[] getLongArray(int)
-  METHOD public short getShort(int)
-  METHOD public void accept(TagVisitor)
-  METHOD public void add(int, Tag)
-  METHOD public void clear()
-  METHOD public void write(DataOutput) throws IOException
+=== net.fabricmc.fabric.api.event.player.AttackBlockCallback  ::  public abstract interface extends <none> implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final AttackBlockCallback> EVENT
 
-=== net.minecraft.nbt.Tag  ::  public abstract interface extends <none> implements 
-  FIELD public static final byte TAG_ANY_NUMERIC
-  FIELD public static final byte TAG_BYTE
-  FIELD public static final byte TAG_BYTE_ARRAY
-  FIELD public static final byte TAG_COMPOUND
-  FIELD public static final byte TAG_DOUBLE
-  FIELD public static final byte TAG_END
-  FIELD public static final byte TAG_FLOAT
-  FIELD public static final byte TAG_INT
-  FIELD public static final byte TAG_INT_ARRAY
-  FIELD public static final byte TAG_LIST
-  FIELD public static final byte TAG_LONG
-  FIELD public static final byte TAG_LONG_ARRAY
-  FIELD public static final byte TAG_SHORT
-  FIELD public static final byte TAG_STRING
-  FIELD public static final int ARRAY_HEADER
-  FIELD public static final int MAX_DEPTH
-  FIELD public static final int OBJECT_HEADER
-  FIELD public static final int OBJECT_REFERENCE
-  FIELD public static final int STRING_SIZE
-  METHOD public String getAsString()
-  METHOD public abstract StreamTagVisitor$ValueResult accept(StreamTagVisitor)
-  METHOD public abstract String toString()
-  METHOD public abstract Tag copy()
-  METHOD public abstract TagType<?> getType()
-  METHOD public abstract byte getId()
-  METHOD public abstract int sizeInBytes()
-  METHOD public abstract void accept(TagVisitor)
-  METHOD public abstract void write(DataOutput) throws IOException
-  METHOD public void acceptAsRoot(StreamTagVisitor)
+=== net.fabricmc.fabric.api.event.player.UseBlockCallback  ::  public abstract interface extends <none> implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final UseBlockCallback> EVENT
 
-=== net.minecraft.network.FriendlyByteBuf  ::  public class extends ByteBuf implements 
-  CTOR public FriendlyByteBuf(ByteBuf)
-  FIELD public static final int DEFAULT_NBT_QUOTA
-  FIELD public static final int MAX_COMPONENT_STRING_LENGTH
-  FIELD public static final short MAX_STRING_LENGTH
-  METHOD public BitSet readBitSet()
-  METHOD public BitSet readFixedBitSet(int)
-  METHOD public BlockHitResult readBlockHitResult()
-  METHOD public BlockPos readBlockPos()
-  METHOD public ByteBuf asReadOnly()
-  METHOD public ByteBuf copy()
-  METHOD public ByteBuf copy(int, int)
-  METHOD public ByteBuf duplicate()
-  METHOD public ByteBuf order(ByteOrder)
-  METHOD public ByteBuf readBytes(int)
-  METHOD public ByteBuf readRetainedSlice(int)
-  METHOD public ByteBuf readSlice(int)
-  METHOD public ByteBuf retainedDuplicate()
-  METHOD public ByteBuf retainedSlice()
-  METHOD public ByteBuf retainedSlice(int, int)
-  METHOD public ByteBuf slice()
-  METHOD public ByteBuf slice(int, int)
-  METHOD public ByteBuf unwrap()
-  METHOD public ByteBufAllocator alloc()
-  METHOD public ByteBuffer internalNioBuffer(int, int)
-  METHOD public ByteBuffer nioBuffer()
-  METHOD public ByteBuffer nioBuffer(int, int)
-  METHOD public ByteBuffer[] nioBuffers()
-  METHOD public ByteBuffer[] nioBuffers(int, int)
-  METHOD public ByteOrder order()
-  METHOD public C readCollection(IntFunction<C>, FriendlyByteBuf, T>)
-  METHOD public CharSequence getCharSequence(int, int, Charset)
-  METHOD public CharSequence readCharSequence(int, Charset)
-  METHOD public ChunkPos readChunkPos()
-  METHOD public CompoundTag readNbt()
-  METHOD public Date readDate()
-  METHOD public EnumSet<E> readEnumSet(Class<E>)
-  METHOD public FriendlyByteBuf capacity(int)
-  METHOD public FriendlyByteBuf clear()
-  METHOD public FriendlyByteBuf discardReadBytes()
-  METHOD public FriendlyByteBuf discardSomeReadBytes()
-  METHOD public FriendlyByteBuf ensureWritable(int)
-  METHOD public FriendlyByteBuf getBytes(int, ByteBuf)
-  METHOD public FriendlyByteBuf getBytes(int, ByteBuf, int)
-  METHOD public FriendlyByteBuf getBytes(int, ByteBuf, int, int)
-  METHOD public FriendlyByteBuf getBytes(int, ByteBuffer)
-  METHOD public FriendlyByteBuf getBytes(int, OutputStream, int) throws IOException
-  METHOD public FriendlyByteBuf getBytes(int, byte[])
-  METHOD public FriendlyByteBuf getBytes(int, byte[], int, int)
-  METHOD public FriendlyByteBuf markReaderIndex()
-  METHOD public FriendlyByteBuf markWriterIndex()
-  METHOD public FriendlyByteBuf readBytes(ByteBuf)
-  METHOD public FriendlyByteBuf readBytes(ByteBuf, int)
-  METHOD public FriendlyByteBuf readBytes(ByteBuf, int, int)
-  METHOD public FriendlyByteBuf readBytes(ByteBuffer)
-  METHOD public FriendlyByteBuf readBytes(OutputStream, int) throws IOException
-  METHOD public FriendlyByteBuf readBytes(byte[])
-  METHOD public FriendlyByteBuf readBytes(byte[], int, int)
-  METHOD public FriendlyByteBuf readerIndex(int)
-  METHOD public FriendlyByteBuf resetReaderIndex()
-  METHOD public FriendlyByteBuf resetWriterIndex()
-  METHOD public FriendlyByteBuf retain()
-  METHOD public FriendlyByteBuf retain(int)
-  METHOD public FriendlyByteBuf setBoolean(int, boolean)
-  METHOD public FriendlyByteBuf setByte(int, int)
-  METHOD public FriendlyByteBuf setBytes(int, ByteBuf)
-  METHOD public FriendlyByteBuf setBytes(int, ByteBuf, int)
-  METHOD public FriendlyByteBuf setBytes(int, ByteBuf, int, int)
-  METHOD public FriendlyByteBuf setBytes(int, ByteBuffer)
-  METHOD public FriendlyByteBuf setBytes(int, byte[])
-  METHOD public FriendlyByteBuf setBytes(int, byte[], int, int)
-  METHOD public FriendlyByteBuf setChar(int, int)
-  METHOD public FriendlyByteBuf setDouble(int, double)
-  METHOD public FriendlyByteBuf setFloat(int, float)
-  METHOD public FriendlyByteBuf setIndex(int, int)
-  METHOD public FriendlyByteBuf setInt(int, int)
-  METHOD public FriendlyByteBuf setIntLE(int, int)
-  METHOD public FriendlyByteBuf setLong(int, long)
-  METHOD public FriendlyByteBuf setLongLE(int, long)
-  METHOD public FriendlyByteBuf setMedium(int, int)
-  METHOD public FriendlyByteBuf setMediumLE(int, int)
-  METHOD public FriendlyByteBuf setShort(int, int)
-  METHOD public FriendlyByteBuf setShortLE(int, int)
-  METHOD public FriendlyByteBuf setZero(int, int)
-  METHOD public FriendlyByteBuf skipBytes(int)
-  METHOD public FriendlyByteBuf touch()
-  METHOD public FriendlyByteBuf touch(Object)
-  METHOD public FriendlyByteBuf writeBlockPos(BlockPos)
-  METHOD public FriendlyByteBuf writeBoolean(boolean)
-  METHOD public FriendlyByteBuf writeById(ToIntFunction<T>, T)
-  METHOD public FriendlyByteBuf writeByte(int)
-  METHOD public FriendlyByteBuf writeByteArray(byte[])
-  METHOD public FriendlyByteBuf writeBytes(ByteBuf)
-  METHOD public FriendlyByteBuf writeBytes(ByteBuf, int)
-  METHOD public FriendlyByteBuf writeBytes(ByteBuf, int, int)
-  METHOD public FriendlyByteBuf writeBytes(ByteBuffer)
-  METHOD public FriendlyByteBuf writeBytes(byte[])
-  METHOD public FriendlyByteBuf writeBytes(byte[], int, int)
-  METHOD public FriendlyByteBuf writeChar(int)
-  METHOD public FriendlyByteBuf writeChunkPos(ChunkPos)
-  METHOD public FriendlyByteBuf writeDate(Date)
-  METHOD public FriendlyByteBuf writeDouble(double)
-  METHOD public FriendlyByteBuf writeEnum(Enum<?>)
-  METHOD public FriendlyByteBuf writeFloat(float)
-  METHOD public FriendlyByteBuf writeInt(int)
-  METHOD public FriendlyByteBuf writeIntLE(int)
-  METHOD public FriendlyByteBuf writeLong(long)
-  METHOD public FriendlyByteBuf writeLongArray(long[])
-  METHOD public FriendlyByteBuf writeLongLE(long)
-  METHOD public FriendlyByteBuf writeMedium(int)
-  METHOD public FriendlyByteBuf writeMediumLE(int)
-  METHOD public FriendlyByteBuf writeNbt(Tag)
-  METHOD public FriendlyByteBuf writePublicKey(PublicKey)
-  METHOD public FriendlyByteBuf writeResourceLocation(ResourceLocation)
-  METHOD public FriendlyByteBuf writeSectionPos(SectionPos)
-  METHOD public FriendlyByteBuf writeShort(int)
-  METHOD public FriendlyByteBuf writeShortLE(int)
-  METHOD public FriendlyByteBuf writeUUID(UUID)
-  METHOD public FriendlyByteBuf writeUtf(String)
-  METHOD public FriendlyByteBuf writeUtf(String, int)
-  METHOD public FriendlyByteBuf writeVarInt(int)
-  METHOD public FriendlyByteBuf writeVarIntArray(int[])
-  METHOD public FriendlyByteBuf writeVarLong(long)
-  METHOD public FriendlyByteBuf writeWithCodec(Tag>, Codec<T>, T)
-  METHOD public FriendlyByteBuf writeZero(int)
-  METHOD public FriendlyByteBuf writerIndex(int)
-  METHOD public GlobalPos readGlobalPos()
-  METHOD public Instant readInstant()
-  METHOD public IntList readIntIdList()
-  METHOD public List<T> readList(FriendlyByteBuf, T>)
-  METHOD public M readMap(IntFunction<M>, FriendlyByteBuf, K>, FriendlyByteBuf, V>)
-  METHOD public Map<K, V> readMap(FriendlyByteBuf, K>, FriendlyByteBuf, V>)
-  METHOD public Optional<T> readOptional(FriendlyByteBuf, T>)
-  METHOD public PublicKey readPublicKey()
-  METHOD public Quaternionf readQuaternion()
-  METHOD public Registry<T>> readRegistryKey()
-  METHOD public ResourceKey<T> readResourceKey(Registry<T>>)
-  METHOD public ResourceLocation readResourceLocation()
-  METHOD public SectionPos readSectionPos()
-  METHOD public String readUtf()
-  METHOD public String readUtf(int)
-  METHOD public String toString()
-  METHOD public String toString(Charset)
-  METHOD public String toString(int, int, Charset)
-  METHOD public T readById(IntFunction<T>)
-  METHOD public T readEnum(Class<T>)
-  METHOD public T readJsonWithCodec(Codec<T>)
-  METHOD public T readNullable(FriendlyByteBuf, T>)
-  METHOD public T readWithCodec(Tag>, Codec<T>, NbtAccounter)
-  METHOD public T readWithCodecTrusted(Tag>, Codec<T>)
-  METHOD public Tag readNbt(NbtAccounter)
-  METHOD public UUID readUUID()
-  METHOD public Vec3 readVec3()
-  METHOD public Vector3f readVector3f()
-  METHOD public boolean equals(Object)
-  METHOD public boolean getBoolean(int)
-  METHOD public boolean hasArray()
-  METHOD public boolean hasMemoryAddress()
-  METHOD public boolean isContiguous()
-  METHOD public boolean isDirect()
-  METHOD public boolean isReadOnly()
-  METHOD public boolean isReadable()
-  METHOD public boolean isReadable(int)
-  METHOD public boolean isWritable()
-  METHOD public boolean isWritable(int)
-  METHOD public boolean readBoolean()
-  METHOD public boolean release()
-  METHOD public boolean release(int)
-  METHOD public byte getByte(int)
-  METHOD public byte readByte()
-  METHOD public byte[] array()
-  METHOD public byte[] readByteArray()
-  METHOD public byte[] readByteArray(int)
-  METHOD public char getChar(int)
-  METHOD public char readChar()
-  METHOD public double getDouble(int)
-  METHOD public double readDouble()
-  METHOD public float getFloat(int)
-  METHOD public float readFloat()
-  METHOD public int arrayOffset()
-  METHOD public int bytesBefore(byte)
-  METHOD public int bytesBefore(int, byte)
-  METHOD public int bytesBefore(int, int, byte)
-  METHOD public int capacity()
-  METHOD public int compareTo(ByteBuf)
-  METHOD public int ensureWritable(int, boolean)
-  METHOD public int forEachByte(ByteProcessor)
-  METHOD public int forEachByte(int, int, ByteProcessor)
-  METHOD public int forEachByteDesc(ByteProcessor)
-  METHOD public int forEachByteDesc(int, int, ByteProcessor)
-  METHOD public int getBytes(int, FileChannel, long, int) throws IOException
-  METHOD public int getBytes(int, GatheringByteChannel, int) throws IOException
-  METHOD public int getInt(int)
-  METHOD public int getIntLE(int)
-  METHOD public int getMedium(int)
-  METHOD public int getMediumLE(int)
-  METHOD public int getUnsignedMedium(int)
-  METHOD public int getUnsignedMediumLE(int)
-  METHOD public int getUnsignedShort(int)
-  METHOD public int getUnsignedShortLE(int)
-  METHOD public int hashCode()
-  METHOD public int indexOf(int, int, byte)
-  METHOD public int maxCapacity()
-  METHOD public int maxFastWritableBytes()
-  METHOD public int maxWritableBytes()
-  METHOD public int nioBufferCount()
-  METHOD public int readBytes(FileChannel, long, int) throws IOException
-  METHOD public int readBytes(GatheringByteChannel, int) throws IOException
-  METHOD public int readInt()
-  METHOD public int readIntLE()
-  METHOD public int readMedium()
-  METHOD public int readMediumLE()
-  METHOD public int readUnsignedMedium()
-  METHOD public int readUnsignedMediumLE()
-  METHOD public int readUnsignedShort()
-  METHOD public int readUnsignedShortLE()
-  METHOD public int readVarInt()
-  METHOD public int readableBytes()
-  METHOD public int readerIndex()
-  METHOD public int refCnt()
-  METHOD public int setBytes(int, FileChannel, long, int) throws IOException
-  METHOD public int setBytes(int, InputStream, int) throws IOException
-  METHOD public int setBytes(int, ScatteringByteChannel, int) throws IOException
-  METHOD public int setCharSequence(int, CharSequence, Charset)
-  METHOD public int writableBytes()
-  METHOD public int writeBytes(FileChannel, long, int) throws IOException
-  METHOD public int writeBytes(InputStream, int) throws IOException
-  METHOD public int writeBytes(ScatteringByteChannel, int) throws IOException
-  METHOD public int writeCharSequence(CharSequence, Charset)
-  METHOD public int writerIndex()
-  METHOD public int[] readVarIntArray()
-  METHOD public int[] readVarIntArray(int)
-  METHOD public long getLong(int)
-  METHOD public long getLongLE(int)
-  METHOD public long getUnsignedInt(int)
-  METHOD public long getUnsignedIntLE(int)
-  METHOD public long memoryAddress()
-  METHOD public long readLong()
-  METHOD public long readLongLE()
-  METHOD public long readUnsignedInt()
-  METHOD public long readUnsignedIntLE()
-  METHOD public long readVarLong()
-  METHOD public long[] readLongArray()
-  METHOD public long[] readLongArray(long[])
-  METHOD public long[] readLongArray(long[], int)
-  METHOD public short getShort(int)
-  METHOD public short getShortLE(int)
-  METHOD public short getUnsignedByte(int)
-  METHOD public short readShort()
-  METHOD public short readShortLE()
-  METHOD public short readUnsignedByte()
-  METHOD public static BlockPos readBlockPos(ByteBuf)
-  METHOD public static CompoundTag readNbt(ByteBuf)
-  METHOD public static IntFunction<T> limitValue(IntFunction<T>, int)
-  METHOD public static Quaternionf readQuaternion(ByteBuf)
-  METHOD public static T readNullable(B, StreamDecoder<? super B, T>)
-  METHOD public static Tag readNbt(ByteBuf, NbtAccounter)
-  METHOD public static UUID readUUID(ByteBuf)
-  METHOD public static Vector3f readVector3f(ByteBuf)
-  METHOD public static byte[] readByteArray(ByteBuf)
-  METHOD public static byte[] readByteArray(ByteBuf, int)
-  METHOD public static void writeBlockPos(ByteBuf, BlockPos)
-  METHOD public static void writeByteArray(ByteBuf, byte[])
-  METHOD public static void writeNbt(ByteBuf, Tag)
-  METHOD public static void writeNullable(B, T, StreamEncoder<? super B, T>)
-  METHOD public static void writeQuaternion(ByteBuf, Quaternionf)
-  METHOD public static void writeUUID(ByteBuf, UUID)
-  METHOD public static void writeVector3f(ByteBuf, Vector3f)
-  METHOD public void readWithCount(FriendlyByteBuf>)
-  METHOD public void writeBitSet(BitSet)
-  METHOD public void writeBlockHitResult(BlockHitResult)
-  METHOD public void writeCollection(Collection<T>, FriendlyByteBuf, T>)
-  METHOD public void writeEnumSet(EnumSet<E>, Class<E>)
-  METHOD public void writeFixedBitSet(BitSet, int)
-  METHOD public void writeGlobalPos(GlobalPos)
-  METHOD public void writeInstant(Instant)
-  METHOD public void writeIntIdList(IntList)
-  METHOD public void writeJsonWithCodec(Codec<T>, T)
-  METHOD public void writeMap(Map<K, V>, FriendlyByteBuf, K>, FriendlyByteBuf, V>)
-  METHOD public void writeNullable(T, FriendlyByteBuf, T>)
-  METHOD public void writeOptional(Optional<T>, FriendlyByteBuf, T>)
-  METHOD public void writeQuaternion(Quaternionf)
-  METHOD public void writeResourceKey(ResourceKey<?>)
-  METHOD public void writeVec3(Vec3)
-  METHOD public void writeVector3f(Vector3f)
+=== net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ServerLivingEntityEvents$AfterDamage> AFTER_DAMAGE
+  FIELD public static final ServerLivingEntityEvents$AfterDeath> AFTER_DEATH
+  FIELD public static final ServerLivingEntityEvents$AllowDamage> ALLOW_DAMAGE
+  FIELD public static final ServerLivingEntityEvents$AllowDeath> ALLOW_DEATH
+  FIELD public static final ServerLivingEntityEvents$MobConversion> MOB_CONVERSION
 
-=== net.minecraft.network.RegistryFriendlyByteBuf  ::  public class extends FriendlyByteBuf implements 
-  CTOR public RegistryFriendlyByteBuf(ByteBuf, RegistryAccess)
-  METHOD public RegistryAccess registryAccess()
-  METHOD public static RegistryFriendlyByteBuf> decorator(RegistryAccess)
+=== net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry  ::  public abstract interface extends <none> implements 
+  # methods unavailable: NoClassDefFoundError
 
-=== net.minecraft.network.chat.Component  ::  public abstract interface extends <none> implements Message, FormattedText
-  METHOD public Component> toFlatList()
-  METHOD public Component> toFlatList(Style)
-  METHOD public MutableComponent copy()
-  METHOD public MutableComponent plainCopy()
-  METHOD public Optional<T> visit(FormattedText$ContentConsumer<T>)
-  METHOD public Optional<T> visit(FormattedText$StyledContentConsumer<T>, Style)
-  METHOD public String getString()
-  METHOD public String getString(int)
-  METHOD public String tryCollapseToString()
-  METHOD public abstract Component> getSiblings()
-  METHOD public abstract ComponentContents getContents()
-  METHOD public abstract FormattedCharSequence getVisualOrderText()
-  METHOD public abstract Style getStyle()
-  METHOD public boolean contains(Component)
-  METHOD public static Component nullToEmpty(String)
-  METHOD public static Component translationArg(ChunkPos)
-  METHOD public static Component translationArg(Date)
-  METHOD public static Component translationArg(Message)
-  METHOD public static Component translationArg(ResourceLocation)
-  METHOD public static Component translationArg(URI)
-  METHOD public static Component translationArg(UUID)
-  METHOD public static MutableComponent empty()
-  METHOD public static MutableComponent keybind(String)
-  METHOD public static MutableComponent literal(String)
-  METHOD public static MutableComponent nbt(String, boolean, Component>, DataSource)
-  METHOD public static MutableComponent score(String, String)
-  METHOD public static MutableComponent selector(String, Component>)
-  METHOD public static MutableComponent translatable(String)
-  METHOD public static MutableComponent translatable(String, Object[])
-  METHOD public static MutableComponent translatableEscape(String, Object[])
-  METHOD public static MutableComponent translatableWithFallback(String, String)
-  METHOD public static MutableComponent translatableWithFallback(String, String, Object[])
+=== net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
 
-=== net.minecraft.network.chat.MutableComponent  ::  public class extends Object implements Component
-  CTOR MutableComponent(ComponentContents, Component>, Style)
-  METHOD public Component> getSiblings()
-  METHOD public ComponentContents getContents()
-  METHOD public FormattedCharSequence getVisualOrderText()
-  METHOD public MutableComponent append(Component)
-  METHOD public MutableComponent append(String)
-  METHOD public MutableComponent setStyle(Style)
-  METHOD public MutableComponent withColor(int)
-  METHOD public MutableComponent withStyle(ChatFormatting)
-  METHOD public MutableComponent withStyle(ChatFormatting[])
-  METHOD public MutableComponent withStyle(Style)
-  METHOD public MutableComponent withStyle(Style>)
-  METHOD public String toString()
-  METHOD public Style getStyle()
-  METHOD public boolean equals(Object)
-  METHOD public int hashCode()
-  METHOD public static MutableComponent create(ComponentContents)
+=== net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ServerPlayConnectionEvents$Disconnect> DISCONNECT
+  FIELD public static final ServerPlayConnectionEvents$Init> INIT
+  FIELD public static final ServerPlayConnectionEvents$Join> JOIN
 
-=== net.minecraft.network.codec.ByteBufCodecs  ::  public abstract interface extends <none> implements 
-  FIELD public static final Boolean> BOOL
-  FIELD public static final Byte> BYTE
-  FIELD public static final ByteBuf, byte[]> BYTE_ARRAY
-  FIELD public static final CompoundTag> COMPOUND_TAG
-  FIELD public static final CompoundTag> TRUSTED_COMPOUND_TAG
-  FIELD public static final CompoundTag>> OPTIONAL_COMPOUND_TAG
-  FIELD public static final Double> DOUBLE
-  FIELD public static final Float> FLOAT
-  FIELD public static final GameProfile> GAME_PROFILE
-  FIELD public static final Integer> INT
-  FIELD public static final Integer> UNSIGNED_SHORT
-  FIELD public static final Integer> VAR_INT
-  FIELD public static final Long> VAR_LONG
-  FIELD public static final PropertyMap> GAME_PROFILE_PROPERTIES
-  FIELD public static final Quaternionf> QUATERNIONF
-  FIELD public static final Short> SHORT
-  FIELD public static final String> STRING_UTF8
-  FIELD public static final Tag> TAG
-  FIELD public static final Tag> TRUSTED_TAG
-  FIELD public static final Vector3f> VECTOR3F
-  FIELD public static final int MAX_INITIAL_COLLECTION_SIZE
-  METHOD public static ByteBuf, T> fromCodec(Codec<T>)
-  METHOD public static ByteBuf, T> fromCodec(Codec<T>, NbtAccounter>)
-  METHOD public static ByteBuf, T> fromCodecTrusted(Codec<T>)
-  METHOD public static ByteBuf, T> idMapper(IdMap<T>)
-  METHOD public static ByteBuf, T> idMapper(IntFunction<T>, ToIntFunction<T>)
-  METHOD public static ByteBuf, byte[]> byteArray(int)
-  METHOD public static CompoundTag> compoundTagCodec(NbtAccounter>)
-  METHOD public static Either<L, R>> either(StreamCodec<? super B, L>, StreamCodec<? super B, R>)
-  METHOD public static Holder<T>> holder(Registry<T>>, RegistryFriendlyByteBuf, T>)
-  METHOD public static Holder<T>> holderRegistry(Registry<T>>)
-  METHOD public static HolderSet<T>> holderSet(Registry<T>>)
-  METHOD public static List<V>> list()
-  METHOD public static List<V>> list(int)
-  METHOD public static Optional<V>> optional(StreamCodec<B, V>)
-  METHOD public static RegistryFriendlyByteBuf, T> fromCodecWithRegistries(Codec<T>)
-  METHOD public static RegistryFriendlyByteBuf, T> fromCodecWithRegistries(Codec<T>, NbtAccounter>)
-  METHOD public static RegistryFriendlyByteBuf, T> fromCodecWithRegistriesTrusted(Codec<T>)
-  METHOD public static RegistryFriendlyByteBuf, T> registry(Registry<T>>)
-  METHOD public static StreamCodec$CodecOperation<B, V, C> collection(IntFunction<C>)
-  METHOD public static StreamCodec<B, C> collection(IntFunction<C>, StreamCodec<? super B, V>)
-  METHOD public static StreamCodec<B, C> collection(IntFunction<C>, StreamCodec<? super B, V>, int)
-  METHOD public static StreamCodec<B, M> map(IntFunction<? extends M>, StreamCodec<? super B, K>, StreamCodec<? super B, V>)
-  METHOD public static StreamCodec<B, M> map(IntFunction<? extends M>, StreamCodec<? super B, K>, StreamCodec<? super B, V>, int)
-  METHOD public static String> stringUtf8(int)
-  METHOD public static Tag> tagCodec(NbtAccounter>)
-  METHOD public static int readCount(ByteBuf, int)
-  METHOD public static void writeCount(ByteBuf, int, int)
+=== net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
 
-=== net.minecraft.network.codec.StreamCodec  ::  public abstract interface extends <none> implements StreamDecoder<B, V>, StreamEncoder<B, V>
-  METHOD public StreamCodec<B, O> apply(StreamCodec$CodecOperation<B, V, O>)
-  METHOD public StreamCodec<B, O> map(Function<? super V, ? extends O>, Function<? super O, ? extends V>)
-  METHOD public StreamCodec<B, U> dispatch(Function<? super U, ? extends V>, StreamCodec<? super B, ? extends U>>)
-  METHOD public StreamCodec<O, V> mapStream(Function<O, ? extends B>)
-  METHOD public StreamCodec<S, V> cast()
-  METHOD public static StreamCodec<B, C> composite(StreamCodec<? super B, T1>, Function<C, T1>, Function<T1, C>)
-  METHOD public static StreamCodec<B, C> composite(StreamCodec<? super B, T1>, Function<C, T1>, StreamCodec<? super B, T2>, Function<C, T2>, BiFunction<T1, T2, C>)
-  METHOD public static StreamCodec<B, C> composite(StreamCodec<? super B, T1>, Function<C, T1>, StreamCodec<? super B, T2>, Function<C, T2>, StreamCodec<? super B, T3>, Function<C, T3>, Function3<T1, T2, T3, C>)
-  METHOD public static StreamCodec<B, C> composite(StreamCodec<? super B, T1>, Function<C, T1>, StreamCodec<? super B, T2>, Function<C, T2>, StreamCodec<? super B, T3>, Function<C, T3>, StreamCodec<? super B, T4>, Function<C, T4>, Function4<T1, T2, T3, T4, C>)
-  METHOD public static StreamCodec<B, C> composite(StreamCodec<? super B, T1>, Function<C, T1>, StreamCodec<? super B, T2>, Function<C, T2>, StreamCodec<? super B, T3>, Function<C, T3>, StreamCodec<? super B, T4>, Function<C, T4>, StreamCodec<? super B, T5>, Function<C, T5>, Function5<T1, T2, T3, T4, T5, C>)
-  METHOD public static StreamCodec<B, C> composite(StreamCodec<? super B, T1>, Function<C, T1>, StreamCodec<? super B, T2>, Function<C, T2>, StreamCodec<? super B, T3>, Function<C, T3>, StreamCodec<? super B, T4>, Function<C, T4>, StreamCodec<? super B, T5>, Function<C, T5>, StreamCodec<? super B, T6>, Function<C, T6>, Function6<T1, T2, T3, T4, T5, T6, C>)
-  METHOD public static StreamCodec<B, T> recursive(StreamCodec<B, T>>)
-  METHOD public static StreamCodec<B, V> of(StreamEncoder<B, V>, StreamDecoder<B, V>)
-  METHOD public static StreamCodec<B, V> ofMember(StreamMemberEncoder<B, V>, StreamDecoder<B, V>)
-  METHOD public static StreamCodec<B, V> unit(V)
+=== net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ItemGroupEvents$ModifyEntriesAll> MODIFY_ENTRIES_ALL
 
-=== net.minecraft.network.protocol.common.custom.CustomPacketPayload  ::  public abstract interface extends <none> implements 
-  METHOD public abstract CustomPacketPayload> type()
-  METHOD public static CustomPacketPayload$Type<T> createType(String)
-  METHOD public static CustomPacketPayload> codec(CustomPacketPayload$FallbackProvider<B>, CustomPacketPayload$TypeAndCodec<? super B, ?>>)
-  METHOD public static StreamCodec<B, T> codec(StreamMemberEncoder<B, T>, StreamDecoder<B, T>)
+=== net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags  ::  public final class extends Object implements 
+  # fields unavailable: NoClassDefFoundError
+  # methods unavailable: NoClassDefFoundError
 
-=== net.minecraft.resources.ResourceKey  ::  public class extends Object implements 
-  METHOD public Registry<T>> registryKey()
-  METHOD public ResourceKey<E>> cast(Registry<E>>)
-  METHOD public ResourceLocation location()
-  METHOD public ResourceLocation registry()
-  METHOD public String toString()
-  METHOD public boolean isFor(Registry<?>>)
-  METHOD public static Registry<T>> createRegistryKey(ResourceLocation)
-  METHOD public static ResourceKey<T> create(Registry<T>>, ResourceLocation)
-  METHOD public static ResourceKey<T>> codec(Registry<T>>)
-  METHOD public static ResourceKey<T>> streamCodec(Registry<T>>)
+=== net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags  ::  public final class extends Object implements 
+  # fields unavailable: NoClassDefFoundError
+  # methods unavailable: NoClassDefFoundError
+=== net.minecraft.client.Minecraft  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.DeltaTracker  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.gui.GuiGraphics  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.gui.screens.Screen  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.gui.components.Button  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.gui.components.Button$Builder  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.gui.components.AbstractWidget  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.gui.components.events.GuiEventListener  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.KeyMapping  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.player.LocalPlayer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.multiplayer.ClientLevel  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.EntityRenderer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.EntityRendererProvider  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.MobRenderer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.HumanoidMobRenderer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.EntityRenderers  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.layers.ItemInHandLayer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.renderer.entity.layers.RenderLayer  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.model.HumanoidModel  ::  MISSING (ClassNotFoundException)
+=== net.minecraft.client.model.geom.ModelLayers  ::  MISSING (ClassNotFoundException)
 
-=== net.minecraft.resources.ResourceLocation  ::  public final class extends Object implements ResourceLocation>
-  FIELD public static final ResourceLocation> CODEC
-  FIELD public static final ResourceLocation> STREAM_CODEC
-  FIELD public static final SimpleCommandExceptionType ERROR_INVALID
-  FIELD public static final String DEFAULT_NAMESPACE
-  FIELD public static final String REALMS_NAMESPACE
-  FIELD public static final char NAMESPACE_SEPARATOR
-  METHOD public ResourceLocation withPath(String)
-  METHOD public ResourceLocation withPath(String>)
-  METHOD public ResourceLocation withPrefix(String)
-  METHOD public ResourceLocation withSuffix(String)
-  METHOD public String getNamespace()
-  METHOD public String getPath()
-  METHOD public String toDebugFileName()
-  METHOD public String toLanguageKey()
-  METHOD public String toLanguageKey(String)
-  METHOD public String toLanguageKey(String, String)
-  METHOD public String toShortLanguageKey()
-  METHOD public String toString()
-  METHOD public boolean equals(Object)
-  METHOD public int compareTo(ResourceLocation)
-  METHOD public int hashCode()
-  METHOD public static ResourceLocation bySeparator(String, char)
-  METHOD public static ResourceLocation fromNamespaceAndPath(String, String)
-  METHOD public static ResourceLocation parse(String)
-  METHOD public static ResourceLocation read(StringReader) throws CommandSyntaxException
-  METHOD public static ResourceLocation readNonEmpty(StringReader) throws CommandSyntaxException
-  METHOD public static ResourceLocation tryBuild(String, String)
-  METHOD public static ResourceLocation tryBySeparator(String, char)
-  METHOD public static ResourceLocation tryParse(String)
-  METHOD public static ResourceLocation withDefaultNamespace(String)
-  METHOD public static ResourceLocation> read(String)
-  METHOD public static boolean isAllowedInResourceLocation(char)
-  METHOD public static boolean isValidNamespace(String)
-  METHOD public static boolean isValidPath(String)
-  METHOD public static boolean validPathChar(char)
+=== net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback  ::  public abstract interface extends <none> implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final HudRenderCallback> EVENT
 
-=== net.minecraft.server.MinecraftServer  ::  public abstract abstract class extends bpl<aln> implements alh, dwg, es, AutoCloseable
-  CTOR public MinecraftServer(Thread, erf$c, atp, alp, Proxy, DataFixer, alm, are)
-  FIELD protected final Proxy h
-  FIELD protected final alm i
-  FIELD protected final erf$c f
-  FIELD protected final eri g
-  FIELD protected final erl j
-  FIELD public static final GameProfile e
-  FIELD public static final String b
-  FIELD public static final dda d
-  FIELD public static final int c
-  METHOD protected abstract blu f()
-  METHOD protected abstract boolean e() throws IOException
-  METHOD protected aln a(Runnable)
-  METHOD protected boolean a(aln)
-  METHOD protected void U()
-  METHOD protected void a(ard)
-  METHOD protected void b(String)
-  METHOD protected void b(aln)
-  METHOD protected void t()
-  METHOD protected void t_()
-  METHOD protected void v_()
-  METHOD protected void y()
-  METHOD public DataFixer aD()
-  METHOD public GameProfile S()
-  METHOD public GameProfileRepository at()
-  METHOD public Iterable<aqu> K()
-  METHOD public KeyPair Q()
-  METHOD public MinecraftServer$b> X()
-  METHOD public MinecraftSessionService ar()
-  METHOD public Path D()
-  METHOD public Path a(erd)
-  METHOD public Path c(String)
-  METHOD public Path> C()
-  METHOD public Proxy ap()
-  METHOD public Set<akq<dcw>> J()
-  METHOD public String L()
-  METHOD public String af()
-  METHOD public String getServerModName()
-  METHOD public String w()
-  METHOD public String[] O()
-  METHOD public Thread az()
-  METHOD public Void> a(String>)
-  METHOD public abstract ac a(ac)
-  METHOD public abstract boolean M_()
-  METHOD public abstract boolean a(GameProfile)
-  METHOD public abstract boolean g()
-  METHOD public abstract boolean m()
-  METHOD public abstract boolean n()
-  METHOD public abstract boolean p()
-  METHOD public abstract boolean q()
-  METHOD public abstract boolean r()
-  METHOD public abstract int k()
-  METHOD public abstract int l()
-  METHOD public abstract int o()
-  METHOD public ac b(ac)
-  METHOD public ajq av()
-  METHOD public alb$b be()
-  METHOD public ale aE()
-  METHOD public alg aF()
-  METHOD public alj bq()
-  METHOD public alk aK()
-  METHOD public all aQ()
-  METHOD public alt aN()
-  METHOD public aqu a(akq<dcw>)
-  METHOD public aqw b(aqv)
-  METHOD public art ai()
-  METHOD public arz a(aqv)
-  METHOD public atp aG()
-  METHOD public aue bg()
-  METHOD public aun au()
-  METHOD public aur ah()
-  METHOD public ayn P()
-  METHOD public azb as()
-  METHOD public bne bk()
-  METHOD public bnf aT()
-  METHOD public boolean B()
-  METHOD public boolean E()
-  METHOD public boolean H()
-  METHOD public boolean T()
-  METHOD public boolean V()
-  METHOD public boolean W()
-  METHOD public boolean Y()
-  METHOD public boolean Z()
-  METHOD public boolean a(aqu, jd, cmx)
-  METHOD public boolean a(boolean, boolean, boolean)
-  METHOD public boolean a(dct, boolean, int)
-  METHOD public boolean a(dcw)
-  METHOD public boolean aB()
-  METHOD public boolean aO()
-  METHOD public boolean aV()
-  METHOD public boolean aZ()
-  METHOD public boolean aa()
-  METHOD public boolean ab()
-  METHOD public boolean ac()
-  METHOD public boolean ad()
-  METHOD public boolean ae()
-  METHOD public boolean ag()
-  METHOD public boolean aj()
-  METHOD public boolean ak()
-  METHOD public boolean an()
-  METHOD public boolean ao()
-  METHOD public boolean ay()
-  METHOD public boolean b(boolean, boolean, boolean)
-  METHOD public boolean bh()
-  METHOD public boolean bi()
-  METHOD public boolean bn()
-  METHOD public boolean bo()
-  METHOD public boolean j()
-  METHOD public boolean k_()
-  METHOD public boolean w_()
-  METHOD public boolean x()
-  METHOD public cwt bp()
-  METHOD public czd aJ()
-  METHOD public dcs aM()
-  METHOD public dct bf()
-  METHOD public dct u_()
-  METHOD public enu ba()
-  METHOD public eqw aL()
-  METHOD public erl bb()
-  METHOD public et aI()
-  METHOD public eu aH()
-  METHOD public final aqu I()
-  METHOD public float aP()
-  METHOD public int M()
-  METHOD public int N()
-  METHOD public int R()
-  METHOD public int a(aqu)
-  METHOD public int aA()
-  METHOD public int al()
-  METHOD public int am()
-  METHOD public int aq()
-  METHOD public int ax()
-  METHOD public int b(int)
-  METHOD public int bl()
-  METHOD public int c(GameProfile)
-  METHOD public jt<ala> bd()
-  METHOD public ka$b bc()
-  METHOD public long aC()
-  METHOD public long aR()
-  METHOD public long[] aS()
-  METHOD public static S a(Thread, S>)
-  METHOD public static boolean z()
-  METHOD public static ddr a(atp, ddr, boolean, boolean)
-  METHOD public static void a(RuntimeException)
-  METHOD public void A()
-  METHOD public void F()
-  METHOD public void G()
-  METHOD public void a(BooleanSupplier)
-  METHOD public void a(Consumer<bne>, Path>)
-  METHOD public void a(Path) throws IOException
-  METHOD public void a(Throwable, dws, dcd)
-  METHOD public void a(aqv, bls)
-  METHOD public void a(aur)
-  METHOD public void a(boolean)
-  METHOD public void a(bqo, boolean)
-  METHOD public void a(dct)
-  METHOD public void a(et)
-  METHOD public void a(int)
-  METHOD public void a(o)
-  METHOD public void a(wz)
-  METHOD public void a(wz, wv$a, String)
-  METHOD public void aU()
-  METHOD public void aW()
-  METHOD public void aX()
-  METHOD public void aY()
-  METHOD public void a_(String)
-  METHOD public void aw()
-  METHOD public void b(BooleanSupplier)
-  METHOD public void b(GameProfile)
-  METHOD public void b(Runnable)
-  METHOD public void b(Throwable, dws, dcd)
-  METHOD public void b(boolean)
-  METHOD public void bj()
-  METHOD public void c(BooleanSupplier)
-  METHOD public void c(Runnable)
-  METHOD public void c(boolean)
-  METHOD public void c(int)
-  METHOD public void close()
-  METHOD public void d(String)
-  METHOD public void d(boolean)
-  METHOD public void e(boolean)
-  METHOD public void f(boolean)
-  METHOD public void g(boolean)
-  METHOD public void h(boolean)
-  METHOD public
+=== net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+
+=== net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+  FIELD public static final ClientTickEvents$EndTick> END_CLIENT_TICK
+  FIELD public static final ClientTickEvents$EndWorldTick> END_WORLD_TICK
+  FIELD public static final ClientTickEvents$StartTick> START_CLIENT_TICK
+  FIELD public static final ClientTickEvents$StartWorldTick> START_WORLD_TICK
+
+=== net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError
+
+=== net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper  ::  public final class extends Object implements 
+  # methods unavailable: NoClassDefFoundError

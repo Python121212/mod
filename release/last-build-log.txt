@@ -905,5 +905,5 @@ Note: Some messages have been simplified; recompile with -Xdiags:verbose to get 
 	... 30 more
 
 
-BUILD FAILED in 46s
+BUILD FAILED in 42s
 1 actionable task: 1 executed

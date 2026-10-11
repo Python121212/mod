@@ -1,16 +1,2 @@
-Exception in thread "main" java.lang.SecurityException: class "net.minecraft.server.ServerScoreboard"'s signer information does not match signer information of other classes in the same package
-	at java.base/java.lang.ClassLoader.checkCerts(ClassLoader.java:1107)
-	at java.base/java.lang.ClassLoader.preDefineClass(ClassLoader.java:854)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:960)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:144)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:776)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:691)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:620)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:578)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
-	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:2985)
-	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2354)
-	at ApiDump.dump(ApiDump.java:241)
-	at ApiDump.main(ApiDump.java:220)
-java-exit=1
+api-dump.txt written (220 classes)
+java-exit=0
