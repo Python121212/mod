@@ -51,5 +51,5 @@ Note: Recompile with -Xlint:deprecation for details.
 
 [Incubating] Problems report is available at: file:///home/runner/work/mod/mod/build/reports/problems/problems-report.html
 
-BUILD SUCCESSFUL in 1m 3s
+BUILD SUCCESSFUL in 53s
 9 actionable tasks: 9 executed
