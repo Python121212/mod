@@ -38,6 +38,10 @@ jobs:
       - name: Make gradle wrapper executable
         run: chmod +x ./gradlew
 
+      - name: Dump API signatures (temporary diagnostic)
+        continue-on-error: true
+        run: ./gradlew apiDump --no-daemon --console=plain
+
       - name: Build with Gradle
         id: gradle_build
         continue-on-error: true
@@ -48,6 +52,7 @@ jobs:
         run: |
           mkdir -p release
           cp build.log release/last-build-log.txt
+          if [ -f api-dump.txt ]; then cp api-dump.txt release/api-dump.txt; fi
           if ls build/libs/*.jar >/dev/null 2>&1; then
             cp build/libs/*.jar release/
             rm -f release/*-sources.jar

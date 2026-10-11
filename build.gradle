@@ -40,6 +40,20 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
+// TEMPORARY diagnostic task: writes the exact remapped Minecraft API signatures into
+// api-dump.txt using a reflection-only single-file program (tools/ApiDump.java).
+// It never depends on compilation of the mod sources, so it also works while they are broken.
+tasks.register('apiDump', Exec) {
+	group = 'verification'
+	description = 'Dumps remapped Minecraft 1.21.1 API signatures for inspection.'
+	ignoreExitValue = true
+	doFirst {
+		def javaBin = new File(System.getProperty('java.home'), 'bin', 'java').absolutePath
+		def cp = sourceSets.client.runtimeClasspath.asPath
+		commandLine javaBin, '-cp', cp, 'tools/ApiDump.java'
+	}
+}
+
 processResources {
 	def version = project.version
 	inputs.property "version", version
