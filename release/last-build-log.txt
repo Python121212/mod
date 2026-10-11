@@ -27,33 +27,95 @@ Please make sure to read and understand the following license:
 duplicate input class net/fabricmc/fabric/mixin/tag/package-info, from /home/runner/.gradle/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-convention-tags-v2/2.12.0+c3656daa19/45cd5f071ec42e13b8b6ce15c8f83db322da2494/fabric-convention-tags-v2-2.12.0+c3656daa19.jar and /home/runner/.gradle/caches/modules-2/files-2.1/net.fabricmc.fabric-api/fabric-tag-api-v1/1.3.0+1eb36c0719/ba08d91572b12cd23a2d7a193ed45c26f8da62b0/fabric-tag-api-v1-1.3.0+1eb36c0719.jar
 
 > Task :compileJava
-> Task :processResources
-> Task :classes
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:428: error: Override is not a repeatable annotation interface
+		@Override
+		^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:542: error: Override is not a repeatable annotation interface
+		@Override
+		^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/NpcSpawner.java:107: error: incompatible types: Player cannot be converted to ServerPlayer
+			ServerPlayer nearest = level.getNearestPlayer(npc, radius);
+			                                             ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java:90: error: cannot find symbol
+			WKLog.debug("npc count failed: " + t);
+			     ^
+  symbol:   method debug(String)
+  location: class WKLog
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java:147: error: incompatible types: RandomSource cannot be converted to Random
+				return com.wisdomking.nation.NationFactory.randomPersonName(level.random);
+				                                                                 ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:85: error: cannot find symbol
+				WKLog.debug("civil job focus skipped: " + t);
+				     ^
+  symbol:   method debug(String)
+  location: class WKLog
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:112: error: cannot find symbol
+				WKLog.debug("civil job step skipped: " + t);
+				     ^
+  symbol:   method debug(String)
+  location: class WKLog
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/goals/WorkAtFacilityGoal.java:91: error: cannot find symbol
+			case FARM -> ResourceType.FOOD;
+			     ^
+  symbol:   variable FARM
+  location: class WorkAtFacilityGoal
+Note: /home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+8 errors
 
-> Task :compileClientJava FAILED
-/home/runner/work/mod/mod/src/client/java/com/wisdomking/client/dev/ClientProbe.java:94: error: <anonymous com.wisdomking.client.dev.ClientProbe$1> is not abstract and does not override abstract method getTextureLocation(ProbeNpc) in EntityRenderer
-				new HumanoidModel<>(ctx.bakeLayer(ModelLayers.PLAYER)), 0.5f) {
-				                                                              ^
-1 error
+> Task :compileJava FAILED
 
 [Incubating] Problems report is available at: file:///home/runner/work/mod/mod/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed for task ':compileClientJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
 > Compilation failed; see the compiler output below.
-  /home/runner/work/mod/mod/src/client/java/com/wisdomking/client/dev/ClientProbe.java:94: error: <anonymous com.wisdomking.client.dev.ClientProbe$1> is not abstract and does not override abstract method getTextureLocation(ProbeNpc) in EntityRenderer
-  				new HumanoidModel<>(ctx.bakeLayer(ModelLayers.PLAYER)), 0.5f) {
-  				                                                              ^
-  1 error
+  Note: /home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java uses or overrides a deprecated API.
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:428: error: Override is not a repeatable annotation interface
+  		@Override
+  		^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:542: error: Override is not a repeatable annotation interface
+  		@Override
+  		^
+  Note: Recompile with -Xlint:deprecation for details.
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/NpcSpawner.java:107: error: incompatible types: Player cannot be converted to ServerPlayer
+  			ServerPlayer nearest = level.getNearestPlayer(npc, radius);
+  			                                             ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java:147: error: incompatible types: RandomSource cannot be converted to Random
+  				return com.wisdomking.nation.NationFactory.randomPersonName(level.random);
+  				                                                                 ^
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/goals/WorkAtFacilityGoal.java:91: error: cannot find symbol
+  			case FARM -> ResourceType.FOOD;
+  			     ^
+    symbol:   variable FARM
+    location: class WorkAtFacilityGoal
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java:90: error: cannot find symbol
+  			WKLog.debug("npc count failed: " + t);
+  			     ^
+    symbol:   method debug(String)
+    location: class WKLog
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:85: error: cannot find symbol
+  				WKLog.debug("civil job focus skipped: " + t);
+  				     ^
+    symbol:   method debug(String)
+    location: class WKLog
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:112: error: cannot find symbol
+  				WKLog.debug("civil job step skipped: " + t);
+  				     ^
+    symbol:   method debug(String)
+    location: class WKLog
+  8 errors
 
 * Try:
 > Check your code and dependencies to fix the compilation error(s)
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
 
 * Exception is:
-org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':compileClientJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:135)
 	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:288)
 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:133)
@@ -88,10 +150,42 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':compile
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:65)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Compilation failed; see the compiler output below.
-/home/runner/work/mod/mod/src/client/java/com/wisdomking/client/dev/ClientProbe.java:94: error: <anonymous com.wisdomking.client.dev.ClientProbe$1> is not abstract and does not override abstract method getTextureLocation(ProbeNpc) in EntityRenderer
-				new HumanoidModel<>(ctx.bakeLayer(ModelLayers.PLAYER)), 0.5f) {
-				                                                              ^
-1 error
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:428: error: Override is not a repeatable annotation interface
+		@Override
+		^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:542: error: Override is not a repeatable annotation interface
+		@Override
+		^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/NpcSpawner.java:107: error: incompatible types: Player cannot be converted to ServerPlayer
+			ServerPlayer nearest = level.getNearestPlayer(npc, radius);
+			                                             ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java:90: error: cannot find symbol
+			WKLog.debug("npc count failed: " + t);
+			     ^
+  symbol:   method debug(String)
+  location: class WKLog
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java:147: error: incompatible types: RandomSource cannot be converted to Random
+				return com.wisdomking.nation.NationFactory.randomPersonName(level.random);
+				                                                                 ^
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:85: error: cannot find symbol
+				WKLog.debug("civil job focus skipped: " + t);
+				     ^
+  symbol:   method debug(String)
+  location: class WKLog
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:112: error: cannot find symbol
+				WKLog.debug("civil job step skipped: " + t);
+				     ^
+  symbol:   method debug(String)
+  location: class WKLog
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/goals/WorkAtFacilityGoal.java:91: error: cannot find symbol
+			case FARM -> ResourceType.FOOD;
+			     ^
+  symbol:   variable FARM
+  location: class WorkAtFacilityGoal
+Note: /home/runner/work/mod/mod/src/main/java/com/wisdomking/entity/WKNpcEntities.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+8 errors
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:88)
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:49)
 	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:98)
@@ -226,5 +320,5 @@ Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Com
 	... 30 more
 
 
-BUILD FAILED in 52s
-3 actionable tasks: 3 executed
+BUILD FAILED in 57s
+1 actionable task: 1 executed
