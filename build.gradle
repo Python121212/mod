@@ -40,45 +40,6 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
-// TEMPORARY diagnostic task (removed before release): writes the resolved Minecraft/mod/library
-// classpath to release/classpath.txt so that tools/ApiDump.java can be executed against the very
-// same jars the compiler uses.
-tasks.register('printClasspath') {
-	group = 'verification'
-	description = 'Writes the resolved compile/runtime classpath to release/classpath.txt.'
-	def cfgs = configurations
-	def srcSets = sourceSets
-	doLast {
-		def out = file('release/classpath.txt')
-		out.parentFile.mkdirs()
-		def lines = []
-		try {
-			lines.addAll(cfgs.minecraft.resolve().collect { it.absolutePath })
-		} catch (Throwable t) {
-			lines.add('# minecraft configuration failed: ' + t)
-		}
-		['main', 'client'].each { name ->
-			def ss = srcSets.findByName(name)
-			if (ss == null) {
-				lines.add('# sourceSet missing: ' + name)
-				return
-			}
-			try {
-				lines.addAll(ss.compileClasspath.files.collect { it.absolutePath })
-			} catch (Throwable t) {
-				lines.add('# compileClasspath failed for ' + name + ': ' + t)
-			}
-			try {
-				lines.addAll(ss.runtimeClasspath.files.collect { it.absolutePath })
-			} catch (Throwable t) {
-				lines.add('# runtimeClasspath failed for ' + name + ': ' + t)
-			}
-		}
-		def unique = lines.unique()
-		out.text = unique.join('\n') + '\n'
-		println "wrote ${out} (${unique.size()} entries)"
-	}
-}
 
 processResources {
 	def version = project.version

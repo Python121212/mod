@@ -45,37 +45,19 @@ jobs:
           set -o pipefail
           ./gradlew build --stacktrace --no-daemon --console=plain 2>&1 | tee build.log
 
-      - name: Dump API signatures (temporary diagnostic)
+      - name: Verify release jar (no dev probes, metadata present)
         if: always()
         run: |
-          mkdir -p release
-          ( ./gradlew printClasspath --no-daemon --console=plain; echo "gradle-exit=$?" ) > release/classpath-gradle.log 2>&1 || true
-
-          if [ -f release/classpath.txt ]; then
-            # remapped minecraft jars first, then the rest (classpath order matters)
-            CP=$( { grep 'minecraftMaven' release/classpath.txt; grep -v 'minecraftMaven' release/classpath.txt; } \
-                  | grep '\.jar$' | grep -v -- '-sources\.jar$' | grep -v -- '-javadoc\.jar$' | tr '\n' ':' )
-          else
-            CP=$(find "$HOME/.gradle/caches" "$PWD/.gradle" -name '*.jar' 2>/dev/null | tr '\n' ':')
+          JAR=$(ls build/libs/*.jar 2>/dev/null | grep -v -- '-sources.jar$' | head -n1)
+          if [ -z "$JAR" ]; then
+            echo "no jar produced"; exit 1
           fi
-          echo "classpath entries: $(echo "$CP" | tr ':' '\n' | grep -c '\.jar')"
-
-          # strip jar signatures so classes from different jars can share a package
-          rm -rf /tmp/strip && mkdir -p /tmp/strip
-          IDX=0
-          for J in $(echo "$CP" | tr ':' '\n'); do
-            [ -f "$J" ] || continue
-            IDX=$((IDX+1))
-            DST=$(printf "/tmp/strip/%03d-%s" "$IDX" "$(basename "$J")")
-            cp -f "$J" "$DST"
-            zip -q -d "$DST" 'META-INF/*.SF' 'META-INF/*.RSA' 'META-INF/*.DSA' 'META-INF/*.EC' >/dev/null 2>&1 || true
-          done
-          CP2=$(ls /tmp/strip/*.jar | tr '\n' ':')
-          ( java -cp "$CP2" tools/ApiDump.java; echo "java-exit=$?" ) > release/api-dump.log 2>&1 || true
-          if [ -f api-dump.txt ]; then cp -f api-dump.txt release/api-dump.txt; fi
-          ( java -cp "$CP2" tools/ApiDump.java scan; echo "scan-exit=$?" ) > release/api-scan.log 2>&1 || true
-          if [ -f api-classes.txt ]; then cp -f api-classes.txt release/api-classes.txt; fi
-          ls -la release
+          echo "jar: $JAR"
+          unzip -l "$JAR" | grep -E 'com/wisdomking/dev/|cmd/|ApiDump|Probe' && { echo "DEV CLASSES PRESENT IN JAR"; exit 1; } || true
+          unzip -l "$JAR" | grep -q 'fabric.mod.json' || { echo "fabric.mod.json missing"; exit 1; }
+          unzip -l "$JAR" | grep -q 'assets/wisdomking/textures/block/capital_core.png' || { echo "block texture missing"; exit 1; }
+          unzip -l "$JAR" | grep -q 'assets/wisdomking/icon.png' || { echo "icon missing"; exit 1; }
+          echo "release jar checks passed"
 
       - name: Collect build artifacts
         if: always()
