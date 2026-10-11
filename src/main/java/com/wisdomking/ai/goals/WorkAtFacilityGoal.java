@@ -83,14 +83,7 @@ public class WorkAtFacilityGoal extends Goal {
 			return;
 		}
 		// 人手による生産ブースト（施設種別ごとの資源）
-		ResourceType type = switch (facility.facility()) {
-			case BARRACKS -> ResourceType.METAL;
-			case GUILD -> ResourceType.LUXURY;
-			case MAGIC_LAB -> ResourceType.ARCANE;
-			case WORKSHOP -> ResourceType.MACHINE;
-			case FARM -> ResourceType.FOOD;
-			case MARKET -> ResourceType.LUXURY;
-		};
+		ResourceType type = facility.facility().focus();
 		double amount = 0.05D + npc.getNationRole().combatBias() * 0.05D;
 		nation.addStock(type, amount);
 		nation.unrest = Math.max(0.0F, nation.unrest - 0.002F);

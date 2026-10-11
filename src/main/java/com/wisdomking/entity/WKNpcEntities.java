@@ -87,7 +87,7 @@ public final class WKNpcEntities {
 				}
 			}
 		} catch (Throwable t) {
-			WKLog.debug("npc count failed: " + t);
+			WKLog.info("npc count failed: " + t);
 		}
 		return count;
 	}
@@ -144,7 +144,7 @@ public final class WKNpcEntities {
 	private static final class NationFactoryNames {
 		private static String random(Level level) {
 			try {
-				return com.wisdomking.nation.NationFactory.randomPersonName(level.random);
+				return com.wisdomking.nation.NationFactory.randomPersonName(new java.util.Random(level.getRandom().nextLong()));
 			} catch (Throwable t) {
 				return "名もなき者";
 			}

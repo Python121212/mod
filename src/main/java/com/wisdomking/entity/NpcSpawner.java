@@ -60,8 +60,8 @@ public final class NpcSpawner {
 			return;
 		}
 		for (ServerPlayer player : level.players()) {
-			Nation nation = manager.nationIdOfPlayer(player) == null ? null
-					: manager.nation(player.getUUID() == null ? null : player.getUUID());
+			java.util.UUID nationId = manager.nationIdOfPlayer(player);
+			Nation nation = nationId == null ? null : manager.nation(nationId);
 			if (nation == null || !nation.alive) {
 				continue;
 			}
@@ -104,8 +104,7 @@ public final class NpcSpawner {
 				record.lastPos = npc.worldPos();
 				record.lastSeenTick = level.getGameTime();
 			}
-			ServerPlayer nearest = level.getNearestPlayer(npc, radius);
-			if (nearest == null) {
+			if (level.getNearestPlayer(npc, radius) == null) {
 				npc.discard();
 			}
 		}

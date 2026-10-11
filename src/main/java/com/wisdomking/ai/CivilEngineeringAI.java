@@ -82,7 +82,7 @@ public final class CivilEngineeringAI {
 				bestDistance = distance;
 				best = focus;
 			} catch (Throwable t) {
-				WKLog.debug("civil job focus skipped: " + t);
+				WKLog.info("civil job focus skipped: " + t);
 			}
 		}
 		return best;
@@ -109,7 +109,7 @@ public final class CivilEngineeringAI {
 				}
 				return job.step(level, nation);
 			} catch (Throwable t) {
-				WKLog.debug("civil job step skipped: " + t);
+				WKLog.info("civil job step skipped: " + t);
 			}
 		}
 		return false;
@@ -425,7 +425,6 @@ public final class CivilEngineeringAI {
 		}
 
 		@Override
-		@Override
 		public java.util.UUID nationId() {
 			return nationId;
 		}
@@ -538,7 +537,6 @@ public final class CivilEngineeringAI {
 			return false;
 		}
 
-		@Override
 		@Override
 		public java.util.UUID nationId() {
 			return nationId;
