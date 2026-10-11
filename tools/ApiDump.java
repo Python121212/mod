@@ -17,6 +17,33 @@ import java.util.List;
  */
 public final class ApiDump {
     private static final String[] CLASSES = {
+        "net.minecraft.tags.BiomeTags",
+        "net.minecraft.world.level.storage.LevelResource",
+        "net.minecraft.world.item.component.ItemAttributeModifiers",
+        "net.minecraft.core.component.DataComponentType",
+        "net.minecraft.core.component.DataComponentMap",
+        "net.minecraft.world.level.block.Blocks",
+        "net.minecraft.world.level.block.RenderShape",
+        "net.minecraft.world.level.block.HorizontalDirectionalBlock",
+        "net.minecraft.world.level.block.state.properties.Property",
+        "net.minecraft.world.level.block.state.properties.BooleanProperty",
+        "net.minecraft.world.level.block.state.properties.EnumProperty",
+        "net.minecraft.world.level.block.state.properties.DirectionProperty",
+        "net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase",
+        "net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity",
+        "net.minecraft.world.level.block.entity.ChestBlockEntity",
+        "net.minecraft.world.level.Explosion",
+        "net.minecraft.world.level.levelgen.Heightmap",
+        "net.minecraft.world.entity.monster.Skeleton",
+        "net.minecraft.world.entity.monster.Pillager",
+        "net.minecraft.world.MenuProvider",
+        "net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents",
+        "net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents",
+        "net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents",
+        "net.minecraft.world.entity.ai.brain.Brain",
+        "net.minecraft.world.entity.ai.sensing.Sensor",
+        "net.minecraft.world.entity.ai.memory.MemoryModuleType",
+        "net.minecraft.world.entity.ai.behavior.Behavior",
         "net.minecraft.core.BlockPos",
         "net.minecraft.core.Direction",
         "net.minecraft.core.Holder",
@@ -238,21 +265,41 @@ public final class ApiDump {
                 + " implements " + typeNames(c.getGenericInterfaces()));
 
         List<String> lines = new ArrayList<>();
-        for (Constructor<?> k : c.getDeclaredConstructors()) {
-            if (Modifier.isPrivate(k.getModifiers())) continue;
-            lines.add("  CTOR " + mods(k.getModifiers()) + c.getSimpleName() + "(" + params(k.getGenericParameterTypes()) + ")");
+        try {
+            for (Constructor<?> k : c.getDeclaredConstructors()) {
+                if (Modifier.isPrivate(k.getModifiers())) continue;
+                try {
+                    lines.add("  CTOR " + mods(k.getModifiers()) + c.getSimpleName() + "(" + params(k.getGenericParameterTypes()) + ")");
+                } catch (Throwable t) {
+                    lines.add("  CTOR <?> (" + t.getClass().getSimpleName() + ")");
+                }
+            }
+        } catch (Throwable t) {
+            lines.add("  # constructors unavailable: " + t.getClass().getSimpleName());
         }
-        for (Field f : c.getDeclaredFields()) {
-            int m = f.getModifiers();
-            if (Modifier.isPrivate(m) || f.isSynthetic()) continue;
-            lines.add("  FIELD " + mods(m) + typeName(f.getGenericType()) + " " + f.getName());
+        try {
+            for (Field f : c.getDeclaredFields()) {
+                int m = f.getModifiers();
+                if (Modifier.isPrivate(m) || f.isSynthetic()) continue;
+                lines.add("  FIELD " + mods(m) + typeName(f.getGenericType()) + " " + f.getName());
+            }
+        } catch (Throwable t) {
+            lines.add("  # fields unavailable: " + t.getClass().getSimpleName());
         }
-        for (Method mm : c.getDeclaredMethods()) {
-            int m = mm.getModifiers();
-            if (Modifier.isPrivate(m) || mm.isSynthetic() || mm.isBridge()) continue;
-            String thr = mm.getExceptionTypes().length == 0 ? "" : " throws " + typeNames(mm.getExceptionTypes());
-            lines.add("  METHOD " + mods(m) + typeName(mm.getGenericReturnType()) + " " + mm.getName()
-                    + "(" + params(mm.getGenericParameterTypes()) + ")" + thr);
+        try {
+            for (Method mm : c.getDeclaredMethods()) {
+                int m = mm.getModifiers();
+                if (Modifier.isPrivate(m) || mm.isSynthetic() || mm.isBridge()) continue;
+                try {
+                    String thr = mm.getExceptionTypes().length == 0 ? "" : " throws " + typeNames(mm.getExceptionTypes());
+                    lines.add("  METHOD " + mods(m) + typeName(mm.getGenericReturnType()) + " " + mm.getName()
+                            + "(" + params(mm.getGenericParameterTypes()) + ")" + thr);
+                } catch (Throwable t) {
+                    lines.add("  METHOD <?> " + mm.getName() + " (" + t.getClass().getSimpleName() + ")");
+                }
+            }
+        } catch (Throwable t) {
+            lines.add("  # methods unavailable: " + t.getClass().getSimpleName());
         }
         lines.sort(null);
         for (String line : lines) {
