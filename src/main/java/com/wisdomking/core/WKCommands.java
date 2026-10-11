@@ -171,7 +171,7 @@ public final class WKCommands {
 														"理念を " + own.ideology.name() + " に変更しました"), false);
 												return 1;
 											}))))
-					);
+					;
 			dispatcher.register(root);
 			dispatcher.register(Commands.literal("wk").redirect(dispatcher.getRoot().getChild("wisdomking")));
 		});
