@@ -38,21 +38,29 @@ jobs:
       - name: Make gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Dump API signatures (temporary diagnostic)
-        continue-on-error: true
-        run: ./gradlew apiDump --no-daemon --console=plain
-
       - name: Build with Gradle
         id: gradle_build
         continue-on-error: true
-        run: ./gradlew build --stacktrace --no-daemon --console=plain 2>&1 | tee build.log
+        run: |
+          set -o pipefail
+          ./gradlew build --stacktrace --no-daemon --console=plain 2>&1 | tee build.log
+
+      - name: Dump API signatures (temporary diagnostic)
+        if: always()
+        run: |
+          mkdir -p release
+          CP=$(find "$HOME/.gradle/caches" -name '*.jar' 2>/dev/null | tr '\n' ':')
+          echo "classpath entries: $(echo "$CP" | tr ':' '\n' | grep -c jar)"
+          ( java -cp "$CP" tools/ApiDump.java; echo "java-exit=$?" ) > release/api-dump.log 2>&1 || true
+          if [ -f api-dump.txt ]; then cp -f api-dump.txt release/api-dump.txt; fi
+          echo "--- dump files ---"
+          ls -la release
 
       - name: Collect build artifacts
         if: always()
         run: |
           mkdir -p release
           cp build.log release/last-build-log.txt
-          if [ -f api-dump.txt ]; then cp api-dump.txt release/api-dump.txt; fi
           if ls build/libs/*.jar >/dev/null 2>&1; then
             cp build/libs/*.jar release/
             rm -f release/*-sources.jar
