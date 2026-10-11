@@ -32,11 +32,9 @@ duplicate input class net/fabricmc/fabric/mixin/tag/package-info, from /home/run
 		         ^
   symbol:   method getFoodProperties(<null>)
   location: variable stack of type ItemStack
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:295: error: cannot find symbol
-		return Registry.ITEM.getKey(stack.getItem());
-		               ^
-  symbol:   variable ITEM
-  location: interface Registry
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:295: error: package BuiltInRegistries does not exist
+		return BuiltInRegistries.ITEM.getKey(stack.getItem());
+		                        ^
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/EquipmentScorer.java:52: error: cannot find symbol
 			ItemAttributeModifiers modifiers = stack.getAttributeModifiers();
 			                                        ^
@@ -47,16 +45,11 @@ duplicate input class net/fabricmc/fabric/mixin/tag/package-info, from /home/run
 			                                        ^
   symbol:   method getAttributeModifiers()
   location: variable stack of type ItemStack
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:463: error: cannot find symbol
-		return server.getServerDirectory().toPath().resolve("wisdomking").resolve("nations.json");
-		                                  ^
-  symbol:   method toPath()
-  location: interface Path
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:90: error: cannot find symbol
-				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.is(BiomeTags.IS_SNOWY)) {
-				                                                             ^
-  symbol:   variable IS_SNOWY
-  location: class BiomeTags
+				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.getBaseTemperature() < 0.15f) {
+				                                                ^
+  symbol:   method getBaseTemperature()
+  location: variable biome of type Holder<Biome>
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:39: error: cannot find symbol
 			case MILITARISM -> b == THEOCRACY ? 0.7f : (b == MERCANTILISM ? 0.45f : 0.25f);
 			                        ^
@@ -97,21 +90,6 @@ duplicate input class net/fabricmc/fabric/mixin/tag/package-info, from /home/run
 			                                                    ^
   symbol:   variable MERCANTILISM
   location: class DiplomacyManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:36: error: cannot find symbol
-			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
-			                                     ^
-  symbol:   class UUID
-  location: class NationPopulation
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:56: error: cannot find symbol
-			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
-			                                     ^
-  symbol:   class UUID
-  location: class NationPopulation
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:262: error: cannot find symbol
-				|| state.is(BlockTags.GRAVEL) /* fallback */) {
-				                     ^
-  symbol:   variable GRAVEL
-  location: class BlockTags
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:34: error: CapitalCoreBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
 public class CapitalCoreBlock extends BaseEntityBlock {
        ^
@@ -257,7 +235,7 @@ public class FacilityBlock extends BaseEntityBlock {
   symbol:   method getFoodProperties(<null>)
   location: variable stack of type ItemStack
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-45 errors
+41 errors
 
 > Task :compileJava FAILED
 
@@ -383,16 +361,6 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/FacilityBlock.java:28: error: FacilityBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
   public class FacilityBlock extends BaseEntityBlock {
          ^
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:295: error: cannot find symbol
-  		return Registry.ITEM.getKey(stack.getItem());
-  		               ^
-    symbol:   variable ITEM
-    location: interface Registry
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:90: error: cannot find symbol
-  				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.is(BiomeTags.IS_SNOWY)) {
-  				                                                             ^
-    symbol:   variable IS_SNOWY
-    location: class BiomeTags
   /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:39: error: cannot find symbol
   			case MILITARISM -> b == THEOCRACY ? 0.7f : (b == MERCANTILISM ? 0.45f : 0.25f);
   			                        ^
@@ -433,21 +401,6 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   			                                                    ^
     symbol:   variable MERCANTILISM
     location: class DiplomacyManager
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:36: error: cannot find symbol
-  			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
-  			                                     ^
-    symbol:   class UUID
-    location: class NationPopulation
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:56: error: cannot find symbol
-  			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
-  			                                     ^
-    symbol:   class UUID
-    location: class NationPopulation
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:262: error: cannot find symbol
-  				|| state.is(BlockTags.GRAVEL) /* fallback */) {
-  				                     ^
-    symbol:   variable GRAVEL
-    location: class BlockTags
   /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:87: error: method does not override or implement a method from a supertype
   	@Override
   	^
@@ -473,6 +426,9 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   	@Override
   	^
   Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:295: error: package BuiltInRegistries does not exist
+  		return BuiltInRegistries.ITEM.getKey(stack.getItem());
+  		                        ^
   /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:151: error: cannot find symbol
   		if (stack.getFoodProperties(null) != null) {
   		         ^
@@ -488,17 +444,17 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   			                                        ^
     symbol:   method getAttributeModifiers()
     location: variable stack of type ItemStack
-  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:463: error: cannot find symbol
-  		return server.getServerDirectory().toPath().resolve("wisdomking").resolve("nations.json");
-  		                                  ^
-    symbol:   method toPath()
-    location: interface Path
+  /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:90: error: cannot find symbol
+  				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.getBaseTemperature() < 0.15f) {
+  				                                                ^
+    symbol:   method getBaseTemperature()
+    location: variable biome of type Holder<Biome>
   /home/runner/work/mod/mod/src/main/java/com/wisdomking/world/ResourceMapper.java:65: error: cannot find symbol
   		if (stack.getFoodProperties(null) != null || containsAny(path, FOOD_HINTS)) {
   		         ^
     symbol:   method getFoodProperties(<null>)
     location: variable stack of type ItemStack
-  45 errors
+  41 errors
 
 * Try:
 > Check your code and dependencies to fix the compilation error(s)
@@ -545,11 +501,9 @@ Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Com
 		         ^
   symbol:   method getFoodProperties(<null>)
   location: variable stack of type ItemStack
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:295: error: cannot find symbol
-		return Registry.ITEM.getKey(stack.getItem());
-		               ^
-  symbol:   variable ITEM
-  location: interface Registry
+/home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/ItemClassifier.java:295: error: package BuiltInRegistries does not exist
+		return BuiltInRegistries.ITEM.getKey(stack.getItem());
+		                        ^
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/equipment/EquipmentScorer.java:52: error: cannot find symbol
 			ItemAttributeModifiers modifiers = stack.getAttributeModifiers();
 			                                        ^
@@ -560,16 +514,11 @@ Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Com
 			                                        ^
   symbol:   method getAttributeModifiers()
   location: variable stack of type ItemStack
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationManager.java:463: error: cannot find symbol
-		return server.getServerDirectory().toPath().resolve("wisdomking").resolve("nations.json");
-		                                  ^
-  symbol:   method toPath()
-  location: interface Path
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/EconomyManager.java:90: error: cannot find symbol
-				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.is(BiomeTags.IS_SNOWY)) {
-				                                                             ^
-  symbol:   variable IS_SNOWY
-  location: class BiomeTags
+				} else if (biome.is(BiomeTags.IS_TAIGA) || biome.getBaseTemperature() < 0.15f) {
+				                                                ^
+  symbol:   method getBaseTemperature()
+  location: variable biome of type Holder<Biome>
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/DiplomacyManager.java:39: error: cannot find symbol
 			case MILITARISM -> b == THEOCRACY ? 0.7f : (b == MERCANTILISM ? 0.45f : 0.25f);
 			                        ^
@@ -610,21 +559,6 @@ Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Com
 			                                                    ^
   symbol:   variable MERCANTILISM
   location: class DiplomacyManager
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:36: error: cannot find symbol
-			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
-			                                     ^
-  symbol:   class UUID
-  location: class NationPopulation
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/nation/NationPopulation.java:56: error: cannot find symbol
-			NpcRecord record = new NpcRecord(new UUID(random.nextLong(), random.nextLong()),
-			                                     ^
-  symbol:   class UUID
-  location: class NationPopulation
-/home/runner/work/mod/mod/src/main/java/com/wisdomking/ai/CivilEngineeringAI.java:262: error: cannot find symbol
-				|| state.is(BlockTags.GRAVEL) /* fallback */) {
-				                     ^
-  symbol:   variable GRAVEL
-  location: class BlockTags
 /home/runner/work/mod/mod/src/main/java/com/wisdomking/block/CapitalCoreBlock.java:34: error: CapitalCoreBlock is not abstract and does not override abstract method codec() in BaseEntityBlock
 public class CapitalCoreBlock extends BaseEntityBlock {
        ^
@@ -770,7 +704,7 @@ public class FacilityBlock extends BaseEntityBlock {
   symbol:   method getFoodProperties(<null>)
   location: variable stack of type ItemStack
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-45 errors
+41 errors
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:88)
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:49)
 	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:98)
@@ -905,5 +839,5 @@ Note: Some messages have been simplified; recompile with -Xdiags:verbose to get 
 	... 30 more
 
 
-BUILD FAILED in 42s
+BUILD FAILED in 41s
 1 actionable task: 1 executed
