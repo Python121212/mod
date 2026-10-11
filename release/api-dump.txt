@@ -5339,6 +5339,29 @@
   METHOD public static InteractionResultHolder<T> sidedSuccess(T, boolean)
   METHOD public static InteractionResultHolder<T> success(T)
 
+=== net.minecraft.world.ItemInteractionResult  ::  public final enum extends Enum<ItemInteractionResult> implements 
+  FIELD public static final ItemInteractionResult CONSUME
+  FIELD public static final ItemInteractionResult CONSUME_PARTIAL
+  FIELD public static final ItemInteractionResult FAIL
+  FIELD public static final ItemInteractionResult PASS_TO_DEFAULT_BLOCK_INTERACTION
+  FIELD public static final ItemInteractionResult SKIP_DEFAULT_BLOCK_INTERACTION
+  FIELD public static final ItemInteractionResult SUCCESS
+  METHOD public InteractionResult result()
+  METHOD public boolean consumesAction()
+  METHOD public static ItemInteractionResult sidedSuccess(boolean)
+  METHOD public static ItemInteractionResult valueOf(String)
+  METHOD public static ItemInteractionResult[] values()
+
+=== net.minecraft.world.InteractionResultHolder  ::  public class extends Object implements 
+  CTOR public InteractionResultHolder(InteractionResult, T)
+  METHOD public InteractionResult getResult()
+  METHOD public T getObject()
+  METHOD public static InteractionResultHolder<T> consume(T)
+  METHOD public static InteractionResultHolder<T> fail(T)
+  METHOD public static InteractionResultHolder<T> pass(T)
+  METHOD public static InteractionResultHolder<T> sidedSuccess(T, boolean)
+  METHOD public static InteractionResultHolder<T> success(T)
+
 === net.minecraft.world.SimpleContainer  ::  public class extends Object implements Container, StackedContentsCompatible
   CTOR public SimpleContainer(ItemStack[])
   CTOR public SimpleContainer(int)
@@ -10043,8 +10066,154 @@
   METHOD public void stepOn(Level, BlockPos, BlockState, Entity)
   METHOD public void updateEntityAfterFallOn(BlockGetter, Entity)
   METHOD public void wasExploded(Level, BlockPos, Explosion)
-=== net.minecraft.world.level.block.BlockBehaviour  ::  MISSING (ClassNotFoundException)
-=== net.minecraft.world.level.block.BlockBehaviour$Properties  ::  MISSING (ClassNotFoundException)
+
+=== net.minecraft.world.level.block.state.BlockBehaviour  ::  public abstract abstract class extends Object implements FeatureElement
+  CTOR public BlockBehaviour(BlockBehaviour$Properties)
+  FIELD protected ResourceKey<LootTable> drops
+  FIELD protected final BlockBehaviour$Properties properties
+  FIELD protected final FeatureFlagSet requiredFeatures
+  FIELD protected final SoundType soundType
+  FIELD protected final boolean dynamicShape
+  FIELD protected final boolean hasCollision
+  FIELD protected final boolean isRandomlyTicking
+  FIELD protected final float explosionResistance
+  FIELD protected final float friction
+  FIELD protected final float jumpFactor
+  FIELD protected final float speedFactor
+  FIELD protected static final Direction[] UPDATE_SHAPE_ORDER
+  METHOD protected BlockState mirror(BlockState, Mirror)
+  METHOD protected BlockState rotate(BlockState, Rotation)
+  METHOD protected BlockState updateShape(BlockState, Direction, BlockState, LevelAccessor, BlockPos, BlockPos)
+  METHOD protected FluidState getFluidState(BlockState)
+  METHOD protected InteractionResult useWithoutItem(BlockState, Level, BlockPos, Player, BlockHitResult)
+  METHOD protected ItemInteractionResult useItemOn(ItemStack, BlockState, Level, BlockPos, Player, InteractionHand, BlockHitResult)
+  METHOD protected List<ItemStack> getDrops(BlockState, LootParams$Builder)
+  METHOD protected MenuProvider getMenuProvider(BlockState, Level, BlockPos)
+  METHOD protected RenderShape getRenderShape(BlockState)
+  METHOD protected SoundType getSoundType(BlockState)
+  METHOD protected VoxelShape getBlockSupportShape(BlockState, BlockGetter, BlockPos)
+  METHOD protected VoxelShape getCollisionShape(BlockState, BlockGetter, BlockPos, CollisionContext)
+  METHOD protected VoxelShape getInteractionShape(BlockState, BlockGetter, BlockPos)
+  METHOD protected VoxelShape getOcclusionShape(BlockState, BlockGetter, BlockPos)
+  METHOD protected VoxelShape getShape(BlockState, BlockGetter, BlockPos, CollisionContext)
+  METHOD protected VoxelShape getVisualShape(BlockState, BlockGetter, BlockPos, CollisionContext)
+  METHOD protected abstract Block asBlock()
+  METHOD protected abstract MapCodec<? extends Block> codec()
+  METHOD protected boolean canBeReplaced(BlockState, BlockPlaceContext)
+  METHOD protected boolean canBeReplaced(BlockState, Fluid)
+  METHOD protected boolean canSurvive(BlockState, LevelReader, BlockPos)
+  METHOD protected boolean hasAnalogOutputSignal(BlockState)
+  METHOD protected boolean isCollisionShapeFullBlock(BlockState, BlockGetter, BlockPos)
+  METHOD protected boolean isOcclusionShapeFullBlock(BlockState, BlockGetter, BlockPos)
+  METHOD protected boolean isPathfindable(BlockState, PathComputationType)
+  METHOD protected boolean isRandomlyTicking(BlockState)
+  METHOD protected boolean isSignalSource(BlockState)
+  METHOD protected boolean propagatesSkylightDown(BlockState, BlockGetter, BlockPos)
+  METHOD protected boolean skipRendering(BlockState, BlockState, Direction)
+  METHOD protected boolean triggerEvent(BlockState, Level, BlockPos, int, int)
+  METHOD protected boolean useShapeForLightOcclusion(BlockState)
+  METHOD protected float getDestroyProgress(BlockState, Player, BlockGetter, BlockPos)
+  METHOD protected float getMaxHorizontalOffset()
+  METHOD protected float getMaxVerticalOffset()
+  METHOD protected float getShadeBrightness(BlockState, BlockGetter, BlockPos)
+  METHOD protected int getAnalogOutputSignal(BlockState, Level, BlockPos)
+  METHOD protected int getDirectSignal(BlockState, BlockGetter, BlockPos, Direction)
+  METHOD protected int getLightBlock(BlockState, BlockGetter, BlockPos)
+  METHOD protected int getSignal(BlockState, BlockGetter, BlockPos, Direction)
+  METHOD protected long getSeed(BlockState, BlockPos)
+  METHOD protected static RecordCodecBuilder<B, BlockBehaviour$Properties> propertiesCodec()
+  METHOD protected void attack(BlockState, Level, BlockPos, Player)
+  METHOD protected void entityInside(BlockState, Level, BlockPos, Entity)
+  METHOD protected void neighborChanged(BlockState, Level, BlockPos, Block, BlockPos, boolean)
+  METHOD protected void onExplosionHit(BlockState, Level, BlockPos, Explosion, BiConsumer<ItemStack, BlockPos>)
+  METHOD protected void onPlace(BlockState, Level, BlockPos, BlockState, boolean)
+  METHOD protected void onProjectileHit(Level, BlockState, BlockHitResult, Projectile)
+  METHOD protected void onRemove(BlockState, Level, BlockPos, BlockState, boolean)
+  METHOD protected void randomTick(BlockState, ServerLevel, BlockPos, RandomSource)
+  METHOD protected void spawnAfterBreak(BlockState, ServerLevel, BlockPos, ItemStack, boolean)
+  METHOD protected void tick(BlockState, ServerLevel, BlockPos, RandomSource)
+  METHOD protected void updateIndirectNeighbourShapes(BlockState, LevelAccessor, BlockPos, int, int)
+  METHOD public BlockBehaviour$Properties properties()
+  METHOD public FeatureFlagSet requiredFeatures()
+  METHOD public MapColor defaultMapColor()
+  METHOD public abstract Item asItem()
+  METHOD public final ResourceKey<LootTable> getLootTable()
+  METHOD public float defaultDestroyTime()
+  METHOD public static MapCodec<B> simpleCodec(Function<BlockBehaviour$Properties, B>)
+
+=== net.minecraft.world.level.block.state.BlockBehaviour$Properties  ::  public static class extends Object implements 
+  FIELD BlockBehaviour$OffsetFunction offsetFunction
+  FIELD BlockBehaviour$StateArgumentPredicate<EntityType<?>> isValidSpawn
+  FIELD BlockBehaviour$StatePredicate emissiveRendering
+  FIELD BlockBehaviour$StatePredicate hasPostProcess
+  FIELD BlockBehaviour$StatePredicate isRedstoneConductor
+  FIELD BlockBehaviour$StatePredicate isSuffocating
+  FIELD BlockBehaviour$StatePredicate isViewBlocking
+  FIELD FeatureFlagSet requiredFeatures
+  FIELD Function<BlockState, MapColor> mapColor
+  FIELD NoteBlockInstrument instrument
+  FIELD PushReaction pushReaction
+  FIELD ResourceKey<LootTable> drops
+  FIELD SoundType soundType
+  FIELD ToIntFunction<BlockState> lightEmission
+  FIELD boolean canOcclude
+  FIELD boolean dynamicShape
+  FIELD boolean forceSolidOff
+  FIELD boolean forceSolidOn
+  FIELD boolean hasCollision
+  FIELD boolean ignitedByLava
+  FIELD boolean isAir
+  FIELD boolean isRandomlyTicking
+  FIELD boolean liquid
+  FIELD boolean replaceable
+  FIELD boolean requiresCorrectToolForDrops
+  FIELD boolean spawnTerrainParticles
+  FIELD float destroyTime
+  FIELD float explosionResistance
+  FIELD float friction
+  FIELD float jumpFactor
+  FIELD float speedFactor
+  FIELD public static final Codec<BlockBehaviour$Properties> CODEC
+  METHOD public BlockBehaviour$Properties air()
+  METHOD public BlockBehaviour$Properties destroyTime(float)
+  METHOD public BlockBehaviour$Properties dropsLike(Block)
+  METHOD public BlockBehaviour$Properties dynamicShape()
+  METHOD public BlockBehaviour$Properties emissiveRendering(BlockBehaviour$StatePredicate)
+  METHOD public BlockBehaviour$Properties explosionResistance(float)
+  METHOD public BlockBehaviour$Properties forceSolidOff()
+  METHOD public BlockBehaviour$Properties forceSolidOn()
+  METHOD public BlockBehaviour$Properties friction(float)
+  METHOD public BlockBehaviour$Properties hasPostProcess(BlockBehaviour$StatePredicate)
+  METHOD public BlockBehaviour$Properties ignitedByLava()
+  METHOD public BlockBehaviour$Properties instabreak()
+  METHOD public BlockBehaviour$Properties instrument(NoteBlockInstrument)
+  METHOD public BlockBehaviour$Properties isRedstoneConductor(BlockBehaviour$StatePredicate)
+  METHOD public BlockBehaviour$Properties isSuffocating(BlockBehaviour$StatePredicate)
+  METHOD public BlockBehaviour$Properties isValidSpawn(BlockBehaviour$StateArgumentPredicate<EntityType<?>>)
+  METHOD public BlockBehaviour$Properties isViewBlocking(BlockBehaviour$StatePredicate)
+  METHOD public BlockBehaviour$Properties jumpFactor(float)
+  METHOD public BlockBehaviour$Properties lightLevel(ToIntFunction<BlockState>)
+  METHOD public BlockBehaviour$Properties liquid()
+  METHOD public BlockBehaviour$Properties mapColor(DyeColor)
+  METHOD public BlockBehaviour$Properties mapColor(Function<BlockState, MapColor>)
+  METHOD public BlockBehaviour$Properties mapColor(MapColor)
+  METHOD public BlockBehaviour$Properties noCollission()
+  METHOD public BlockBehaviour$Properties noLootTable()
+  METHOD public BlockBehaviour$Properties noOcclusion()
+  METHOD public BlockBehaviour$Properties noTerrainParticles()
+  METHOD public BlockBehaviour$Properties offsetType(BlockBehaviour$OffsetType)
+  METHOD public BlockBehaviour$Properties pushReaction(PushReaction)
+  METHOD public BlockBehaviour$Properties randomTicks()
+  METHOD public BlockBehaviour$Properties replaceable()
+  METHOD public BlockBehaviour$Properties requiredFeatures(FeatureFlag[])
+  METHOD public BlockBehaviour$Properties requiresCorrectToolForDrops()
+  METHOD public BlockBehaviour$Properties sound(SoundType)
+  METHOD public BlockBehaviour$Properties speedFactor(float)
+  METHOD public BlockBehaviour$Properties strength(float)
+  METHOD public BlockBehaviour$Properties strength(float, float)
+  METHOD public static BlockBehaviour$Properties of()
+  METHOD public static BlockBehaviour$Properties ofFullCopy(BlockBehaviour)
+  METHOD public static BlockBehaviour$Properties ofLegacyCopy(BlockBehaviour)
 
 === net.minecraft.world.level.block.ChestBlock  ::  public class extends AbstractChestBlock<ChestBlockEntity> implements SimpleWaterloggedBlock
   CTOR public ChestBlock(BlockBehaviour$Properties, Supplier<BlockEntityType<? extends ChestBlockEntity>>)
