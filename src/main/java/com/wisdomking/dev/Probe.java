@@ -97,7 +97,7 @@ public final class Probe {
 	@SuppressWarnings("unused")
 	private static void probeSavedData(ServerLevel level) {
 		Supplier<ProbeData> ctor = ProbeData::new;
-		BiFunction<net.minecraft.core.HolderLookup.Provider, CompoundTag, ProbeData> loader = ProbeData::load;
+		BiFunction<CompoundTag, net.minecraft.core.HolderLookup.Provider, ProbeData> loader = ProbeData::load;
 		SavedData.Factory<ProbeData> factory = new SavedData.Factory<ProbeData>(ctor, loader, null);
 		ProbeData data = level.getDataStorage().computeIfAbsent(factory, "wisdomking_probe");
 		data.setDirty();
@@ -105,7 +105,7 @@ public final class Probe {
 
 	/** 保存データのサンプル。 */
 	public static final class ProbeData extends SavedData {
-		public static ProbeData load(net.minecraft.core.HolderLookup.Provider registries, CompoundTag tag) {
+		public static ProbeData load(CompoundTag tag, net.minecraft.core.HolderLookup.Provider registries) {
 			return new ProbeData();
 		}
 
