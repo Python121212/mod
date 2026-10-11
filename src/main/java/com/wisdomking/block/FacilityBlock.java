@@ -79,9 +79,8 @@ public class FacilityBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public InteractionResult useWithoutItem(Level level, Player player, BlockHitResult hit) {
-		BlockPos pos = hit.getBlockPos();
-		BlockState state = level.getBlockState(pos);
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
+			BlockHitResult hit) {
 
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
@@ -108,9 +107,9 @@ public class FacilityBlock extends BaseEntityBlock {
 		}
 
 	@Override
-	public ItemInteractionResult useItemOn(ItemStack stack, Level level, Player player, InteractionHand hand,
-			BlockHitResult hit) {
-		return useWithoutItem(level, player, hit) == InteractionResult.SUCCESS
+	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+			Player player, InteractionHand hand, BlockHitResult hit) {
+		return useWithoutItem(state, level, pos, player, hit) == InteractionResult.SUCCESS
 				? ItemInteractionResult.SUCCESS : ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 

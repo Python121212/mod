@@ -83,17 +83,15 @@ public class TradePostBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public ItemInteractionResult useItemOn(ItemStack heldStack, Level level, Player player, InteractionHand hand,
-			BlockHitResult hit) {
-		BlockPos pos = hit.getBlockPos();
-		BlockState state = level.getBlockState(pos);
+	protected ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos,
+			Player player, InteractionHand hand, BlockHitResult hit) {
 
 		if (level.isClientSide()) {
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 		BlockEntity be = level.getBlockEntity(pos);
 		if (!(be instanceof TradePostBlockEntity post) || !(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)) {
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 		ItemStack held = heldStack;
 		if (!held.isEmpty()) {
@@ -102,7 +100,7 @@ public class TradePostBlock extends BaseEntityBlock {
 			} else {
 				serverPlayer.displayClientMessage(Component.literal("§e[交易] 市場在庫が満杯です。"), true);
 			}
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 		Nation nation = post.nation();
 		List<String> details = new ArrayList<>();
@@ -117,12 +115,13 @@ public class TradePostBlock extends BaseEntityBlock {
 		}
 		RaphaelRelay.announceTo(serverPlayer, new AnalysisReport(Tone.REPORT,
 				"市場ターミナル報告", details, Urgency.INFO), false);
-		return InteractionResult.SUCCESS;
+		return ItemInteractionResult.SUCCESS;
 		}
 
 	@Override
-	public InteractionResult useWithoutItem(Level level, Player player, BlockHitResult hit) {
-		return useItemOn(ItemStack.EMPTY, level, player, InteractionHand.MAIN_HAND, hit) == ItemInteractionResult.SUCCESS
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
+			BlockHitResult hit) {
+		return useItemOn(ItemStack.EMPTY, state, level, pos, player, InteractionHand.MAIN_HAND, hit) == ItemInteractionResult.SUCCESS
 				? InteractionResult.SUCCESS : InteractionResult.PASS;
 	}
 

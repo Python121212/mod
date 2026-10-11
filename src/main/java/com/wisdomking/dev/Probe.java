@@ -70,7 +70,12 @@ public final class Probe {
 		Item.Properties props = new Item.Properties().stacksTo(1).rarity(Rarity.RARE).fireResistant();
 		Item item = new Item(props) {
 			@Override
-			public InteractionResult use(Level level, Player player, InteractionHand hand) {
+			public net.minecraft.world.InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+				return net.minecraft.world.InteractionResultHolder.success(player.getItemInHand(hand));
+			}
+
+			@Override
+			public InteractionResult useOn(net.minecraft.world.item.context.UseOnContext context) {
 				return InteractionResult.SUCCESS;
 			}
 		};
@@ -93,7 +98,7 @@ public final class Probe {
 	private static void probeSavedData(ServerLevel level) {
 		Supplier<ProbeData> ctor = ProbeData::new;
 		BiFunction<net.minecraft.core.HolderLookup.Provider, CompoundTag, ProbeData> loader = ProbeData::load;
-		SavedData.Factory<ProbeData> factory = new SavedData.Factory<>(ctor, loader, null);
+		SavedData.Factory<ProbeData> factory = new SavedData.Factory<ProbeData>(ctor, loader, null);
 		ProbeData data = level.getDataStorage().computeIfAbsent(factory, "wisdomking_probe");
 		data.setDirty();
 	}

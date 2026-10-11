@@ -86,17 +86,15 @@ public class NationalChestBlock extends BaseEntityBlock {
 	}
 
 	@Override
-	public ItemInteractionResult useItemOn(ItemStack heldStack, Level level, Player player, InteractionHand hand,
-			BlockHitResult hit) {
-		BlockPos pos = hit.getBlockPos();
-		BlockState state = level.getBlockState(pos);
+	protected ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos,
+			Player player, InteractionHand hand, BlockHitResult hit) {
 
 		if (level.isClientSide()) {
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 		BlockEntity be = level.getBlockEntity(pos);
 		if (!(be instanceof NationalChestBlockEntity chest) || !(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)) {
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 		ItemStack held = heldStack;
 		if (!heldStack.isEmpty() && !player.isShiftKeyDown()) {
@@ -108,7 +106,7 @@ public class NationalChestBlock extends BaseEntityBlock {
 			} else {
 				serverPlayer.displayClientMessage(Component.literal("§e[国庫] 満杯です。"), true);
 			}
-			return InteractionResult.SUCCESS;
+			return ItemInteractionResult.SUCCESS;
 		}
 		// 空手: 在庫解析 + 国庫GUI
 		List<ItemStack> contents = new ArrayList<>();
@@ -118,12 +116,13 @@ public class NationalChestBlock extends BaseEntityBlock {
 		RaphaelRelay.remember(ItemAnalyzer.analyzeInventory(contents));
 		serverPlayer.displayClientMessage(Component.literal("§6[国庫] " + chest.summarize()), false);
 		com.wisdomking.network.WKNetwork.openDashboard(serverPlayer);
-		return InteractionResult.SUCCESS;
+		return ItemInteractionResult.SUCCESS;
 		}
 
 	@Override
-	public InteractionResult useWithoutItem(Level level, Player player, BlockHitResult hit) {
-		return useItemOn(ItemStack.EMPTY, level, player, InteractionHand.MAIN_HAND, hit) == ItemInteractionResult.SUCCESS
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
+			BlockHitResult hit) {
+		return useItemOn(ItemStack.EMPTY, state, level, pos, player, InteractionHand.MAIN_HAND, hit) == ItemInteractionResult.SUCCESS
 				? InteractionResult.SUCCESS : InteractionResult.PASS;
 	}
 
