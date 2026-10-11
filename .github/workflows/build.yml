@@ -1,0 +1,74 @@
+# Continuous integration for the Wisdom King mod.
+# Builds the mod with the Gradle wrapper, then publishes the produced JAR and the
+# full build log back into the repository (directory: release/) so that build
+# results can be inspected without downloading workflow artifacts.
+
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+
+      - name: Setup JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'microsoft'
+
+      - name: Make gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        id: gradle_build
+        continue-on-error: true
+        run: ./gradlew build --stacktrace --no-daemon --console=plain 2>&1 | tee build.log
+
+      - name: Collect build artifacts
+        if: always()
+        run: |
+          mkdir -p release
+          cp build.log release/last-build-log.txt
+          if ls build/libs/*.jar >/dev/null 2>&1; then
+            cp build/libs/*.jar release/
+            rm -f release/*-sources.jar
+          fi
+          ls -la release
+
+      - name: Publish artifacts back to the branch
+        if: always() && github.event_name == 'push'
+        run: |
+          git config user.name "wisdomking-ci"
+          git config user.email "ci@users.noreply.github.com"
+          git add -f release
+          if git diff --cached --quiet; then
+            echo "No artifact changes to publish."
+          else
+            git commit -m "ci: build artifacts [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: Fail job when the build failed
+        if: steps.gradle_build.outcome == 'failure'
+        run: |
+          echo "Gradle build failed - see release/last-build-log.txt"
+          exit 1

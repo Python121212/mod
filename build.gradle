@@ -1,0 +1,77 @@
+plugins {
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+	id 'maven-publish'
+}
+
+version = project.version
+group = project.group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	// Soft-dependency compile-only repositories (optional integrations).
+	maven { name = 'BlameJared'; url = 'https://maven.blamejared.com/' }          // JEI
+	maven { name = 'Jade'; url = 'https://maven2.ryanliptak.com/' }               // Jade / WTHIT
+	maven { name = 'shedaniel'; url = 'https://maven.shedaniel.me/' }             // REI
+	maven { name = 'TerraformersMC'; url = 'https://maven.terraformersmc.com/releases/' } // EMI
+	maven { name = 'MaxHenkel'; url = 'https://maven.maxhenkel.de/repository/public' } // Simple Voice Chat
+	maven { name = 'CreateMod'; url = 'https://maven.createmod.net/' }            // Create
+	maven { name = 'IronSpells'; url = 'https://maven.iron.wiki/' }               // Iron's Spells 'n Spellbooks
+	mavenCentral()
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"wisdomking" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+	it.options.encoding = 'UTF-8'
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.archives_base_name}" }
+	}
+}
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+	repositories {
+	}
+}

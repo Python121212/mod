@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "wisdomking",
+	"version": "${version}",
+	"name": "Wisdom King - Autonomous NPC Nations",
+	"description": "Autonomous NPC nations, geopolitics, dynamic succession, universal mod analysis (Raphael), voice dialogue and civil-engineering AI for Fabric 1.21.1.",
+	"authors": [
+		"Wisdom King Team"
+	],
+	"contact": {
+		"homepage": "https://github.com/Python121212/mod"
+	},
+	"license": "MIT",
+	"icon": "assets/wisdomking/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.wisdomking.WisdomKingMod"
+		],
+		"client": [
+			"com.wisdomking.client.WisdomKingClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "wisdomking.mixins.json",
+			"environment": "*"
+		},
+		{
+			"config": "wisdomking.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.0",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
