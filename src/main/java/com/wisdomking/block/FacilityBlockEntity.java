@@ -166,7 +166,7 @@ public class FacilityBlockEntity extends NationBlockEntity {
 	}
 
 	/** 周辺の国庫金庫を探す（自動クラフトの入出力）。 */
-	@javax.annotation.Nullable
+	@org.jetbrains.annotations.Nullable
 	public NationalChestBlockEntity findChest() {
 		if (!(level instanceof ServerLevel serverLevel)) {
 			return null;

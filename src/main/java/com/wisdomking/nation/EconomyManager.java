@@ -65,7 +65,7 @@ public final class EconomyManager {
 			cachedChunkCount.put(nation.id, nation.claimedChunks.size());
 			return factors;
 		}
-		List<long[]> sample = new ArrayList<>(nation.claimedChunks);
+		List<Long> sample = new ArrayList<>(nation.claimedChunks);
 		int step = Math.max(1, sample.size() / 24);
 		int counted = 0;
 		double[] biomeMix = new double[8]; // forest, desert, ocean, mountain, jungle, swamp, snow, plains

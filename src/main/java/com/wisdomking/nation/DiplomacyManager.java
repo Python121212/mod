@@ -6,7 +6,7 @@ import com.wisdomking.raphael.AnalysisReport;
 import com.wisdomking.raphael.RaphaelRelay;
 import net.minecraft.network.chat.Component;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;

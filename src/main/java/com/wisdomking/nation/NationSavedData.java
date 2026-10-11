@@ -47,6 +47,6 @@ public final class NationSavedData extends SavedData {
 	}
 
 	public static SavedData.Factory<NationSavedData> factory() {
-		return new SavedData.Factory<>(NationSavedData::create, NationSavedData::load, NAME);
+		return new SavedData.Factory<>(NationSavedData::create, NationSavedData::load, null);
 	}
 }

@@ -2,7 +2,7 @@ package com.wisdomking.raphael;
 
 import net.minecraft.server.level.ServerPlayer;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 import java.util.UUID;
 
 /** 標準チャット配送シンク。常に有効な最終フォールバック。 */
