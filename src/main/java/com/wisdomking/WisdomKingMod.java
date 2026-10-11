@@ -31,6 +31,7 @@ public class WisdomKingMod implements net.fabricmc.api.ModInitializer {
 		WKLog.info("《解析完了》智慧之王システム、初期化を開始します。");
 		WKConfig.get();
 		WKRegistry.init();
+		com.wisdomking.compat.CompatRegistry.init();
 		WKNetwork.init();
 		WKLog.safely("server payload receivers", WKPayloads::registerServer);
 		WKEvents.register();

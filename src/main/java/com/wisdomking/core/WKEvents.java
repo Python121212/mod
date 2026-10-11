@@ -68,6 +68,7 @@ public final class WKEvents {
 				manager.tick();
 				CivilEngineeringAI.tick(server.overworld());
 				com.wisdomking.entity.NpcSpawner.tick(server.overworld());
+					com.wisdomking.entity.NpcSync.tick(server.overworld());
 				RaphaelCore.passiveTick(server);
 			} catch (Throwable t) {
 				WKLog.error("nation tick failed", t);

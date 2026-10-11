@@ -5,6 +5,10 @@ import com.wisdomking.nation.NationManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,6 +25,9 @@ import java.util.UUID;
 public abstract class NationBlockEntity extends BlockEntity {
 	protected UUID nationId;
 	protected long lastSyncTick;
+	/** クライアント側で受信した HUD 表示用データ。 */
+	@Nullable
+	private CompoundTag clientHud;
 
 	protected NationBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
 		super(type, pos, state);
@@ -69,10 +76,40 @@ public abstract class NationBlockEntity extends BlockEntity {
 			}
 		}
 		lastSyncTick = tag.getLong("LastSync");
+		if (level != null && level.isClientSide && !tag.isEmpty()) {
+			clientHud = tag.copy();
+		}
+	}
+
+	/** クライアントへの同期用タグ（Jade/WTHIT 相当の HUD 情報を含む）。 */
+	@Override
+	public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+		CompoundTag tag = super.getUpdateTag(registries);
+		tag.merge(describeForHud());
+		return tag;
+	}
+
+	@Override
+	public Packet<ClientGamePacketListener> getUpdatePacket() {
+		return ClientboundBlockEntityDataPacket.create(this);
+	}
+
+	/** データ変更時に間隔を空けてクライアントへ再送する（毎tickの帯域消費を防ぐ）。 */
+	@Override
+	public void setChanged() {
+		super.setChanged();
+		if (level instanceof ServerLevel server && server.getGameTime() - lastSyncTick > 100L) {
+			lastSyncTick = server.getGameTime();
+			BlockState state = getBlockState();
+			server.sendBlockUpdated(worldPosition, state, state, 2);
+		}
 	}
 
 	/** 所有国家IDを付与した状態でクライアントへ同期する。 */
 	public CompoundTag describeForHud() {
+		if (level != null && level.isClientSide && clientHud != null) {
+			return clientHud.copy();
+		}
 		CompoundTag tag = new CompoundTag();
 		Nation nation = nation();
 		tag.putString("NationName", nation == null ? "無所属" : nation.name);

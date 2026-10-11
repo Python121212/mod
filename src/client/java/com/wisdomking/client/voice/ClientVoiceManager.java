@@ -185,8 +185,25 @@ public final class ClientVoiceManager {
 	// TTS
 	// ------------------------------------------------------------------
 
-	/** 智慧之王／NPCの発話を再生する。 */
+	/** 智慧之王の発話を再生する（内声・距離減衰なし）。 */
 	public static void speak(String text, Urgency urgency) {
+		speakInternal(text, urgency, 1.0F);
+	}
+
+	/**
+	 * NPC の発話を距離減衰つきで再生する（3D音声相当）。
+	 *
+	 * <p>NPC の位置とプレイヤーの距離に応じて音量を下げることで、
+	 * 立体感のある「その場の声」を再現する。Simple Voice Chat などの
+	 * 音声Modとは独立した経路（自前の SourceDataLine）を使うため競合しない。</p>
+	 */
+	public static void speakAt(String text, Urgency urgency, double distance) {
+		double range = Math.max(2.0D, WKConfig.get().voiceDistance);
+		float gain = (float) Math.max(0.15D, Math.min(1.0D, 1.0D - (distance / range)));
+		speakInternal(text, urgency, gain);
+	}
+
+	private static void speakInternal(String text, Urgency urgency, float gain) {
 		if (text == null || text.isBlank() || !WKConfig.get().voiceEnabled) {
 			return;
 		}
@@ -196,14 +213,14 @@ public final class ClientVoiceManager {
 		}
 		if ("http".equalsIgnoreCase(mode) && WKConfig.get().ttsEndpoint != null
 				&& !WKConfig.get().ttsEndpoint.isBlank()) {
-			AUDIO_POOL.submit(() -> speakHttp(text, urgency));
+			AUDIO_POOL.submit(() -> speakHttp(text, urgency, gain));
 		} else {
-			AUDIO_POOL.submit(() -> speakProcedural(text, urgency));
+			AUDIO_POOL.submit(() -> speakProcedural(text, urgency, gain));
 		}
 	}
 
 	/** 外部TTSエンジンから音声を取得して再生する。 */
-	private static void speakHttp(String text, Urgency urgency) {
+	private static void speakHttp(String text, Urgency urgency, float gain) {
 		try {
 			String endpoint = WKConfig.get().ttsEndpoint;
 			String body = "{\"text\":\"" + text.replace("\\", "\\\\").replace("\"", "\\\"")
@@ -216,7 +233,7 @@ public final class ClientVoiceManager {
 					.build();
 			HttpResponse<byte[]> response = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
 			if (response.statusCode() / 100 != 2) {
-				speakProcedural(text, urgency);
+				speakProcedural(text, urgency, gain);
 				return;
 			}
 			byte[] audio = response.body();
@@ -233,10 +250,10 @@ public final class ClientVoiceManager {
 				rate = 22050;
 				channels = 1;
 			}
-			playPcm(pcm, rate, channels);
+			playPcm(pcm, rate, channels, gain);
 		} catch (Throwable t) {
 			WK.LOG.warn("HTTP TTS failed, falling back to procedural voice: {}", t.toString());
-			speakProcedural(text, urgency);
+			speakProcedural(text, urgency, gain);
 		}
 	}
 
@@ -247,7 +264,7 @@ public final class ClientVoiceManager {
 	 * 文字ごとに基本周波数とフォルマント（倍音構成）を割り当てた
 	 * 短い音節列を合成する。日本語のモーラ数に応じてピッチを変化させる。</p>
 	 */
-	private static void speakProcedural(String text, Urgency urgency) {
+	private static void speakProcedural(String text, Urgency urgency, float gain) {
 		try {
 			int sampleRate = 22050;
 			double basePitch = switch (urgency) {
@@ -277,10 +294,22 @@ public final class ClientVoiceManager {
 			if (pcm.length == 0) {
 				return;
 			}
-			playPcm(pcm, sampleRate, 1);
+			playPcm(pcm, sampleRate, 1, gain);
 		} catch (Throwable t) {
 			WK.LOG.warn("procedural TTS failed safely: {}", t.toString());
 		}
+	}
+
+	/** 16bit LE PCM に音量ゲインを適用する（3D音声の距離減衰）。 */
+	private static byte[] applyGain(byte[] pcm, float gain) {
+		byte[] out = new byte[pcm.length];
+		for (int i = 0; i + 1 < pcm.length; i += 2) {
+			int sample = (short) ((pcm[i] & 0xFF) | (pcm[i + 1] << 8));
+			int scaled = Math.max(Short.MIN_VALUE, Math.min(Short.MAX_VALUE, Math.round(sample * gain)));
+			out[i] = (byte) (scaled & 0xFF);
+			out[i + 1] = (byte) ((scaled >> 8) & 0xFF);
+		}
+		return out;
 	}
 
 	private static void appendSilence(ByteArrayOutputStream out, int sampleRate, int ms) {
@@ -308,7 +337,10 @@ public final class ClientVoiceManager {
 		}
 	}
 
-	private static void playPcm(byte[] pcm, int sampleRate, int channels) {
+	private static void playPcm(byte[] pcm, int sampleRate, int channels, float gain) {
+		if (gain < 0.99F) {
+			pcm = applyGain(pcm, gain);
+		}
 		if (SPEAKING.getAndSet(true)) {
 			return;
 		}

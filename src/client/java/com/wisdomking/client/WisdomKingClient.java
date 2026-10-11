@@ -51,6 +51,7 @@ public class WisdomKingClient implements ClientModInitializer {
 		ClientVoiceManager.init();
 		com.wisdomking.client.raphael.RaphaelHud.init();
 		com.wisdomking.client.render.WKRenderers.init();
+		com.wisdomking.client.compat.TargetOverlay.init();
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (dashKey.consumeClick()) {
@@ -68,6 +69,7 @@ public class WisdomKingClient implements ClientModInitializer {
 				ClientVoiceManager.togglePushToTalk();
 			}
 			ClientVoiceManager.tick(client);
+			com.wisdomking.client.voice.NpcVoiceDirector.tick(client);
 		});
 	}
 

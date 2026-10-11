@@ -38,10 +38,20 @@ public class WKNpcRenderer extends HumanoidMobRenderer<WKNpcEntity, HumanoidMode
 	@Override
 	public ResourceLocation getTextureLocation(WKNpcEntity entity) {
 		try {
-			Nation nation = entity.nation();
-			int color = nation == null ? 0x8899AA : nation.color;
-			NationRole role = entity.getNationRole();
-			Personality personality = entity.personality();
+			NpcInfoCache.Entry info = NpcInfoCache.get(entity.getId());
+			int color;
+			NationRole role;
+			Personality personality;
+			if (info != null) {
+				color = info.color();
+				role = info.role();
+				personality = info.personality();
+			} else {
+				Nation nation = entity.nation();
+				color = nation == null ? 0x8899AA : nation.color;
+				role = entity.getNationRole();
+				personality = entity.personality();
+			}
 			return NpcSkinManager.skin(color, role, personality);
 		} catch (Throwable t) {
 			return NpcSkinManager.fallback();

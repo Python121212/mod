@@ -63,6 +63,20 @@ public final class WKPayloads {
 		}
 	}
 
+	/** サーバー → クライアント: 視界内 NPC の外見・装備情報（スキン/HUD 用）。 */
+	public record NpcSyncPayload(CompoundTag data) implements CustomPacketPayload {
+		public static final CustomPacketPayload.Type<NpcSyncPayload> TYPE =
+				new CustomPacketPayload.Type<>(WK.id("npc_sync"));
+		public static final StreamCodec<RegistryFriendlyByteBuf, NpcSyncPayload> CODEC =
+				StreamCodec.composite(ByteBufCodecs.COMPOUND_TAG, NpcSyncPayload::data,
+						NpcSyncPayload::new);
+
+		@Override
+		public CustomPacketPayload.Type<? extends CustomPacketPayload> type() {
+			return TYPE;
+		}
+	}
+
 	private WKPayloads() {
 	}
 
@@ -74,6 +88,8 @@ public final class WKPayloads {
 				.register(RaphaelPayload.TYPE, RaphaelPayload.CODEC);
 		net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S()
 				.register(ActionPayload.TYPE, ActionPayload.CODEC);
+		net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playS2C()
+				.register(NpcSyncPayload.TYPE, NpcSyncPayload.CODEC);
 		WKLog.info("payload types registered");
 	}
 

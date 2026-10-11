@@ -87,5 +87,18 @@
   "wisdomking.advancements.war.title": "Fire on the border",
   "wisdomking.advancements.war.desc": "Witness the outbreak of a war between nations.",
   "wisdomking.advancements.scan.title": "Analysis complete",
-  "wisdomking.advancements.scan.desc": "Run an analysis with the Wisdom King."
+  "wisdomking.advancements.scan.desc": "Run an analysis with the Wisdom King.",
+  "wisdomking.voice.king": "My nation stands firm. Work without fear.",
+  "wisdomking.voice.prince": "The king's will is the will of the nation.",
+  "wisdomking.voice.general": "Watch the enemy. Carelessness invites death.",
+  "wisdomking.voice.soldier": "I hold this post. Anything unusual gets reported.",
+  "wisdomking.voice.mage": "Spellwork verified. Keep the materials coming.",
+  "wisdomking.voice.engineer": "This site is cleared. The bridge is next.",
+  "wisdomking.voice.merchant": "The market moves. A good time to buy.",
+  "wisdomking.voice.craftsman": "Good tools come from good work.",
+  "wisdomking.voice.scholar": "Knowledge defends a nation. Keep the records.",
+  "wisdomking.voice.citizen": "Another peaceful day. Nothing better than that.",
+  "wisdomking.facility.warehouse": "Warehouse",
+  "wisdomking.overlay.title": "Target Info",
+  "wisdomking.overlay.protected": "Territory protection: ON"
 }

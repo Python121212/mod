@@ -21,6 +21,9 @@ public final class WKClientNetwork {
 		ClientPlayNetworking.registerGlobalReceiver(WKPayloads.DashboardPayload.TYPE,
 				(payload, context) -> context.client().execute(
 						() -> WisdomKingClient.onDashboard(payload.data())));
+		ClientPlayNetworking.registerGlobalReceiver(WKPayloads.NpcSyncPayload.TYPE,
+				(payload, context) -> context.client().execute(
+						() -> com.wisdomking.client.render.NpcInfoCache.apply(payload.data())));
 		ClientPlayNetworking.registerGlobalReceiver(WKPayloads.RaphaelPayload.TYPE,
 				(payload, context) -> context.client().execute(
 						() -> WisdomKingClient.onRaphael(payload.data())));

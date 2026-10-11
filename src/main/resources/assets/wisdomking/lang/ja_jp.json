@@ -87,5 +87,18 @@
   "wisdomking.advancements.war.title": "国境の火",
   "wisdomking.advancements.war.desc": "国家間戦争の勃発を目撃する。",
   "wisdomking.advancements.scan.title": "解析完了",
-  "wisdomking.advancements.scan.desc": "智慧之王の解析を実行する。"
+  "wisdomking.advancements.scan.desc": "智慧之王の解析を実行する。",
+  "wisdomking.voice.king": "我が国は揺るがぬ。民よ、安心して励め。",
+  "wisdomking.voice.prince": "王の意志は、すなわち国の意志である。",
+  "wisdomking.voice.general": "敵の動きを見ろ。油断は死を招く。",
+  "wisdomking.voice.soldier": "持ち場を離れるな。異常があれば報告する。",
+  "wisdomking.voice.mage": "術式の構築を確認。素材の供給を頼む。",
+  "wisdomking.voice.engineer": "この区画の整地は完了だ。次は橋を架ける。",
+  "wisdomking.voice.merchant": "相場は動いている。仕入れの好機だ。",
+  "wisdomking.voice.craftsman": "良い道具は良い仕事から生まれる。",
+  "wisdomking.voice.scholar": "知は国を守る。記録を怠るな。",
+  "wisdomking.voice.citizen": "今日も国は平穏だ。それが何よりだ。",
+  "wisdomking.facility.warehouse": "倉庫",
+  "wisdomking.overlay.title": "照準情報",
+  "wisdomking.overlay.protected": "領土保護: 有効"
 }
