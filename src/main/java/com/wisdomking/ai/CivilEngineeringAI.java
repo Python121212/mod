@@ -259,7 +259,7 @@ public final class CivilEngineeringAI {
 					Blocks.OAK_PLANKS.defaultBlockState()));
 			placed++;
 		} else if (state.is(BlockTags.DIRT) || state.is(BlockTags.SAND) || state.is(BlockTags.BASE_STONE_OVERWORLD)
-				|| state.is(BlockTags.GRAVEL) /* fallback */) {
+				|| state.is(Blocks.GRAVEL) /* fallback */) {
 			BlockState road = level.getGameTime() % 3 == 0
 					? material(nation, ResourceType.STONE, Blocks.STONE_BRICKS.defaultBlockState())
 					: material(nation, ResourceType.STONE, Blocks.COBBLESTONE.defaultBlockState());

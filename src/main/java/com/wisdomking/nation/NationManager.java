@@ -460,7 +460,7 @@ public final class NationManager {
 	}
 
 	public Path exportPath() {
-		return server.getServerDirectory().toPath().resolve("wisdomking").resolve("nations.json");
+		return server.getServerDirectory().resolve("wisdomking").resolve("nations.json");
 	}
 
 	public void exportJson() {

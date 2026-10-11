@@ -52,34 +52,26 @@ jobs:
           ( ./gradlew printClasspath --no-daemon --console=plain; echo "gradle-exit=$?" ) > release/classpath-gradle.log 2>&1 || true
 
           if [ -f release/classpath.txt ]; then
-            MAPPED=$(grep -E -- '-mapped-' release/classpath.txt | tr '\n' ':')
-            REST=$(grep -v -E -- '-mapped-' release/classpath.txt | grep -v -E '/(client|server|minecraft[^/]*)\.jar$' | tr '\n' ':')
-            CP="$MAPPED$REST"
+            # remapped minecraft jars first, then the rest (classpath order matters)
+            CP=$( { grep 'minecraftMaven' release/classpath.txt; grep -v 'minecraftMaven' release/classpath.txt; } \
+                  | grep '\.jar$' | grep -v -- '-sources\.jar$' | grep -v -- '-javadoc\.jar$' | tr '\n' ':' )
           else
-            CP=$(find "$HOME/.gradle/caches" -name '*.jar' 2>/dev/null | tr '\n' ':')
+            CP=$(find "$HOME/.gradle/caches" "$PWD/.gradle" -name '*.jar' 2>/dev/null | tr '\n' ':')
           fi
-
           echo "classpath entries: $(echo "$CP" | tr ':' '\n' | grep -c '\.jar')"
-          ( java -cp "$CP" tools/ApiDump.java; echo "java-exit=$?" ) > release/api-dump.log 2>&1 || true
 
-          if ! grep -q "java-exit=0" release/api-dump.log; then
-            echo "first attempt failed - retrying with signature-stripped jar copies" >> release/api-dump.log
-            rm -rf /tmp/strip && mkdir -p /tmp/strip
-            IDX=0
-            for J in $(echo "$CP" | tr ':' '\n'); do
-              [ -f "$J" ] || continue
-              IDX=$((IDX+1))
-              DST="/tmp/strip/$IDX-$(basename "$J")"
-              cp -f "$J" "$DST"
-              zip -q -d "$DST" 'META-INF/*.SF' 'META-INF/*.RSA' 'META-INF/*.DSA' 'META-INF/*.EC' >/dev/null 2>&1 || true
-            done
-            CP2=$(ls /tmp/strip/*.jar | tr '\n' ':')
-            ( java -cp "$CP2" tools/ApiDump.java; echo "java-exit=$?" ) > release/api-dump-2.log 2>&1 || true
-            if grep -q "java-exit=0" release/api-dump-2.log; then
-              mv -f release/api-dump-2.log release/api-dump.log
-            fi
-          fi
-
+          # strip jar signatures so classes from different jars can share a package
+          rm -rf /tmp/strip && mkdir -p /tmp/strip
+          IDX=0
+          for J in $(echo "$CP" | tr ':' '\n'); do
+            [ -f "$J" ] || continue
+            IDX=$((IDX+1))
+            DST=$(printf "/tmp/strip/%03d-%s" "$IDX" "$(basename "$J")")
+            cp -f "$J" "$DST"
+            zip -q -d "$DST" 'META-INF/*.SF' 'META-INF/*.RSA' 'META-INF/*.DSA' 'META-INF/*.EC' >/dev/null 2>&1 || true
+          done
+          CP2=$(ls /tmp/strip/*.jar | tr '\n' ':')
+          ( java -cp "$CP2" tools/ApiDump.java; echo "java-exit=$?" ) > release/api-dump.log 2>&1 || true
           if [ -f api-dump.txt ]; then cp -f api-dump.txt release/api-dump.txt; fi
           ls -la release
 

@@ -292,7 +292,7 @@ public final class ItemClassifier {
 
 	/** アイテムの登録名（{@code namespace:path}）。 */
 	public static ResourceLocation itemId(ItemStack stack) {
-		return Registry.ITEM.getKey(stack.getItem());
+		return BuiltInRegistries.ITEM.getKey(stack.getItem());
 	}
 
 	public static String idPath(ItemStack stack) {
