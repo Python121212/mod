@@ -295,7 +295,12 @@ public final class Probe {
 		InteractionResult use = InteractionResult.SUCCESS;
 		String name = player.getGameProfile().getName();
 		Vec3 look = player.getLookAngle();
-		boolean b = hit.getBlockPos() != null && use != null && air != null && air2 != null && food
-				&& maxDamage >= 0 && !name.isEmpty() && look != null && b == false;
+		net.minecraft.core.Holder<net.minecraft.world.level.biome.Biome> biomeHolder = level.getBiome(hit.getBlockPos());
+		float temperature = biomeHolder.value().getBaseTemperature();
+		boolean ok = hit.getBlockPos() != null && use != null && air != null && air2 != null && food
+				&& maxDamage >= 0 && !name.isEmpty() && look != null && temperature > -100.0f;
+		if (ok) {
+			com.wisdomking.WK.LOG.debug("probe ok");
+		}
 	}
 }
